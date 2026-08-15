@@ -6,9 +6,69 @@
 <meta name="theme-color" content="#121016">
 <title>DevFit IR Deck - New Edition</title>
 <style>
-@font-face{font-family:"SCDream";font-weight:400;src:url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff") format("woff");font-display:swap}
-@font-face{font-family:"SCDream";font-weight:700;src:url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff") format("woff");font-display:swap}
-@font-face{font-family:"SCDream";font-weight:900;src:url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff") format("woff");font-display:swap}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
 
 :root{
   --paper:#f6f5f7;
@@ -33,7 +93,7 @@
   --amber-soft:#fff0d7;
   --dark:#121016;
   --dark-2:#1e1a23;
-  --sans:"SCDream","Pretendard","Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  --sans:"Pretendard","Apple SD Gothic Neo","Noto Sans KR",sans-serif;
   --mono:"SFMono-Regular","Cascadia Code","Consolas",monospace;
   --shadow:0 10px 28px rgba(28,21,40,.08);
   --shadow-lg:0 24px 70px rgba(35,24,58,.16);
@@ -647,7 +707,7 @@ img{display:block}
 <main id="stage" aria-live="polite">
 
 <!-- 01 COVER -->
-<section class="slide cover" data-title="표지">
+<section class="slide cover" data-title="표지" data-order="1">
   <div class="slide-shell">
     <div class="cover-grid">
       <div class="cover-copy">
@@ -664,7 +724,7 @@ img{display:block}
 </section>
 
 <!-- 02 PROBLEM -->
-<section class="slide" data-title="문제제기">
+<section class="slide" data-title="문제제기" data-order="2">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -708,7 +768,7 @@ img{display:block}
 </section>
 
 <!-- 03 ASYMMETRY -->
-<section class="slide" data-title="정보 비대칭">
+<section class="slide" data-title="정보 비대칭" data-order="3">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline" style="padding-right:0">
@@ -722,15 +782,15 @@ img{display:block}
           <div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:18px">
             <div style="display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center">
               <div class="metric purple" style="font-size:46px">37배</div>
-              <div class="body-copy" style="font-size:21px;line-height:1.5">신입 공고 비중 <strong>0.8%</strong> 대 지원 비중 <strong>29.5%</strong>. 적은 기회에 경쟁이 집중됩니다</div>
+              <div class="body-copy" style="font-size:27px;line-height:1.5">신입 공고 비중 <strong>0.8%</strong> 대 지원 비중 <strong>29.5%</strong>. 적은 기회에 경쟁이 집중됩니다</div>
             </div>
             <div style="display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;border-top:1px solid var(--line);padding-top:18px">
               <div class="metric purple" style="font-size:46px">50%↓</div>
-              <div class="body-copy" style="font-size:21px;line-height:1.5">면접관이 지켜보는 환경에서 문제 해결 점수는 <strong>절반</strong>으로 하락. 실력이 있어도 저평가됩니다</div>
+              <div class="body-copy" style="font-size:27px;line-height:1.5">면접관이 지켜보는 환경에서 문제 해결 점수는 <strong>절반</strong>으로 하락. 실력이 있어도 저평가됩니다</div>
             </div>
             <div style="display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;border-top:1px solid var(--line);padding-top:18px">
               <div style="font-size:31px;font-weight:900;color:var(--purple-deep);line-height:1.2">반복<br>준비</div>
-              <div class="body-copy" style="font-size:21px;line-height:1.5">바이브코딩으로 늘어난 프로젝트의 구현 의도와 기여 근거를 공고마다 처음부터 다시 복기합니다</div>
+              <div class="body-copy" style="font-size:27px;line-height:1.5">바이브코딩으로 늘어난 프로젝트의 구현 의도와 기여 근거를 공고마다 처음부터 다시 복기합니다</div>
             </div>
           </div>
         </div>
@@ -744,15 +804,15 @@ img{display:block}
           <div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:18px">
             <div style="display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center">
               <div style="font-size:31px;font-weight:900;color:var(--purple-deep);line-height:1.2">본업과<br>병행</div>
-              <div class="body-copy" style="font-size:21px;line-height:1.5">기술면접 대부분은 <strong>개발 실무자</strong>가 면접관으로 들어갑니다. 본업에 쫓겨 지원자 저장소를 읽지 못한 채 면접을 시작합니다</div>
+              <div class="body-copy" style="font-size:27px;line-height:1.5">기술면접 대부분은 <strong>개발 실무자</strong>가 면접관으로 들어갑니다. 본업에 쫓겨 지원자 저장소를 읽지 못한 채 면접을 시작합니다</div>
             </div>
             <div style="display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;border-top:1px solid var(--line);padding-top:18px">
               <div class="metric purple" style="font-size:46px">49일</div>
-              <div class="body-copy" style="font-size:21px;line-height:1.5">개발 직군 채용 소요 기간, <strong>전 직군 최장</strong>. 다단계 기술 검증이 주요 원인입니다</div>
+              <div class="body-copy" style="font-size:27px;line-height:1.5">개발 직군 채용 소요 기간, <strong>전 직군 최장</strong>. 다단계 기술 검증이 주요 원인입니다</div>
             </div>
             <div style="display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;border-top:1px solid var(--line);padding-top:18px">
               <div class="metric purple" style="font-size:46px">30%</div>
-              <div class="body-copy" style="font-size:21px;line-height:1.5">잘못된 채용 1건의 최소 손실은 <strong>연봉의 30%</strong>. 검증 실패는 곧 비용입니다</div>
+              <div class="body-copy" style="font-size:27px;line-height:1.5">잘못된 채용 1건의 최소 손실은 <strong>연봉의 30%</strong>. 검증 실패는 곧 비용입니다</div>
             </div>
           </div>
         </div>
@@ -765,7 +825,7 @@ img{display:block}
 </section>
 
 <!-- 04 PRODUCT LINES -->
-<section class="slide" data-title="제품 구조">
+<section class="slide" data-title="제품 구조" data-order="4">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -802,7 +862,7 @@ img{display:block}
 </section>
 
 <!-- 05 SOLUTION -->
-<section class="slide" data-title="솔루션">
+<section class="slide" data-title="솔루션" data-order="5">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -840,8 +900,59 @@ img{display:block}
   </div>
 </section>
 
-<!-- 05 WHY NOW -->
-<section class="slide" data-title="시장 동향">
+<!-- 06 B2C -->
+<section class="slide" data-title="지원자용 서비스" data-order="6">
+  <div class="slide-shell">
+    <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
+    <header class="topline">
+      <div class="eyebrow">서비스 소개, 지원자용</div>
+      <h1 class="title">공고를 등록하면 <span class="purple">자기 코드가 근거로 붙은 준비 자료</span>를 받습니다</h1>
+    </header>
+    <div class="slide-content" style="margin-top:8px">
+      <div class="step-strip">
+        <div class="step"><div class="dot">1</div><div class="t">공고 입력</div><div class="s">URL, 이미지, PDF, 텍스트</div></div>
+        <div class="step"><div class="dot">2</div><div class="t">본인 기여 분석</div><div class="s">머지, 자동 생성, 설정 잡음 제외</div></div>
+        <div class="step"><div class="dot">3</div><div class="t">맞춤 준비 자료</div><div class="s">어필 포인트, 질문, 꼬리질문</div></div>
+        <div class="step"><div class="dot">4</div><div class="t">연습과 회고</div><div class="s">모의면접, 지원 일정, 실제 질문 기록</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;height:515px;margin-top:32px">
+        <div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2c_mock.png" alt="공고 등록과 분석 화면"></div>
+        <div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2c_appeal.png" alt="어필 포인트와 근거 화면"></div>
+        <div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2c_quiz.png" alt="모의면접 화면"></div>
+      </div>
+    </div>
+    <div class="folio">06</div>
+    <div class="source">시연 동선: 공고 카드 → 어필 포인트 → 질문의 근거 버튼 → 꼬리질문 체인. 외부 API를 호출하지 않는 mock 경로 사용</div>
+  </div>
+</section>
+
+<!-- 07 B2B -->
+<section class="slide" data-title="기업용 서비스" data-order="7">
+  <div class="slide-shell">
+    <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
+    <header class="topline">
+      <div class="eyebrow">서비스 소개, 기업용</div>
+      <h1 class="title">면접관은 저장소를 직접 읽지 않고 <span class="purple">45분 구조화 인터뷰 킷</span>을 받습니다</h1>
+    </header>
+    <div class="slide-content">
+      <div style="display:grid;grid-template-columns:1.08fr .92fr;gap:40px;flex:1;min-height:0">
+        <div class="browser" style="height:100%"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2b_landing.png" alt="면접관용 콘솔"></div>
+        <div style="display:flex;flex-direction:column;justify-content:center;gap:16px">
+          <div class="panel" style="padding:23px 27px;display:flex;align-items:center;gap:20px"><span class="num">1</span><div class="body-copy"><strong>채용 채널 개설</strong><br><span class="small-copy">공개 지원 링크 배포</span></div></div>
+          <div class="panel" style="padding:23px 27px;display:flex;align-items:center;gap:20px"><span class="num">2</span><div class="body-copy"><strong>지원자 인증과 동의</strong><br><span class="small-copy">동의 2건, 이메일 인증 후 접수</span></div></div>
+          <div class="panel" style="padding:23px 27px;display:flex;align-items:center;gap:20px"><span class="num">3</span><div class="body-copy"><strong>프로젝트와 기여 확인</strong><br><span class="small-copy">서류 우선 프로젝트 선택, 저자 확인</span></div></div>
+          <div class="panel soft" style="padding:25px 27px;display:flex;align-items:center;gap:20px;border:2px solid var(--purple)"><span class="num" style="background:var(--purple)">4</span><div class="body-copy"><strong style="color:var(--purple-deep)">45분 인터뷰 킷</strong><br><span class="small-copy">질문별 코드 근거와 평가 기록</span></div></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px"><span class="badge neutral">자동 합격 판정 없음</span><span class="badge neutral">지원자 순위 없음</span><span class="badge neutral">AI 작성 판별 없음</span><span class="badge">최종 판단은 면접관</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="folio">07</div>
+    <div class="source">커밋 선별과 근거 선택은 결정론적으로 처리하고, LLM 출력은 스키마 검증과 원문 대조로 변동을 통제</div>
+  </div>
+</section>
+
+<!-- 15 WHY NOW -->
+<section class="slide" data-title="시장 동향" data-order="15">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -874,13 +985,13 @@ img{display:block}
       </div>
       <div class="callout" style="margin-top:28px;font-size:29px">AI가 더 많은 코드를 만들수록 <strong>"누가, 왜 만들었는지"를 검증하는 수요</strong>가 커집니다</div>
     </div>
-    <div class="folio">06</div>
+    <div class="folio">15</div>
     <div class="source">자료: GitHub Octoverse 2025, Stack Overflow Developer Survey 2025, 응답 49,000명 이상</div>
   </div>
 </section>
 
-<!-- 06 MARKET -->
-<section class="slide" data-title="시장 규모">
+<!-- 16 MARKET -->
+<section class="slide" data-title="시장 규모" data-order="16">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -915,13 +1026,13 @@ img{display:block}
         </div>
       </div>
     </div>
-    <div class="folio">07</div>
+    <div class="folio">16</div>
     <div class="source">자료: Fortune Business Insights, 더스탁, 프로그래머스 비즈니스, 사람인, 점핏. 도입률과 가격은 파일럿에서 검증할 가설</div>
   </div>
 </section>
 
-<!-- 07 COMPETITION -->
-<section class="slide" data-title="경쟁사 분석">
+<!-- 17 COMPETITION -->
+<section class="slide" data-title="경쟁사 분석" data-order="17">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -944,64 +1055,13 @@ img{display:block}
         <div class="panel flat" style="padding:25px 30px;display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="badge">공고 1건 맞춤</span><span class="badge">근거 추적</span><span class="badge">B2C, B2B 공유 엔진</span></div>
       </div>
     </div>
-    <div class="folio">08</div>
+    <div class="folio">17</div>
     <div class="source">Greenroom: GitHub 기반 음성 모의면접, Evalo: GitHub 코드 품질 분석. 자동 합격 판정, 순위, 작성자 판별은 제공하지 않음</div>
   </div>
 </section>
 
-<!-- 08 B2C -->
-<section class="slide" data-title="지원자용 서비스">
-  <div class="slide-shell">
-    <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
-    <header class="topline">
-      <div class="eyebrow">서비스 소개, 지원자용</div>
-      <h1 class="title">공고를 등록하면 <span class="purple">자기 코드가 근거로 붙은 준비 자료</span>를 받습니다</h1>
-    </header>
-    <div class="slide-content" style="margin-top:8px">
-      <div class="step-strip">
-        <div class="step"><div class="dot">1</div><div class="t">공고 입력</div><div class="s">URL, 이미지, PDF, 텍스트</div></div>
-        <div class="step"><div class="dot">2</div><div class="t">본인 기여 분석</div><div class="s">머지, 자동 생성, 설정 잡음 제외</div></div>
-        <div class="step"><div class="dot">3</div><div class="t">맞춤 준비 자료</div><div class="s">어필 포인트, 질문, 꼬리질문</div></div>
-        <div class="step"><div class="dot">4</div><div class="t">연습과 회고</div><div class="s">모의면접, 지원 일정, 실제 질문 기록</div></div>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;height:515px;margin-top:32px">
-        <div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2c_mock.png" alt="공고 등록과 분석 화면"></div>
-        <div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2c_appeal.png" alt="어필 포인트와 근거 화면"></div>
-        <div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2c_quiz.png" alt="모의면접 화면"></div>
-      </div>
-    </div>
-    <div class="folio">09</div>
-    <div class="source">시연 동선: 공고 카드 → 어필 포인트 → 질문의 근거 버튼 → 꼬리질문 체인. 외부 API를 호출하지 않는 mock 경로 사용</div>
-  </div>
-</section>
-
-<!-- 09 B2B -->
-<section class="slide" data-title="기업용 서비스">
-  <div class="slide-shell">
-    <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
-    <header class="topline">
-      <div class="eyebrow">서비스 소개, 기업용</div>
-      <h1 class="title">면접관은 저장소를 직접 읽지 않고 <span class="purple">45분 구조화 인터뷰 킷</span>을 받습니다</h1>
-    </header>
-    <div class="slide-content">
-      <div style="display:grid;grid-template-columns:1.08fr .92fr;gap:40px;flex:1;min-height:0">
-        <div class="browser" style="height:100%"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2b_landing.png" alt="면접관용 콘솔"></div>
-        <div style="display:flex;flex-direction:column;justify-content:center;gap:16px">
-          <div class="panel" style="padding:23px 27px;display:flex;align-items:center;gap:20px"><span class="num">1</span><div class="body-copy"><strong>채용 채널 개설</strong><br><span class="small-copy">공개 지원 링크 배포</span></div></div>
-          <div class="panel" style="padding:23px 27px;display:flex;align-items:center;gap:20px"><span class="num">2</span><div class="body-copy"><strong>지원자 인증과 동의</strong><br><span class="small-copy">동의 2건, 이메일 인증 후 접수</span></div></div>
-          <div class="panel" style="padding:23px 27px;display:flex;align-items:center;gap:20px"><span class="num">3</span><div class="body-copy"><strong>프로젝트와 기여 확인</strong><br><span class="small-copy">서류 우선 프로젝트 선택, 저자 확인</span></div></div>
-          <div class="panel soft" style="padding:25px 27px;display:flex;align-items:center;gap:20px;border:2px solid var(--purple)"><span class="num" style="background:var(--purple)">4</span><div class="body-copy"><strong style="color:var(--purple-deep)">45분 인터뷰 킷</strong><br><span class="small-copy">질문별 코드 근거와 평가 기록</span></div></div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px"><span class="badge neutral">자동 합격 판정 없음</span><span class="badge neutral">지원자 순위 없음</span><span class="badge neutral">AI 작성 판별 없음</span><span class="badge">최종 판단은 면접관</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="folio">10</div>
-    <div class="source">지원자 평가에 쓰이는 결과이므로 결정론적 선택과 근거 지문으로 같은 입력에 같은 결과를 보장</div>
-  </div>
-</section>
-
-<!-- 10 TARGETING -->
-<section class="slide" data-title="핵심 기술, 커밋 선별">
+<!-- 09 TARGETING -->
+<section class="slide" data-title="핵심 기술, 커밋 선별" data-order="9">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -1021,18 +1081,18 @@ img{display:block}
         </div>
         <div style="display:flex;flex-direction:column;justify-content:center;gap:22px">
           <div class="panel" style="padding:32px 36px"><div class="small-copy">선별 구간의 LLM 호출</div><div class="metric" style="font-size:84px;margin-top:14px">0회</div><div class="body-copy" style="margin-top:18px">같은 입력이면 같은 결과가 나오고, 점수 변경은 회귀 테스트가 감지합니다.</div></div>
-          <div class="panel soft" style="padding:32px 36px"><div class="small-copy">분석 1회 실측 원가 <span class="badge neutral">내부 기록</span></div><div class="metric purple" style="font-size:64px;margin-top:14px">500원 미만</div><div class="body-copy" style="margin-top:18px">입력 토큰을 줄여 비용과 환각을 함께 낮춥니다.</div></div>
+          <div class="panel soft" style="padding:32px 36px"><div class="small-copy">B2C 분석 1회 변동비 <span class="badge neutral">내부 산출</span></div><div class="metric purple" style="font-size:64px;margin-top:14px">약 330원</div><div class="body-copy" style="margin-top:18px">입력 토큰을 줄여 비용과 환각을 함께 낮춥니다.</div></div>
           <div class="panel flat" style="padding:23px 28px"><div class="small-copy">완전한 저작 판정이 아니라 <strong style="color:var(--ink)">검증 가능한 기여 근거</strong>를 제공합니다. 커밋 이메일 원문은 저장하지 않고 HMAC 지문만 보관합니다.</div></div>
         </div>
       </div>
     </div>
-    <div class="folio">11</div>
+    <div class="folio">09</div>
     <div class="source">선별 점수 상세 수식과 회귀 테스트는 부록</div>
   </div>
 </section>
 
-<!-- 11 ASYNC ARCHITECTURE -->
-<section class="slide" data-title="핵심 기술, 분석 아키텍처">
+<!-- 10 ASYNC ARCHITECTURE -->
+<section class="slide" data-title="핵심 기술, 분석 아키텍처" data-order="10">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -1059,13 +1119,13 @@ img{display:block}
       </div>
       <div class="callout" style="margin-top:24px;font-size:25px">수십 초에서 수 분이 걸리는 저장소 분석을 <strong>타임아웃과 중복 실행 없이</strong> 운영합니다</div>
     </div>
-    <div class="folio">12</div>
+    <div class="folio">10</div>
     <div class="source">운영 품질: Terraform IaC, GitHub Actions OIDC 무키 배포. 전체 시스템 구성도와 서비스 상세는 부록</div>
   </div>
 </section>
 
-<!-- 12 LLM OPS -->
-<section class="slide" data-title="핵심 기술, LLM 운영">
+<!-- 11 LLM OPS -->
+<section class="slide" data-title="핵심 기술, LLM 운영" data-order="11">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -1091,17 +1151,17 @@ img{display:block}
             <div style="display:grid;grid-template-columns:56px 1fr;gap:20px"><span class="num" style="background:var(--purple)">2</span><div class="body-copy" style="color:#ddd9e1"><strong style="color:#bdb4ff">근거 인용 강제</strong><br>커밋 해시와 파일 경로가 없는 문장은 폐기</div></div>
             <div style="display:grid;grid-template-columns:56px 1fr;gap:20px"><span class="num" style="background:var(--purple)">3</span><div class="body-copy" style="color:#ddd9e1"><strong style="color:#bdb4ff">서버 재검증</strong><br>추출 값을 원문과 대조하고, 문서 안 지시문은 데이터로만 취급</div></div>
           </div>
-          <div style="margin-top:32px;padding-top:28px;border-top:1px solid rgba(255,255,255,.13);display:flex;gap:10px;flex-wrap:wrap"><span class="badge neutral">diff 압축</span><span class="badge neutral">변경 없으면 호출 생략</span><span class="badge neutral">근거 스냅샷 캐시</span><span class="badge">면접관 경로는 결정론</span></div>
+          <div style="margin-top:32px;padding-top:28px;border-top:1px solid rgba(255,255,255,.13);display:flex;gap:10px;flex-wrap:wrap"><span class="badge neutral">diff 압축</span><span class="badge neutral">변경 없으면 호출 생략</span><span class="badge neutral">근거 스냅샷 캐시</span><span class="badge">선별·근거 선택은 결정론</span></div>
         </div>
       </div>
     </div>
-    <div class="folio">13</div>
+    <div class="folio">11</div>
     <div class="source">역할별 모델과 선정 근거는 뒤의 모델 선정 장 참고. 특정 모델의 일반적 우월성을 주장하지 않음</div>
   </div>
 </section>
 
-<!-- 13 QUALITY -->
-<section class="slide" data-title="핵심 기술, 품질 측정">
+<!-- 12 QUALITY -->
+<section class="slide" data-title="핵심 기술, 품질 측정" data-order="12">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -1133,13 +1193,13 @@ img{display:block}
         <div class="panel flat" style="padding:28px 32px"><div class="small-copy">질문 판별력을 자동 평가하는 연구 프레임워크의 실증 하네스로 활용합니다.</div></div>
       </div>
     </div>
-    <div class="folio">14</div>
+    <div class="folio">12</div>
     <div class="source">이 측정 장치가 뒤의 검증 계획에서 약속하는 지표의 근거</div>
   </div>
 </section>
 
-<!-- 13.5 INFRA -->
-<section class="slide" data-title="핵심 기술, 인프라">
+<!-- 13 INFRA -->
+<section class="slide" data-title="핵심 기술, 인프라" data-order="13">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline" style="padding-right:0">
@@ -1171,13 +1231,13 @@ img{display:block}
         </div>
       </div>
     </div>
-    <div class="folio">15</div>
+    <div class="folio">13</div>
     <div class="source">AWS 서울 리전. 전체 구성은 코드로 정의해 관리하며, 배포는 GitHub Actions 기준</div>
   </div>
 </section>
 
-<!-- 13.6 MODEL SELECTION -->
-<section class="slide" data-title="핵심 기술, 모델 선정">
+<!-- 14 MODEL SELECTION -->
+<section class="slide" data-title="핵심 기술, 모델 선정" data-order="14">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -1238,13 +1298,13 @@ img{display:block}
       </div>
       <div class="callout" style="margin-top:22px;font-size:24px">선정 기준과 결과를 문서로 기록해, 모델 교체 시 <strong>같은 절차로 재평가</strong>합니다</div>
     </div>
-    <div class="folio">16</div>
+    <div class="folio">14</div>
     <div class="source">2026년 7월 자체 재현 벤치마크, 합성 데이터 기반. 과제별 적합성 기준이며 특정 모델의 일반적 우월성을 주장하지 않음</div>
   </div>
 </section>
 
-<!-- 14 PROGRESS -->
-<section class="slide" data-title="개발 진행현황">
+<!-- 18 PROGRESS -->
+<section class="slide" data-title="개발 진행현황" data-order="18">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -1256,24 +1316,25 @@ img{display:block}
         <div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2c_dashboard.png" alt="운영 중인 DevFit 화면"></div>
         <div style="display:grid;grid-template-rows:1fr 1fr;gap:24px">
           <div class="panel soft" style="padding:32px 36px;display:flex;align-items:center;justify-content:space-between"><div><div class="small-copy">DevFit 피벗에서 B2C 운영 배포까지</div><div class="metric purple" style="font-size:96px;margin-top:17px">45일</div></div><span class="badge green" style="font-size:22px;padding:13px 19px">운영 배포</span></div>
-          <div class="panel" style="padding:30px 36px"><div class="small-copy" style="margin-bottom:19px">2026-08-14 코드 실사 기준</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:18px 26px"><div class="body-copy"><strong>Java</strong> 217개 파일</div><div class="body-copy"><strong>TypeScript</strong> 205개 파일</div><div class="body-copy"><strong>API</strong> 92개</div><div class="body-copy"><strong>FE 테스트</strong> 202개 통과</div></div></div>
+          <div class="panel" style="padding:30px 36px"><div class="small-copy" style="margin-bottom:19px">2026-08-14 코드 실사 기준</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:18px 36px"><div class="body-copy" style="font-size:24px"><strong>Java</strong> 217개 파일</div><div class="body-copy" style="font-size:24px"><strong>TypeScript</strong> 205개 파일</div><div class="body-copy" style="font-size:24px"><strong>API</strong> 92개</div><div class="body-copy" style="font-size:24px"><strong>FE 테스트</strong> 202개 통과</div></div></div>
         </div>
       </div>
-      <div class="step-strip" style="grid-template-columns:repeat(5,1fr);margin-top:34px">
-        <div class="step"><div class="dot">5</div><div class="t">5~6월</div><div class="s">선행 아이템 검증과 중단</div></div>
-        <div class="step"><div class="dot">7</div><div class="t">7월 초</div><div class="s">DevFit 피벗</div></div>
+      <div class="step-strip" style="grid-template-columns:repeat(6,1fr);margin-top:34px">
+        <div class="step"><div class="dot">5</div><div class="t">5월</div><div class="s">선행 아이템 검증</div></div>
+        <div class="step"><div class="dot">6</div><div class="t">6월</div><div class="s">베베톡 기획심의</div></div>
+        <div class="step"><div class="dot">7</div><div class="t">7월 초</div><div class="s">베베톡 중단, DevFit 피벗</div></div>
         <div class="step"><div class="dot">8</div><div class="t">8월 2일</div><div class="s">B2C 운영 배포</div></div>
         <div class="step"><div class="dot" style="background:#fff;color:var(--purple);border-color:#d9d3ff;box-shadow:inset 0 0 0 3px var(--purple)">9</div><div class="t">9월</div><div class="s">사용과 품질 지표</div></div>
         <div class="step"><div class="dot" style="background:#fff;color:var(--muted);border-color:var(--paper);box-shadow:inset 0 0 0 3px #bbb5c2">10</div><div class="t">10~11월</div><div class="s">기업 파일럿과 가격 검증</div></div>
       </div>
     </div>
-    <div class="folio">16</div>
+    <div class="folio">18</div>
     <div class="source">구현 규모는 보조 정보이며 사용자 가치의 증거는 아님. 기업용은 개인정보, 부하, 보존 운영 게이트 점검 중</div>
   </div>
 </section>
 
-<!-- 15 FEEDBACK -->
-<section class="slide" data-title="기획심의 반영">
+<!-- 19 FEEDBACK -->
+<section class="slide" data-title="기획심의 반영" data-order="19">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -1294,13 +1355,13 @@ img{display:block}
         <div style="padding:30px 36px;display:flex;align-items:center"><div class="body-copy">좌석 구독에서 <strong style="color:var(--purple-deep)">분석 지원자 수 기준 종량 과금</strong>으로 전환하고, 모든 산출물에 커밋 근거 인용을 강제했습니다.</div></div>
       </div>
     </div>
-    <div class="folio">17</div>
+    <div class="folio">19</div>
     <div class="source">중간보고서 기획심의 주요 의견 반영 요약</div>
   </div>
 </section>
 
-<!-- 16 VALIDATION -->
-<section class="slide" data-title="검증 계획">
+<!-- 20 VALIDATION -->
+<section class="slide" data-title="검증 계획" data-order="20">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -1327,13 +1388,13 @@ img{display:block}
         </div>
       </div>
     </div>
-    <div class="folio">18</div>
+    <div class="folio">20</div>
     <div class="source">목표 수치는 현재 실적이 아니라 제안 목표이며 팀 리소스와 일정에 맞춰 확정 예정</div>
   </div>
 </section>
 
-<!-- 17 BUSINESS MODEL -->
-<section class="slide" data-title="수익 창출 방안">
+<!-- 08 BUSINESS MODEL -->
+<section class="slide" data-title="수익 창출 방안" data-order="8">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -1365,16 +1426,16 @@ img{display:block}
       <div class="panel" style="margin-top:26px;padding:24px 34px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;text-align:center">
         <div><div class="small-copy">B2C</div><div style="font-size:29px;font-weight:900;margin-top:7px">무료, 1일 10회 <span class="badge green">현재 정책</span></div></div>
         <div style="border-left:1px solid var(--line);border-right:1px solid var(--line)"><div class="small-copy">B2B</div><div style="font-size:29px;font-weight:900;margin-top:7px">지원자 1인당 과금 <span class="badge">가설</span></div></div>
-        <div><div class="small-copy">내부 분석 원가</div><div style="font-size:29px;font-weight:900;margin-top:7px">1,000~2,000원 <span class="badge neutral">추정</span></div></div>
+        <div><div class="small-copy">B2C 분석 1회 변동비</div><div style="font-size:29px;font-weight:900;margin-top:7px">약 330원 <span class="badge neutral">내부 산출</span></div></div>
       </div>
     </div>
-    <div class="folio">19</div>
+    <div class="folio">08</div>
     <div class="source">가격은 1만, 2만, 3만 원 실험으로 검증. 참고 앵커: 프로그래머스 비즈니스, Karat 공개 가격 자료</div>
   </div>
 </section>
 
-<!-- 18 TEAM -->
-<section class="slide" data-title="팀 소개">
+<!-- 22 TEAM -->
+<section class="slide" data-title="팀 소개" data-order="22">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -1401,13 +1462,13 @@ img{display:block}
       </div>
       <div class="panel flat soft" style="margin-top:24px;padding:23px 32px;display:flex;align-items:center;gap:22px"><span class="badge">Founder-market fit</span><strong class="body-copy">세 명 모두 개발자 취업 시장의 당사자로, 스스로 매일 겪는 문제를 만들고 있습니다.</strong></div>
     </div>
-    <div class="folio">20</div>
+    <div class="folio">22</div>
     <div class="source">세 명 모두 개발자 취업 시장의 당사자로 스스로 매일 겪는 문제를 만들고 있음</div>
   </div>
 </section>
 
-<!-- 20 MENTORS -->
-<section class="slide" data-title="멘토 소개">
+<!-- 23 MENTORS -->
+<section class="slide" data-title="멘토 소개" data-order="23">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -1434,13 +1495,13 @@ img{display:block}
       </div>
       <div class="panel flat soft" style="margin-top:24px;padding:23px 32px;display:flex;align-items:center;gap:22px"><span class="badge">멘토링의 역할</span><strong class="body-copy">결정을 대신하는 평가가 아니라, 팀이 검증할 리스크를 앞당겨 드러냅니다.</strong></div>
     </div>
-    <div class="folio">21</div>
+    <div class="folio">23</div>
     <div class="source">멘토의 추천이나 긍정 평가를 인용한 것이 아니라 팀이 정리한 자문 범위</div>
   </div>
 </section>
 
 <!-- 21 ROADMAP -->
-<section class="slide" data-title="향후 추진 계획">
+<section class="slide" data-title="향후 추진 계획" data-order="21">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -1457,13 +1518,13 @@ img{display:block}
       </div>
       <div style="display:flex;align-items:center;gap:16px;margin-top:25px;flex-wrap:wrap"><strong class="body-copy" style="margin-right:10px">중간평가에서 요청드리는 것</strong><span class="badge" style="font-size:19px;padding:11px 17px">파일럿 기업 3~5개사 연결</span><span class="badge" style="font-size:19px;padding:11px 17px">선임 면접관 30~50명 조사 연결</span><span class="badge" style="font-size:19px;padding:11px 17px">채용과 개인정보 법률 검토</span></div>
     </div>
-    <div class="folio">22</div>
+    <div class="folio">21</div>
     <div class="source">매출 시나리오는 가설이며 확인된 유료 실적은 현재 없음</div>
   </div>
 </section>
 
-<!-- 22 CLOSING -->
-<section class="slide dark-slide" data-title="마무리">
+<!-- 24 CLOSING -->
+<section class="slide dark-slide" data-title="마무리" data-order="24">
   <div class="dark-grid"></div>
   <div class="slide-shell" style="padding:0">
     <div style="position:absolute;inset:0;display:grid;grid-template-columns:56% 44%">
@@ -1496,6 +1557,10 @@ img{display:block}
   "use strict";
   var stage=document.getElementById("stage");
   var slides=Array.prototype.slice.call(document.querySelectorAll(".slide"));
+  slides.sort(function(a,b){
+    return Number(a.getAttribute("data-order"))-Number(b.getAttribute("data-order"));
+  });
+  slides.forEach(function(slide){stage.appendChild(slide)});
   var counter=document.getElementById("counter");
   var progress=document.getElementById("progress");
   var current=0;
