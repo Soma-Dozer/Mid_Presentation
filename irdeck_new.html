@@ -96,7 +96,6 @@ img{display:block}
 }
 .topline{
   min-height:170px;
-  padding-right:260px;
 }
 .eyebrow{
   display:flex;
@@ -125,6 +124,7 @@ img{display:block}
   line-height:1.26;
   letter-spacing:-.045em;
   word-break:keep-all;
+  white-space:nowrap;
 }
 .title .purple{color:var(--purple-deep)}
 .title .red{color:var(--red)}
@@ -785,7 +785,7 @@ img{display:block}
           <div style="font-size:58px;font-weight:900;letter-spacing:.08em;color:var(--purple-deep)">CORE</div>
           <div class="badge neutral" style="margin-top:20px">공유 엔진</div>
           <div style="margin-top:32px;font-size:31px;font-weight:900">공고 × 커밋</div>
-          <div class="body-copy" style="margin-top:16px;color:var(--muted)">본인 기여만 조준해<br>근거 에피소드를 생성</div>
+          <div class="body-copy" style="margin-top:16px;color:var(--muted)">본인 기여만 선별해<br>근거 에피소드를 생성</div>
         </article>
         <article style="padding:54px 54px 46px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:#f1f6ff;border-left:1px solid #c7dcff">
           <img src="deck_assets/icon-b2b.svg" alt="DevFit B2B 로고" style="width:94px;height:94px;border-radius:22px;box-shadow:0 20px 44px rgba(0,92,230,.16)">
@@ -807,7 +807,7 @@ img{display:block}
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
       <div class="eyebrow">솔루션</div>
-      <h1 class="title">채용공고 1건과 지원자의 실제 커밋을 연결해 <span class="purple">근거가 붙은 면접 질문</span>을 만듭니다</h1>
+      <h1 class="title" style="font-size:48px">채용공고 1건과 지원자의 실제 커밋을 연결해 <span class="purple">근거가 붙은 면접 질문</span>을 만듭니다</h1>
     </header>
     <div class="slide-content" style="margin-top:12px">
       <div style="display:grid;grid-template-columns:1.06fr .94fr;gap:38px;flex:1;min-height:0">
@@ -940,8 +940,8 @@ img{display:block}
         </tbody>
       </table>
       <div style="display:grid;grid-template-columns:1.22fr .78fr;gap:26px;margin-top:24px">
-        <div class="panel flat soft" style="padding:25px 30px"><div class="body-copy">가장 흔한 대안은 서비스가 아니라 <strong>범용 LLM에 직접 붙여넣기</strong>입니다. DevFit의 차이는 모델이 아니라 앞단의 <strong style="color:var(--purple-deep)">기여 확인, 조준, 근거 추적 구조</strong>에 있습니다.</div></div>
-        <div class="panel flat" style="padding:25px 30px;display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="badge">공고 1건 조준</span><span class="badge">근거 추적</span><span class="badge">B2C, B2B 공유 엔진</span></div>
+        <div class="panel flat soft" style="padding:25px 30px"><div class="body-copy">가장 흔한 대안은 서비스가 아니라 <strong>범용 LLM에 직접 붙여넣기</strong>입니다. DevFit의 차이는 모델이 아니라 앞단의 <strong style="color:var(--purple-deep)">기여 확인, 커밋 선별, 근거 추적 구조</strong>에 있습니다.</div></div>
+        <div class="panel flat" style="padding:25px 30px;display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="badge">공고 1건 맞춤</span><span class="badge">근거 추적</span><span class="badge">B2C, B2B 공유 엔진</span></div>
       </div>
     </div>
     <div class="folio">08</div>
@@ -1001,12 +1001,12 @@ img{display:block}
 </section>
 
 <!-- 10 TARGETING -->
-<section class="slide" data-title="핵심 기술, 조준 계층">
+<section class="slide" data-title="핵심 기술, 커밋 선별">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
-      <div class="eyebrow">핵심 기술 1, 조준 계층</div>
-      <h1 class="title">LLM 호출 전에 <span class="purple">결정론적 조준 계층</span>이 질문 가치가 높은 코드만 선별합니다</h1>
+      <div class="eyebrow">핵심 기술 1, 커밋 선별</div>
+      <h1 class="title">LLM 호출 전에 <span class="purple">결정론적 선별 계층</span>이 질문 가치가 높은 코드만 남깁니다</h1>
     </header>
     <div class="slide-content">
       <div style="display:grid;grid-template-columns:1.18fr .82fr;gap:48px;flex:1">
@@ -1020,14 +1020,14 @@ img{display:block}
           <div class="panel flat" style="width:33%;padding:25px 32px;background:var(--purple);color:#fff"><div style="font-size:28px;font-weight:900">질문 가치 조각</div></div>
         </div>
         <div style="display:flex;flex-direction:column;justify-content:center;gap:22px">
-          <div class="panel" style="padding:32px 36px"><div class="small-copy">조준 구간의 LLM 호출</div><div class="metric" style="font-size:84px;margin-top:14px">0회</div><div class="body-copy" style="margin-top:18px">같은 입력이면 같은 결과가 나오고, 점수 변경은 회귀 테스트가 감지합니다.</div></div>
+          <div class="panel" style="padding:32px 36px"><div class="small-copy">선별 구간의 LLM 호출</div><div class="metric" style="font-size:84px;margin-top:14px">0회</div><div class="body-copy" style="margin-top:18px">같은 입력이면 같은 결과가 나오고, 점수 변경은 회귀 테스트가 감지합니다.</div></div>
           <div class="panel soft" style="padding:32px 36px"><div class="small-copy">분석 1회 실측 원가 <span class="badge neutral">내부 기록</span></div><div class="metric purple" style="font-size:64px;margin-top:14px">500원 미만</div><div class="body-copy" style="margin-top:18px">입력 토큰을 줄여 비용과 환각을 함께 낮춥니다.</div></div>
           <div class="panel flat" style="padding:23px 28px"><div class="small-copy">완전한 저작 판정이 아니라 <strong style="color:var(--ink)">검증 가능한 기여 근거</strong>를 제공합니다. 커밋 이메일 원문은 저장하지 않고 HMAC 지문만 보관합니다.</div></div>
         </div>
       </div>
     </div>
     <div class="folio">11</div>
-    <div class="source">조준 점수 상세 수식과 선별 회귀 테스트는 부록</div>
+    <div class="source">선별 점수 상세 수식과 회귀 테스트는 부록</div>
   </div>
 </section>
 
@@ -1096,7 +1096,7 @@ img{display:block}
       </div>
     </div>
     <div class="folio">13</div>
-    <div class="source">모델명과 자체 벤치마크 표는 부록. 특정 모델의 일반적 우월성을 주장하지 않음</div>
+    <div class="source">역할별 모델과 선정 근거는 뒤의 모델 선정 장 참고. 특정 모델의 일반적 우월성을 주장하지 않음</div>
   </div>
 </section>
 
@@ -1193,26 +1193,53 @@ img{display:block}
           <div style="display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start;padding:14px 0;border-top:1px solid var(--line)"><span class="num">3</span><div class="body-copy">유효 JSON 비율, 품질 점수, 중앙 지연시간, 출력 토큰을 기록해 <strong>역할별 5종 확정</strong></div></div>
           <div class="panel flat" style="padding:18px 24px;background:#f1eff3"><div class="small-copy">실패 시 다른 모델로 자동 전환하지 않음. 호출 1회 원칙으로 비용과 지연을 예측 가능하게 유지</div></div>
         </div>
-        <div style="display:flex;flex-direction:column;gap:16px;min-height:0">
-          <div class="panel" style="flex:1;padding:24px 30px;display:flex;align-items:center;justify-content:space-between;gap:20px">
-            <div><div style="font-size:23px;font-weight:900">추출, 단문</div><div class="small-copy" style="margin-top:6px">채용공고 구조화</div></div>
-            <div style="text-align:right"><div class="metric purple" style="font-size:40px">1.23초</div><div class="small-copy" style="margin-top:4px">후보 중 최저 지연, 품질 12/12 동률로 경량 모델 선정</div></div>
-          </div>
-          <div class="panel" style="flex:1;padding:24px 30px;display:flex;align-items:center;justify-content:space-between;gap:20px">
-            <div><div style="font-size:23px;font-weight:900">코드 판단</div><div class="small-copy" style="margin-top:6px">코드 위험 분석, 답변 피드백</div></div>
-            <div style="text-align:right"><div class="metric purple" style="font-size:40px">9/9</div><div class="small-copy" style="margin-top:4px">중복 결제, 멱등성, 재시도를 모두 식별한 유일한 모델 선정</div></div>
-          </div>
-          <div class="panel" style="flex:1;padding:24px 30px;display:flex;align-items:center;justify-content:space-between;gap:20px">
-            <div><div style="font-size:23px;font-weight:900">복합 추론</div><div class="small-copy" style="margin-top:6px">질문, 어필 포인트 생성</div></div>
-            <div style="text-align:right"><div style="font-size:26px;font-weight:900;color:var(--purple-deep)">근거 설명 깊이 우선</div><div class="small-copy" style="margin-top:4px">정량 동률, 전체 프롬프트 수동 평가로 선정</div></div>
-          </div>
-          <div class="panel flat soft" style="padding:20px 28px"><div class="body-copy" style="font-size:21px">입력도 상한 관리: diff 파일당 10줄, 줄당 180자, README 500자. head SHA가 같으면 호출 생략</div></div>
+        <div class="panel" style="padding:26px 32px;display:flex;flex-direction:column;justify-content:center;min-height:0">
+          <table style="width:100%;border-collapse:collapse;font-size:20px;text-align:center">
+            <thead>
+              <tr style="color:var(--muted);font-size:17px">
+                <th style="text-align:left;padding:12px 8px;border-bottom:2px solid var(--line)">모델</th>
+                <th style="padding:12px 8px;border-bottom:2px solid var(--line)">공고 추출</th>
+                <th style="padding:12px 8px;border-bottom:2px solid var(--line)">채용 판단</th>
+                <th style="padding:12px 8px;border-bottom:2px solid var(--line)">코드 위험 분석</th>
+                <th style="padding:12px 8px;border-bottom:2px solid var(--line)">선정 역할</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align:left;padding:17px 8px;border-bottom:1px solid var(--line);font-weight:900">GLM 5</td>
+                <td style="padding:17px 8px;border-bottom:1px solid var(--line)">12/12, 2.24초</td>
+                <td style="padding:17px 8px;border-bottom:1px solid var(--line)">18/18, 4.82초</td>
+                <td style="padding:17px 8px;border-bottom:1px solid var(--line)">6/9, 2.29초</td>
+                <td style="padding:17px 8px;border-bottom:1px solid var(--line)"><span class="badge">복합 추론</span></td>
+              </tr>
+              <tr>
+                <td style="text-align:left;padding:17px 8px;border-bottom:1px solid var(--line);font-weight:900">Qwen3 Coder Next</td>
+                <td style="padding:17px 8px;border-bottom:1px solid var(--line)">12/12, 1.40초</td>
+                <td style="padding:17px 8px;border-bottom:1px solid var(--line)">18/18, 3.22초</td>
+                <td style="padding:17px 8px;border-bottom:1px solid var(--line);font-weight:900;color:var(--purple-deep)">9/9, 3.14초</td>
+                <td style="padding:17px 8px;border-bottom:1px solid var(--line)"><span class="badge">코드 판단</span></td>
+              </tr>
+              <tr>
+                <td style="text-align:left;padding:17px 8px;border-bottom:1px solid var(--line);font-weight:900">GLM 4.7 Flash</td>
+                <td style="padding:17px 8px;border-bottom:1px solid var(--line);font-weight:900;color:var(--purple-deep)">12/12, 1.23초</td>
+                <td style="padding:17px 8px;border-bottom:1px solid var(--line)">18/18, 2.42초</td>
+                <td style="padding:17px 8px;border-bottom:1px solid var(--line)">5/9, 1.42초</td>
+                <td style="padding:17px 8px;border-bottom:1px solid var(--line)"><span class="badge">추출, 단문</span></td>
+              </tr>
+              <tr>
+                <td style="text-align:left;padding:17px 8px;font-weight:900">Nova 2 Lite, Qwen3-VL 235B</td>
+                <td colspan="3" style="padding:17px 8px;color:var(--muted)">이미지 공고, 사업자등록증 실문서로 별도 확인</td>
+                <td style="padding:17px 8px"><span class="badge">OCR 2종</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="small-copy" style="margin-top:18px;font-size:16px">표기는 품질 점수와 중앙 지연시간. 유효 JSON은 세 모델 모두 3/3. 품질 동률인 과제는 지연시간과 전체 프롬프트 수동 평가로 결정</div>
         </div>
       </div>
       <div class="callout" style="margin-top:22px;font-size:24px">선정 기준과 결과를 문서로 기록해, 모델 교체 시 <strong>같은 절차로 재평가</strong>합니다</div>
     </div>
     <div class="folio">16</div>
-    <div class="source">2026년 7월 자체 재현 벤치마크. 모델명과 전체 결과 표는 부록. 합성 데이터 기반 smoke benchmark로 한계는 문서에 명시</div>
+    <div class="source">2026년 7월 자체 재현 벤치마크, 합성 데이터 기반. 과제별 적합성 기준이며 특정 모델의 일반적 우월성을 주장하지 않음</div>
   </div>
 </section>
 
@@ -1369,7 +1396,7 @@ img{display:block}
         <article class="panel" style="padding:32px 34px">
           <div style="display:flex;align-items:center;gap:22px;margin-bottom:28px"><div style="width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,#342b82,#7566e6);color:#fff;display:flex;align-items:center;justify-content:center;font-size:46px;font-weight:900">노</div><div><div style="font-size:31px;font-weight:900">노재원</div><div class="small-copy">Backend Engineer</div></div></div>
           <div class="badge" style="margin-bottom:22px">백엔드, 핵심 로직</div>
-          <div class="body-copy">결정론적 조준 알고리즘 설계와 구현<br><br>질문 생성 파이프라인과 판별도 집계<br><br>알고리즘 최적화로 정확도와 원가 개선</div>
+          <div class="body-copy">결정론적 커밋 선별 알고리즘 설계와 구현<br><br>질문 생성 파이프라인과 판별도 집계<br><br>알고리즘 최적화로 정확도와 원가 개선</div>
         </article>
       </div>
       <div class="panel flat soft" style="margin-top:24px;padding:23px 32px;display:flex;align-items:center;gap:22px"><span class="badge">Founder-market fit</span><strong class="body-copy">세 명 모두 개발자 취업 시장의 당사자로, 스스로 매일 겪는 문제를 만들고 있습니다.</strong></div>
