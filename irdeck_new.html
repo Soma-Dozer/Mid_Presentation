@@ -460,7 +460,11 @@ img{display:block}
 
 /* cover */
 .cover{
-  background:#f7f5fc;
+  background:
+    radial-gradient(1000px 760px at 80% 28%,rgba(255,255,255,.5) 0,rgba(255,255,255,0) 62%),
+    radial-gradient(1200px 940px at 106% 110%,rgba(96,73,221,.4) 0,rgba(96,73,221,0) 64%),
+    radial-gradient(820px 620px at -6% -10%,rgba(255,255,255,.9) 0,rgba(255,255,255,0) 60%),
+    linear-gradient(118deg,#f2effa 0%,#ddd6f3 45%,#a89ae6 100%);
 }
 .cover::after{display:none}
 .cover .slide-shell{padding:0}
@@ -469,11 +473,24 @@ img{display:block}
   isolation:isolate;
   height:100%;
 }
-.cover-grid::before,.cover-grid::after{display:none}
+.cover-grid::after{display:none}
+.cover-grid::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  display:block;
+  background-image:
+    linear-gradient(rgba(96,73,221,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(96,73,221,.055) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(1150px 800px at 72% 44%,#000 12%,transparent 78%);
+  mask-image:radial-gradient(1150px 800px at 72% 44%,#000 12%,transparent 78%);
+  pointer-events:none;
+}
 .cover-copy{
   position:relative;
   z-index:2;
-  width:650px;
+  width:760px;
   height:100%;
   padding:118px 0 92px 112px;
   display:flex;
@@ -481,11 +498,20 @@ img{display:block}
   justify-content:center;
 }
 .cover-copy::before{display:none}
+.cover-kicker::before{
+  content:"";
+  display:block;
+  width:58px;
+  height:6px;
+  margin-bottom:28px;
+  border-radius:3px;
+  background:linear-gradient(90deg,var(--purple-deep),var(--purple));
+}
 .cover-kicker{
-  max-width:440px;
-  margin-bottom:30px;
+  max-width:540px;
+  margin-bottom:34px;
   color:var(--ink);
-  font-size:30px;
+  font-size:36px;
   font-weight:700;
   line-height:1.55;
   letter-spacing:-.03em;
@@ -493,27 +519,37 @@ img{display:block}
 .cover-wordmark{
   display:flex;
   align-items:center;
-  gap:26px;
-  margin:0 0 32px;
-  font-size:104px;
+  gap:28px;
+  margin:0 0 38px;
+  font-size:122px;
   font-weight:900;
   line-height:1;
   letter-spacing:-.07em;
 }
-.cover-wordmark img{width:92px;height:92px;border-radius:22px}
+.cover-wordmark img{width:108px;height:108px;border-radius:26px}
 .cover-wordmark b{color:var(--purple)}
 .cover-tagline{
-  max-width:430px;
-  color:var(--body);
-  font-size:34px;
+  max-width:none;
+  white-space:nowrap;
+  color:var(--ink-2);
+  font-size:41px;
   font-weight:700;
   line-height:1.45;
   letter-spacing:-.035em;
 }
+.cover-tagline b{
+  background:linear-gradient(94deg,var(--purple-deep),var(--purple));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
 .cover-meta{
-  margin-top:88px;
+  margin-top:92px;
+  padding-top:28px;
+  border-top:1px solid rgba(21,18,24,.14);
+  max-width:430px;
   color:var(--muted);
-  font-size:21px;
+  font-size:24px;
   line-height:1.72;
 }
 .cover-meta strong{color:var(--ink)}
@@ -524,14 +560,23 @@ img{display:block}
   overflow:hidden;
   pointer-events:none;
 }
-.cover-visual::before,.cover-visual::after{display:none}
+.cover-visual::after{display:none}
+.cover-visual::before{
+  content:"";
+  position:absolute;
+  display:block;
+  top:10%;
+  right:-8%;
+  width:74%;
+  height:78%;
+  background:radial-gradient(closest-side,rgba(255,255,255,.5) 0,rgba(255,255,255,0) 72%);
+}
 .cover-device{
   position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
+  top:50%;
+  right:-2%;
+  width:72%;
+  transform:translateY(-50%);
 }
 
 /* responsive and print */
@@ -608,97 +653,114 @@ img{display:block}
       <div class="cover-copy">
         <div class="cover-kicker">GitHub 커밋 기반<br>기술면접 준비와 검증 솔루션</div>
         <div class="cover-wordmark"><img src="deck_assets/icon.svg" alt=""><span>Dev<b>Fit</b></span></div>
-        <div class="cover-tagline">내 GitHub로 묻고 답하는 기술면접</div>
+        <div class="cover-tagline">내 <b>GitHub</b>로 묻고 답하는 기술면접</div>
         <div class="cover-meta">AI SW마에스트로 17기 중간평가<br><strong>팀 Dozer</strong> 박천웅, 김건우, 노재원</div>
       </div>
       <div class="cover-visual" aria-hidden="true">
-        <img class="cover-device" src="deck_assets/cover_dual_macbook_mockup.png" alt="DevFit 웹 화면을 담은 듀얼 3D 맥북 목업">
+        <img class="cover-device" src="deck_assets/dual_macbook_mac1_mac2_transparent.png" alt="DevFit 웹 화면을 담은 듀얼 3D 맥북 목업">
       </div>
     </div>
   </div>
 </section>
 
 <!-- 02 PROBLEM -->
-<section class="slide problem" data-title="문제제기">
+<section class="slide" data-title="문제제기">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
       <div class="eyebrow">문제제기</div>
-      <h1 class="title">AI가 코드를 대신 쓰는 시대, <span class="red">코드를 이해했는지 검증하는 일</span>이 채용의 병목입니다</h1>
+      <h1 class="title">AI가 코드를 대신 쓰는 시대, <span class="purple">개발자 채용</span>도 변화하고 있습니다</h1>
     </header>
     <div class="slide-content" style="margin-top:20px">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:34px;flex:1;min-height:0">
         <div style="display:flex;flex-direction:column;min-height:0">
-          <div class="section-line"><span class="num">1</span><span>폭증하는 코드, 흐려지는 기억</span></div>
-          <div class="panel" style="flex:1;padding:28px 32px;display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center">
-            <div>
-              <div class="metric">약 10억</div>
-              <div class="metric-label">2025년 GitHub 연간 커밋<br><strong style="color:var(--red)">전년 대비 +25.1%</strong></div>
+          <div class="section-line"><span class="num">1</span><span>코드 생산량과 AI 사용률의 급증</span></div>
+          <div class="panel" style="flex:1;padding:30px 36px;display:flex;flex-direction:column">
+            <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center;justify-items:center;text-align:center">
+              <div>
+                <div class="metric" style="font-size:84px">약 10억</div>
+                <div class="metric-label" style="font-size:22px">2025년 GitHub 연간 커밋<br><strong style="color:var(--purple)">전년 대비 +25.1%</strong></div>
+              </div>
+              <div>
+                <div class="metric purple" style="font-size:84px">84%</div>
+                <div class="metric-label" style="font-size:22px">AI 도구를 사용 중이거나<br>사용할 계획인 개발자</div>
+              </div>
             </div>
-            <div>
-              <div class="metric red">84%</div>
-              <div class="metric-label">AI 도구를 사용 중이거나<br>사용할 계획인 개발자</div>
-            </div>
-            <div class="body-copy" style="grid-column:1/-1;border-top:1px solid var(--line);padding-top:22px"><strong style="color:var(--red)">지원자</strong>는 늘어난 프로젝트의 구현 의도와 기술 선택 이유를 공고마다 다시 복기해야 합니다.</div>
+            <div class="body-copy" style="margin-top:auto;border-top:1px solid var(--line);padding-top:22px"><strong style="color:var(--purple)">지원자</strong>는 늘어난 프로젝트의 구현 의도와 기술 선택 이유를 공고마다 다시 복기해야 합니다.</div>
           </div>
         </div>
         <div style="display:flex;flex-direction:column;min-height:0">
-          <div class="section-line"><span class="num">2</span><span>신호를 잃어가는 기존 검증</span></div>
-          <div class="panel" style="flex:1;padding:24px;display:flex;flex-direction:column;gap:20px">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;height:210px">
+          <div class="section-line"><span class="num">2</span><span>기존 검증 방식의 한계</span></div>
+          <div class="panel" style="flex:1;padding:24px 24px 30px;display:flex;flex-direction:column;gap:20px">
+            <div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:18px">
               <div class="news-frame"><img src="deck_assets/news_zdnet_crop.png" alt="코딩테스트 관련 기사"></div>
-              <div class="news-frame"><img src="deck_assets/news_cnbc_crop.png" alt="AI 면접 관련 기사"></div>
+              <div class="news-frame" style="background:#5f6061"><img src="deck_assets/news_herald_skax_crop.png" alt="SK AX 채용연계형 AI 프로그램 스칼라 기사" style="background:#5f6061"></div>
             </div>
-            <div class="body-copy" style="border-top:1px solid var(--line);padding:22px 8px 0"><strong style="color:var(--red)">면접관</strong>은 AI로 푼 코딩테스트와 AI로 쓴 이력서를 걸러내기 어렵습니다. 채용 애로 1위는 역량을 갖춘 인력 부족, <strong>30.0%</strong>입니다.</div>
+            <div class="body-copy" style="margin-top:auto;border-top:1px solid var(--line);padding:22px 8px 0"><strong style="color:var(--purple)">면접관</strong>은 AI로 푼 코딩테스트와 AI로 쓴 이력서를 걸러내기 어렵습니다. 채용 애로 1위는 역량을 갖춘 인력 부족, <strong>30.0%</strong>입니다.</div>
           </div>
         </div>
       </div>
       <div class="callout" style="margin-top:26px">평가의 초점이 "코드를 짤 수 있는가"에서 <strong>"자기 코드를 이해하고 설명할 수 있는가"</strong>로 이동하고 있습니다</div>
     </div>
     <div class="folio">02</div>
-    <div class="source">자료: GitHub Octoverse 2025, Stack Overflow Developer Survey 2025, SPRi 2024 SW산업 실태조사, ZDNet Korea, CNBC</div>
+    <div class="source">자료: GitHub Octoverse 2025, Stack Overflow Developer Survey 2025, SPRi 2024 SW산업 실태조사, ZDNet Korea, 헤럴드경제</div>
   </div>
 </section>
 
 <!-- 03 ASYMMETRY -->
-<section class="slide problem" data-title="정보 비대칭">
+<section class="slide" data-title="정보 비대칭">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
-    <header class="topline">
+    <header class="topline" style="padding-right:0">
       <div class="eyebrow">문제제기</div>
-      <h1 class="title">지원자의 <span class="red">준비</span>와 면접관의 <span class="red">검증</span>이 모두 실패하는 정보 비대칭 구조입니다</h1>
+      <h1 class="title" style="white-space:nowrap">지원자는 <span class="purple">기회</span>를 잃고, 기업은 <span class="purple">시간과 돈</span>을 잃고 있습니다</h1>
     </header>
     <div class="slide-content">
       <div style="display:grid;grid-template-columns:1fr 210px 1fr;gap:26px;align-items:stretch;flex:1">
-        <div class="panel" style="padding:34px 40px">
-          <div style="font-size:30px;font-weight:900;margin-bottom:28px">지원자, 취업준비생</div>
-          <div style="display:flex;flex-direction:column;gap:22px">
-            <div class="body-copy"><span class="badge red">01</span><br><strong>회사마다 다른 역량</strong>을 범용 면접 문제로 반복 준비</div>
-            <div class="body-copy"><span class="badge red">02</span><br>매 공고마다 자기 저장소를 처음부터 다시 공부</div>
-            <div class="body-copy"><span class="badge red">03</span><br>실제 역량이 있어도 <strong>기여 근거</strong>를 설명하지 못해 탈락</div>
+        <div class="panel" style="padding:30px 38px;display:flex;flex-direction:column">
+          <div style="font-size:30px;font-weight:900;margin-bottom:24px">지원자, 취업준비생</div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:18px">
+            <div style="display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center">
+              <div class="metric purple" style="font-size:46px">37배</div>
+              <div class="body-copy" style="font-size:21px;line-height:1.5">신입 공고 비중 <strong>0.8%</strong> 대 지원 비중 <strong>29.5%</strong>. 면접 기회 한 번의 무게가 그만큼 무겁습니다</div>
+            </div>
+            <div style="display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;border-top:1px solid var(--line);padding-top:18px">
+              <div class="metric purple" style="font-size:46px">50%↓</div>
+              <div class="body-copy" style="font-size:21px;line-height:1.5">면접관이 지켜보는 환경에서 문제 해결 점수는 <strong>절반</strong>으로 하락. 실력이 있어도 저평가됩니다</div>
+            </div>
+            <div style="display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;border-top:1px solid var(--line);padding-top:18px">
+              <div style="font-size:31px;font-weight:900;color:var(--purple-deep);line-height:1.2">매 공고<br>리셋</div>
+              <div class="body-copy" style="font-size:21px;line-height:1.5">바이브코딩으로 늘어난 프로젝트의 구현 의도와 기여 근거를 공고마다 처음부터 다시 복기합니다</div>
+            </div>
           </div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
-          <div style="width:142px;height:142px;border:4px solid var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;background:#fff;font-size:25px;font-weight:900;line-height:1.35">정보<br>단절</div>
+          <div style="width:142px;height:142px;border:4px solid var(--purple);border-radius:50%;display:flex;align-items:center;justify-content:center;background:#fff;font-size:25px;font-weight:900;line-height:1.35">검증<br>공백</div>
           <div style="height:54px;border-left:3px dashed #bdb7c2"></div>
-          <div class="badge red" style="font-size:19px;padding:11px 17px">신뢰 손실</div>
+          <div class="badge" style="font-size:19px;padding:11px 17px">양쪽 모두 손실</div>
         </div>
-        <div class="panel" style="padding:34px 40px">
-          <div style="font-size:30px;font-weight:900;margin-bottom:28px">면접관, 기업</div>
-          <div style="display:flex;flex-direction:column;gap:22px">
-            <div class="body-copy"><span class="badge red">01</span><br>제출 저장소는 늘어나지만 <strong>직접 읽을 시간</strong>이 없음</div>
-            <div class="body-copy"><span class="badge red">02</span><br>이력서 문장과 범용 문제은행에 의존</div>
-            <div class="body-copy"><span class="badge red">03</span><br>실제 기여 범위와 기술적 깊이를 확인하지 못한 채 판단</div>
+        <div class="panel" style="padding:30px 38px;display:flex;flex-direction:column">
+          <div style="font-size:30px;font-weight:900;margin-bottom:24px">면접관, 기업</div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:18px">
+            <div style="display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center">
+              <div style="font-size:31px;font-weight:900;color:var(--purple-deep);line-height:1.2">본업과<br>병행</div>
+              <div class="body-copy" style="font-size:21px;line-height:1.5">기술면접 대부분은 <strong>개발 실무자</strong>가 면접관으로 들어갑니다. 본업에 쫓겨 지원자 저장소를 읽지 못한 채 면접을 시작합니다</div>
+            </div>
+            <div style="display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;border-top:1px solid var(--line);padding-top:18px">
+              <div class="metric purple" style="font-size:46px">49일</div>
+              <div class="body-copy" style="font-size:21px;line-height:1.5">개발 직군 채용 소요 기간, <strong>전 직군 최장</strong>. 다단계 기술 검증이 주요 원인입니다</div>
+            </div>
+            <div style="display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;border-top:1px solid var(--line);padding-top:18px">
+              <div class="metric purple" style="font-size:46px">30%</div>
+              <div class="body-copy" style="font-size:21px;line-height:1.5">잘못된 채용 1건의 최소 손실은 <strong>연봉의 30%</strong>. 검증 실패는 곧 비용입니다</div>
+            </div>
           </div>
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:26px">
-        <div class="panel flat red-soft" style="padding:22px 30px"><span class="metric red" style="font-size:48px">0.8%</span><span class="body-copy" style="margin-left:22px">신입 대상 공고</span></div>
-        <div class="panel flat" style="padding:22px 30px"><span class="metric" style="font-size:48px">29.5%</span><span class="body-copy" style="margin-left:22px">신입 지원 비중</span></div>
-      </div>
+      <div class="callout" style="margin-top:26px">지원자는 실력을 <strong>증명할 수단</strong>이 없고, 면접관은 <strong>확인할 시간</strong>이 없습니다. DevFit은 이 검증 공백을 팝니다</div>
     </div>
     <div class="folio">03</div>
-    <div class="source">자료: 사람인, 점핏 2025 상반기 개발자 채용 리포트. 플랫폼 표본이며 국내 시장 전체를 단정하지 않음</div>
+    <div class="source">자료: 사람인, 점핏 2025 상반기 개발자 채용 리포트, NC State University ESEC/FSE 2020, LinkedIn Economic Graph, 미국 노동부</div>
   </div>
 </section>
 
@@ -773,7 +835,7 @@ img{display:block}
         </div>
       </div>
     </div>
-    <div class="folio">04</div>
+    <div class="folio">05</div>
     <div class="source">질문 예시는 실제 파이프라인 산출 형식. 지원자용과 면접관용은 서로 다른 화면으로 제공</div>
   </div>
 </section>
@@ -812,7 +874,7 @@ img{display:block}
       </div>
       <div class="callout" style="margin-top:28px;font-size:29px">AI가 더 많은 코드를 만들수록 <strong>"누가, 왜 만들었는지"를 검증하는 수요</strong>가 커집니다</div>
     </div>
-    <div class="folio">05</div>
+    <div class="folio">06</div>
     <div class="source">자료: GitHub Octoverse 2025, Stack Overflow Developer Survey 2025, 응답 49,000명 이상</div>
   </div>
 </section>
@@ -828,8 +890,8 @@ img{display:block}
     <div class="slide-content">
       <div style="display:grid;grid-template-columns:470px 1fr;gap:42px;align-items:center;flex:1;min-height:0">
         <div style="height:500px;position:relative">
-          <div style="position:absolute;width:440px;height:440px;border-radius:50%;left:15px;top:0;background:#dcd6ff;display:flex;align-items:flex-start;justify-content:center;padding-top:56px;color:#8579d9;font-size:25px;font-weight:900">TAM</div>
-          <div style="position:absolute;width:320px;height:320px;border-radius:50%;left:75px;top:60px;background:#b9aff8;display:flex;align-items:flex-start;justify-content:center;padding-top:44px;color:#fff;font-size:25px;font-weight:900">SAM</div>
+          <div style="position:absolute;width:440px;height:440px;border-radius:50%;left:15px;top:0;background:#dcd6ff;display:flex;align-items:flex-start;justify-content:center;padding-top:16px;color:#7c6de0;font-size:25px;font-weight:900">TAM</div>
+          <div style="position:absolute;width:320px;height:320px;border-radius:50%;left:75px;top:60px;background:#b9aff8;display:flex;align-items:flex-start;justify-content:center;padding-top:16px;color:#fff;font-size:25px;font-weight:900">SAM</div>
           <div style="position:absolute;width:200px;height:200px;border-radius:50%;left:135px;top:120px;background:var(--purple);display:flex;align-items:center;justify-content:center;color:#fff;font-size:29px;font-weight:900">SOM</div>
           <div style="position:absolute;bottom:0;left:51px;width:368px;text-align:center;color:var(--muted);font-size:19px;line-height:1.45">큰 시장의 크기를 주장하기보다<br>초기 구매 업무를 좁게 정의합니다</div>
         </div>
@@ -853,7 +915,7 @@ img{display:block}
         </div>
       </div>
     </div>
-    <div class="folio">06</div>
+    <div class="folio">07</div>
     <div class="source">자료: Fortune Business Insights, 더스탁, 프로그래머스 비즈니스, 사람인, 점핏. 도입률과 가격은 파일럿에서 검증할 가설</div>
   </div>
 </section>
@@ -882,7 +944,7 @@ img{display:block}
         <div class="panel flat" style="padding:25px 30px;display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="badge">공고 1건 조준</span><span class="badge">근거 추적</span><span class="badge">B2C, B2B 공유 엔진</span></div>
       </div>
     </div>
-    <div class="folio">07</div>
+    <div class="folio">08</div>
     <div class="source">Greenroom: GitHub 기반 음성 모의면접, Evalo: GitHub 코드 품질 분석. 자동 합격 판정, 순위, 작성자 판별은 제공하지 않음</div>
   </div>
 </section>
@@ -908,7 +970,7 @@ img{display:block}
         <div class="browser"><div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">/quiz</span></div><img src="deck_assets/b2c_quiz.png" alt="모의면접 화면"></div>
       </div>
     </div>
-    <div class="folio">08</div>
+    <div class="folio">09</div>
     <div class="source">시연 동선: 공고 카드 → 어필 포인트 → 질문의 근거 버튼 → 꼬리질문 체인. 외부 API를 호출하지 않는 mock 경로 사용</div>
   </div>
 </section>
@@ -933,7 +995,7 @@ img{display:block}
         </div>
       </div>
     </div>
-    <div class="folio">09</div>
+    <div class="folio">10</div>
     <div class="source">지원자 평가에 쓰이는 결과이므로 결정론적 선택과 근거 지문으로 같은 입력에 같은 결과를 보장</div>
   </div>
 </section>
@@ -964,7 +1026,7 @@ img{display:block}
         </div>
       </div>
     </div>
-    <div class="folio">10</div>
+    <div class="folio">11</div>
     <div class="source">조준 점수 상세 수식과 선별 회귀 테스트는 부록</div>
   </div>
 </section>
@@ -997,7 +1059,7 @@ img{display:block}
       </div>
       <div class="callout" style="margin-top:24px;font-size:25px">수십 초에서 수 분이 걸리는 저장소 분석을 <strong>타임아웃과 중복 실행 없이</strong> 운영합니다</div>
     </div>
-    <div class="folio">11</div>
+    <div class="folio">12</div>
     <div class="source">운영 품질: Terraform IaC, GitHub Actions OIDC 무키 배포. 전체 시스템 구성도와 서비스 상세는 부록</div>
   </div>
 </section>
@@ -1033,7 +1095,7 @@ img{display:block}
         </div>
       </div>
     </div>
-    <div class="folio">12</div>
+    <div class="folio">13</div>
     <div class="source">모델명과 자체 벤치마크 표는 부록. 특정 모델의 일반적 우월성을 주장하지 않음</div>
   </div>
 </section>
@@ -1066,8 +1128,47 @@ img{display:block}
         <div class="panel flat" style="padding:28px 32px"><div class="small-copy">질문 판별력을 자동 평가하는 연구 프레임워크의 실증 하네스로 활용합니다.</div></div>
       </div>
     </div>
-    <div class="folio">13</div>
+    <div class="folio">14</div>
     <div class="source">이 측정 장치가 뒤의 검증 계획에서 약속하는 지표의 근거</div>
+  </div>
+</section>
+
+<!-- 13.5 INFRA & COST -->
+<section class="slide" data-title="핵심 기술, 인프라와 비용">
+  <div class="slide-shell">
+    <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
+    <header class="topline">
+      <div class="eyebrow">핵심 기술 5, 인프라와 비용</div>
+      <h1 class="title">전체 인프라를 <span class="purple">코드로 관리</span>하고, 분석 1건의 원가를 계속 깎습니다</h1>
+    </header>
+    <div class="slide-content" style="margin-top:16px">
+      <div style="display:grid;grid-template-columns:1.45fr .55fr;gap:30px;flex:1;min-height:0">
+        <div class="panel" style="padding:20px;display:flex;min-height:0">
+          <img src="deck_assets/infra_architecture.png" alt="Devfit AWS 통합 아키텍처 다이어그램" style="width:100%;height:100%;object-fit:contain">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;min-height:0">
+          <div class="panel flat soft" style="padding:20px 24px">
+            <div style="font-size:22px;font-weight:900;margin-bottom:8px;color:var(--purple-deep)">역할별 모델 라우팅</div>
+            <div class="small-copy" style="font-size:17px">무거운 추론 모델은 질문 생성에만, 공고 추출과 OCR은 경량 모델로 5종 분리</div>
+          </div>
+          <div class="panel flat soft" style="padding:20px 24px">
+            <div style="font-size:22px;font-weight:900;margin-bottom:8px;color:var(--purple-deep)">프롬프트 다이어트</div>
+            <div class="small-copy" style="font-size:17px">diff는 파일당 10줄, 줄당 180자, README 500자로 잘라 입력 토큰을 상한 관리</div>
+          </div>
+          <div class="panel flat soft" style="padding:20px 24px">
+            <div style="font-size:22px;font-weight:900;margin-bottom:8px;color:var(--purple-deep)">호출 자체를 생략</div>
+            <div class="small-copy" style="font-size:17px">저장소 head SHA가 같으면 LLM 호출 생략, GitHub API는 ETag 캐시로 재사용</div>
+          </div>
+          <div class="panel flat soft" style="padding:20px 24px">
+            <div style="font-size:22px;font-weight:900;margin-bottom:8px;color:var(--purple-deep)">쉬는 자원은 끕니다</div>
+            <div class="small-copy" style="font-size:17px">개발 EC2와 RDS는 야간 자동 중지, NAT 대신 고정 EIP, 프런트는 S3 정적 서빙</div>
+          </div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:22px;font-size:24px">비용 절감 장치가 운영 습관이 아니라 <strong>코드와 Terraform에 박혀 있어</strong>, 트래픽이 늘어도 원가가 비례해 폭증하지 않습니다</div>
+    </div>
+    <div class="folio">15</div>
+    <div class="source">AWS 서울 리전, Terraform IaC, GitHub Actions OIDC 무키 배포. 수치는 운영 설정값 기준</div>
   </div>
 </section>
 
@@ -1095,7 +1196,7 @@ img{display:block}
         <div class="step"><div class="dot" style="background:#fff;color:var(--muted);border-color:var(--paper);box-shadow:inset 0 0 0 3px #bbb5c2">10</div><div class="t">10~11월</div><div class="s">기업 파일럿과 가격 검증</div></div>
       </div>
     </div>
-    <div class="folio">14</div>
+    <div class="folio">16</div>
     <div class="source">구현 규모는 보조 정보이며 사용자 가치의 증거는 아님. 기업용은 개인정보, 부하, 보존 운영 게이트 점검 중</div>
   </div>
 </section>
@@ -1122,7 +1223,7 @@ img{display:block}
         <div style="padding:30px 36px;display:flex;align-items:center"><div class="body-copy">좌석 구독에서 <strong style="color:var(--purple-deep)">분석 지원자 수 기준 종량 과금</strong>으로 전환하고, 모든 산출물에 커밋 근거 인용을 강제했습니다.</div></div>
       </div>
     </div>
-    <div class="folio">15</div>
+    <div class="folio">17</div>
     <div class="source">중간보고서 기획심의 주요 의견 반영 요약</div>
   </div>
 </section>
@@ -1155,7 +1256,7 @@ img{display:block}
         </div>
       </div>
     </div>
-    <div class="folio">16</div>
+    <div class="folio">18</div>
     <div class="source">목표 수치는 현재 실적이 아니라 제안 목표이며 팀 리소스와 일정에 맞춰 확정 예정</div>
   </div>
 </section>
@@ -1196,7 +1297,7 @@ img{display:block}
         <div><div class="small-copy">내부 분석 원가</div><div style="font-size:29px;font-weight:900;margin-top:7px">1,000~2,000원 <span class="badge neutral">추정</span></div></div>
       </div>
     </div>
-    <div class="folio">17</div>
+    <div class="folio">19</div>
     <div class="source">가격은 1만, 2만, 3만 원 실험으로 검증. 참고 앵커: 프로그래머스 비즈니스, Karat 공개 가격 자료</div>
   </div>
 </section>
@@ -1229,7 +1330,7 @@ img{display:block}
       </div>
       <div class="panel flat soft" style="margin-top:24px;padding:23px 32px;display:flex;align-items:center;gap:22px"><span class="badge">Founder-market fit</span><strong class="body-copy">세 명 모두 개발자 취업 시장의 당사자로, 스스로 매일 겪는 문제를 만들고 있습니다.</strong></div>
     </div>
-    <div class="folio">18</div>
+    <div class="folio">20</div>
     <div class="source">세 명 모두 개발자 취업 시장의 당사자로 스스로 매일 겪는 문제를 만들고 있음</div>
   </div>
 </section>
@@ -1262,7 +1363,7 @@ img{display:block}
       </div>
       <div class="panel flat soft" style="margin-top:24px;padding:23px 32px;display:flex;align-items:center;gap:22px"><span class="badge">멘토링의 역할</span><strong class="body-copy">결정을 대신하는 평가가 아니라, 팀이 검증할 리스크를 앞당겨 드러냅니다.</strong></div>
     </div>
-    <div class="folio">20</div>
+    <div class="folio">21</div>
     <div class="source">멘토의 추천이나 긍정 평가를 인용한 것이 아니라 팀이 정리한 자문 범위</div>
   </div>
 </section>
@@ -1285,7 +1386,7 @@ img{display:block}
       </div>
       <div style="display:flex;align-items:center;gap:16px;margin-top:25px;flex-wrap:wrap"><strong class="body-copy" style="margin-right:10px">중간평가에서 요청드리는 것</strong><span class="badge" style="font-size:19px;padding:11px 17px">파일럿 기업 3~5개사 연결</span><span class="badge" style="font-size:19px;padding:11px 17px">선임 면접관 30~50명 조사 연결</span><span class="badge" style="font-size:19px;padding:11px 17px">채용과 개인정보 법률 검토</span></div>
     </div>
-    <div class="folio">19</div>
+    <div class="folio">22</div>
     <div class="source">매출 시나리오는 가설이며 확인된 유료 실적은 현재 없음</div>
   </div>
 </section>
