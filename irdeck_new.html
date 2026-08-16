@@ -140,6 +140,32 @@ img{display:block}
   background:radial-gradient(circle,rgba(108,92,231,.065) 0,rgba(108,92,231,0) 69%);
   pointer-events:none;
 }
+.slide.b2b-theme{
+  --paper:#f4f8ff;
+  --paper-2:#eaf2ff;
+  --purple:#005ce6;
+  --purple-deep:#0047b8;
+  --purple-soft:#dceaff;
+  --purple-pale:#edf5ff;
+  --lavender:#76adff;
+  --line:#d5e2f5;
+  --line-2:#b9cce8;
+  --shadow:0 10px 28px rgba(0,71,184,.09);
+  --shadow-lg:0 24px 70px rgba(0,71,184,.15);
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.8),rgba(234,242,255,.72)),
+    var(--paper);
+}
+.slide.b2b-theme::after{
+  background:radial-gradient(circle,rgba(0,92,230,.1) 0,rgba(0,92,230,0) 69%);
+}
+.slide.b2b-theme .panel{border-color:rgba(0,92,230,.14)}
+.slide.b2b-theme .panel.soft{background:var(--purple-pale);border-color:#bcd4f7}
+.slide.b2b-theme .browser{border-color:#bfd3ef}
+.slide.b2b-theme .brand img{box-shadow:0 8px 22px rgba(0,92,230,.2)}
+.slide.b2b-theme .num{background:var(--purple)}
+.slide.b2b-theme .folio{color:#7695bf}
+.slide.b2b-theme .source{color:#6f86a5}
 .slide-shell{
   position:absolute;
   inset:0;
@@ -208,6 +234,17 @@ img{display:block}
 }
 .brand img{width:42px;height:42px;border-radius:10px}
 .brand b{margin-left:-13px;color:var(--purple)}
+.team-avatar{
+  width:78px;
+  height:78px;
+  flex:none;
+  border:2px solid #ded8ff;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 5px 14px rgba(79,63,201,.14);
+  object-fit:cover;
+  object-position:center;
+}
 .source{
   min-height:22px;
   margin-top:20px;
@@ -927,9 +964,9 @@ img{display:block}
 </section>
 
 <!-- 13 B2B -->
-<section class="slide" data-title="기업용 서비스" data-order="13">
+<section class="slide b2b-theme" data-title="기업용 서비스" data-order="13">
   <div class="slide-shell">
-    <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
+    <div class="brand"><img src="deck_assets/icon-b2b.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
       <div class="eyebrow">서비스 소개, 기업용</div>
       <h1 class="title">면접관은 저장소를 직접 읽지 않고 <span class="purple">구조화 인터뷰 킷</span>을 받습니다</h1>
@@ -1414,7 +1451,7 @@ img{display:block}
     <div class="slide-content" style="margin-top:18px">
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;flex:1">
         <article class="panel" style="padding:26px 30px 30px;display:flex;flex-direction:column">
-          <div style="display:flex;align-items:center;gap:18px;margin-bottom:16px"><div style="width:78px;height:78px;border-radius:50%;background:linear-gradient(135deg,#4f3fc9,#8c7ff2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:37px;font-weight:900;flex:none">박</div><div><div style="font-size:28px;font-weight:900">박천웅 <span class="small-copy" style="font-size:17px;font-weight:700">Team Leader</span></div><div class="badge" style="margin-top:8px">풀스택, 인프라</div></div></div>
+          <div style="display:flex;align-items:center;gap:18px;margin-bottom:16px"><img class="team-avatar" src="deck_assets/team-park-cheonwoong.jpg" alt="박천웅 프로필"><div><div style="font-size:28px;font-weight:900">박천웅 <span class="small-copy" style="font-size:17px;font-weight:700">Team Leader · 23세</span></div><div class="badge" style="margin-top:8px">풀스택, 인프라</div></div></div>
           <div style="flex:1;display:flex;flex-direction:column;gap:16px;justify-content:space-evenly">
             <div>
               <div style="font-size:15px;font-weight:900;letter-spacing:.08em;color:var(--purple-deep);margin-bottom:6px">이력</div>
@@ -1435,7 +1472,7 @@ img{display:block}
           </div>
         </article>
         <article class="panel" style="padding:26px 30px 30px;display:flex;flex-direction:column">
-          <div style="display:flex;align-items:center;gap:18px;margin-bottom:16px"><div style="width:78px;height:78px;border-radius:50%;background:linear-gradient(135deg,#7969eb,#b1a7ff);color:#fff;display:flex;align-items:center;justify-content:center;font-size:37px;font-weight:900;flex:none">김</div><div><div style="font-size:28px;font-weight:900">김건우 <span class="small-copy" style="font-size:17px;font-weight:700">Product Manager</span></div><div class="badge" style="margin-top:8px">제품 기획, 프론트엔드</div></div></div>
+          <div style="display:flex;align-items:center;gap:18px;margin-bottom:16px"><img class="team-avatar" src="deck_assets/team-kim-gunwoo.jpg" alt="김건우 프로필"><div><div style="font-size:28px;font-weight:900">김건우 <span class="small-copy" style="font-size:17px;font-weight:700">Product Manager · 18세</span></div><div class="badge" style="margin-top:8px">제품 기획, 프론트엔드</div></div></div>
           <div style="flex:1;display:flex;flex-direction:column;gap:16px;justify-content:space-evenly">
             <div>
               <div style="font-size:15px;font-weight:900;letter-spacing:.08em;color:var(--purple-deep);margin-bottom:6px">이력</div>
@@ -1456,7 +1493,7 @@ img{display:block}
           </div>
         </article>
         <article class="panel" style="padding:26px 30px 30px;display:flex;flex-direction:column">
-          <div style="display:flex;align-items:center;gap:18px;margin-bottom:16px"><div style="width:78px;height:78px;border-radius:50%;background:linear-gradient(135deg,#342b82,#7566e6);color:#fff;display:flex;align-items:center;justify-content:center;font-size:37px;font-weight:900;flex:none">노</div><div><div style="font-size:28px;font-weight:900">노재원 <span class="small-copy" style="font-size:17px;font-weight:700">Backend Engineer</span></div><div class="badge" style="margin-top:8px">백엔드, AI</div></div></div>
+          <div style="display:flex;align-items:center;gap:18px;margin-bottom:16px"><img class="team-avatar" src="deck_assets/team-noh-jaewon.jpg" alt="노재원 프로필"><div><div style="font-size:28px;font-weight:900">노재원 <span class="small-copy" style="font-size:17px;font-weight:700">Backend Engineer · 20세</span></div><div class="badge" style="margin-top:8px">백엔드, AI</div></div></div>
           <div style="flex:1;display:flex;flex-direction:column;gap:26px;justify-content:space-evenly">
             <div>
               <div style="font-size:19px;font-weight:900;letter-spacing:.08em;color:var(--purple-deep);margin-bottom:10px">이력</div>
@@ -1561,19 +1598,19 @@ img{display:block}
           <span class="badge" style="align-self:flex-start;margin-bottom:18px;font-size:19px;padding:10px 16px">1 소셜 마케팅</span>
           <div style="font-size:29px;font-weight:900;letter-spacing:-.035em;margin-bottom:12px">메타 광고 집행</div>
           <div class="small-copy" style="font-size:20px;margin-bottom:24px">개발자 지원자를 대상으로 메타 광고를 집행해 초기 사용자를 확보합니다.</div>
-          <div style="flex:1;margin-top:12px;border-radius:16px;background:#f1eff5;border:1px dashed #d5d0de;display:flex;align-items:center;justify-content:center;color:#aca7b2;font-size:18px;font-weight:700">이미지 자리</div>
+          <img src="deck_assets/roadmap_b2c_social_marketing.png" alt="소셜 미디어를 활용한 개발자 지원자 대상 마케팅" style="width:100%;min-height:0;flex:1;margin-top:12px;border-radius:16px;object-fit:cover;display:block">
         </div>
         <div class="panel" style="padding:34px 38px;display:flex;flex-direction:column">
           <span class="badge" style="align-self:flex-start;margin-bottom:18px;font-size:19px;padding:10px 16px">2 현장 마케팅</span>
           <div style="font-size:29px;font-weight:900;letter-spacing:-.035em;margin-bottom:12px">대학 현장 굿즈 배포</div>
           <div class="small-copy" style="font-size:20px;margin-bottom:24px">대학을 직접 찾아가 굿즈를 나눠주며 서비스를 알리고 현장 반응을 수집합니다.</div>
-          <div style="flex:1;margin-top:12px;border-radius:16px;background:#f1eff5;border:1px dashed #d5d0de;display:flex;align-items:center;justify-content:center;color:#aca7b2;font-size:18px;font-weight:700">이미지 자리</div>
+          <img src="deck_assets/roadmap_b2c_campus_goods.png" alt="대학 현장에서 배포할 QR 코드 굿즈" style="width:100%;min-height:0;flex:1;margin-top:12px;border-radius:16px;object-fit:cover;display:block">
         </div>
         <div class="panel" style="padding:34px 38px;display:flex;flex-direction:column">
           <span class="badge" style="align-self:flex-start;margin-bottom:18px;font-size:19px;padding:10px 16px">3 고도화</span>
           <div style="font-size:29px;font-weight:900;letter-spacing:-.035em;margin-bottom:12px">피드백 반영, 질문 DB 업데이트</div>
           <div class="small-copy" style="font-size:20px;margin-bottom:24px">사용자 피드백을 제품에 반영하고 면접 질문 DB를 지속해서 업데이트합니다.</div>
-          <div style="flex:1;margin-top:12px;border-radius:16px;background:#f1eff5;border:1px dashed #d5d0de;display:flex;align-items:center;justify-content:center;color:#aca7b2;font-size:18px;font-weight:700">이미지 자리</div>
+          <img src="deck_assets/roadmap_b2c_feedback_loop.png" alt="사용자 피드백과 질문 데이터베이스 고도화 과정" style="width:100%;min-height:0;flex:1;margin-top:12px;border-radius:16px;object-fit:cover;display:block">
         </div>
       </div>
     </div>
@@ -1583,9 +1620,9 @@ img{display:block}
 </section>
 
 <!-- 22 ROADMAP B2B -->
-<section class="slide" data-title="앞으로 계획, 기업용" data-order="22">
+<section class="slide b2b-theme" data-title="앞으로 계획, 기업용" data-order="22">
   <div class="slide-shell">
-    <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
+    <div class="brand"><img src="deck_assets/icon-b2b.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline" style="min-height:auto">
       <div class="eyebrow">앞으로 계획, 기업용</div>
       <h1 class="title">기업 접점을 만들어 <span class="purple">파일럿 프로젝트로 검증</span>합니다</h1>
@@ -1596,19 +1633,19 @@ img{display:block}
           <span class="badge" style="align-self:flex-start;margin-bottom:18px;font-size:19px;padding:10px 16px">1 기능 개발</span>
           <div style="font-size:29px;font-weight:900;letter-spacing:-.035em;margin-bottom:12px">기업용 기능 완성</div>
           <div class="small-copy" style="font-size:20px;margin-bottom:24px">남은 기업용 기능을 마저 개발해 파일럿에 들어갈 준비를 마칩니다.</div>
-          <div style="flex:1;margin-top:12px;border-radius:16px;background:#f1eff5;border:1px dashed #d5d0de;display:flex;align-items:center;justify-content:center;color:#aca7b2;font-size:18px;font-weight:700">이미지 자리</div>
+          <img src="deck_assets/roadmap_b2b_feature_completion.png" alt="기업용 지원자 분석과 평가 기능" style="width:100%;height:498px;flex:0 0 498px;margin-top:auto;border-radius:16px;object-fit:cover;display:block">
         </div>
         <div class="panel" style="padding:34px 38px;display:flex;flex-direction:column">
           <span class="badge" style="align-self:flex-start;margin-bottom:18px;font-size:19px;padding:10px 16px">2 콜드 메일</span>
           <div style="font-size:29px;font-weight:900;letter-spacing:-.035em;margin-bottom:12px">페르소나 기반 콜드 메일</div>
           <div class="small-copy" style="font-size:20px;margin-bottom:24px">공시 기준 페르소나에 맞는 기업을 추려 콜드 메일로 접점을 만듭니다.</div>
-          <div style="flex:1;margin-top:12px;border-radius:16px;background:#f1eff5;border:1px dashed #d5d0de;display:flex;align-items:center;justify-content:center;color:#aca7b2;font-size:18px;font-weight:700">이미지 자리</div>
+          <img src="deck_assets/roadmap_b2b_cold_email.png" alt="기업 페르소나 선별과 콜드 메일 발송" style="width:100%;height:498px;flex:0 0 498px;margin-top:auto;border-radius:16px;object-fit:cover;display:block">
         </div>
         <div class="panel" style="padding:34px 38px;display:flex;flex-direction:column">
           <span class="badge" style="align-self:flex-start;margin-bottom:18px;font-size:19px;padding:10px 16px">3 파일럿</span>
           <div style="font-size:29px;font-weight:900;letter-spacing:-.035em;margin-bottom:12px">파일럿 프로젝트 진행</div>
           <div class="small-copy" style="font-size:20px;margin-bottom:24px">관심 기업과 파일럿을 진행해 질문 채택률과 효용을 검증합니다.</div>
-          <div style="flex:1;margin-top:12px;border-radius:16px;background:#f1eff5;border:1px dashed #d5d0de;display:flex;align-items:center;justify-content:center;color:#aca7b2;font-size:18px;font-weight:700">이미지 자리</div>
+          <img src="deck_assets/roadmap_b2b_pilot.png" alt="기업 면접관과 지원자가 참여하는 파일럿 프로젝트" style="width:100%;height:498px;flex:0 0 498px;margin-top:auto;border-radius:16px;object-fit:cover;display:block">
         </div>
       </div>
     </div>
@@ -1701,6 +1738,7 @@ img{display:block}
     });
     counter.textContent=(current+1)+" / "+slides.length;
     progress.style.width=((current+1)/slides.length*100)+"%";
+    progress.style.backgroundColor=slides[current].classList.contains("b2b-theme")?"#005ce6":"#6c5ce7";
     var hash="#"+(current+1);
     if(window.location.hash!==hash){history.replaceState(null,"",hash)}
     document.title="DevFit IR Deck - "+slides[current].getAttribute("data-title");
