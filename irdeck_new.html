@@ -393,7 +393,7 @@ img{display:block}
 .browser img{
   width:100%;
   height:calc(100% - 47px);
-  object-fit:contain;
+  object-fit:cover;
   object-position:top center;
   background:#fff;
 }
@@ -761,7 +761,7 @@ img{display:block}
 </section>
 
 <!-- 04 PROBLEM -->
-<section class="slide" data-title="문제제기" data-order="4">
+<section class="slide" data-title="문제제기" data-order="5">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -805,7 +805,7 @@ img{display:block}
 </section>
 
 <!-- 05 ASYMMETRY -->
-<section class="slide" data-title="정보 비대칭" data-order="5">
+<section class="slide" data-title="정보 비대칭" data-order="4">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline" style="padding-right:0">
@@ -1040,7 +1040,7 @@ img{display:block}
     </header>
     <div class="slide-content">
       <div style="display:grid;grid-template-columns:1.08fr .92fr;gap:40px;flex:1;min-height:0">
-        <div class="browser" style="height:100%"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2b_landing.png" alt="면접관용 콘솔"></div>
+        <div class="browser" style="height:100%"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2b_landing_hero.png" alt="면접관용 랜딩 페이지"></div>
         <div style="display:flex;flex-direction:column;justify-content:center;gap:16px">
           <div class="panel" style="padding:23px 27px;display:flex;align-items:center;gap:20px"><span class="num">1</span><div class="body-copy"><strong>채용 채널 개설</strong><br><span class="small-copy">공개 지원 링크 배포</span></div></div>
           <div class="panel" style="padding:23px 27px;display:flex;align-items:center;gap:20px"><span class="num">2</span><div class="body-copy"><strong>지원자 인증과 동의</strong><br><span class="small-copy">동의 2건, 이메일 인증 후 접수</span></div></div>
@@ -1279,40 +1279,41 @@ img{display:block}
 </section>
 
 <!-- 17 QUALITY -->
-<section class="slide" data-title="핵심 기술, 품질 측정" data-order="17">
+<section class="slide" data-title="핵심 기술, AI 파이프라인" data-order="17">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
-      <div class="eyebrow">핵심 기술 4, 품질 측정</div>
-      <h1 class="title">질문 품질을 주장하지 않고 <span class="purple">정량 측정</span>하도록, 측정 장치를 먼저 구축했습니다</h1>
+      <div class="eyebrow">핵심 기술 4, AI 파이프라인</div>
+      <h1 class="title">8단계 파이프라인 중 LLM은 <span class="purple">꼭 필요한 4곳에서만</span> 호출합니다</h1>
     </header>
     <div class="slide-content">
-      <div class="panel" style="flex:1;padding:34px 36px;display:flex;flex-direction:column;justify-content:space-evenly;min-height:0">
-        <div>
-          <div class="section-line" style="font-size:26px;margin-bottom:20px">측정 1, 질문 유용성과 판별도</div>
-          <div style="display:grid;grid-template-columns:1fr 60px 1fr 60px 1fr 60px 1fr;align-items:stretch">
-            <div class="flow-node" style="padding:30px 26px">질문 생성</div><div class="flow-arrow">→</div>
-            <div class="flow-node" style="padding:30px 26px">유용성 라벨<span class="sub">사용자 3단계 평가</span></div><div class="flow-arrow">→</div>
-            <div class="flow-node" style="padding:30px 26px">문항 판별도<span class="sub">point-biserial 상관</span></div><div class="flow-arrow">→</div>
-            <div class="flow-node accent" style="padding:30px 26px">생성 품질 개선</div>
-          </div>
+      <div class="panel" style="flex:1;padding:30px 36px;display:flex;flex-direction:column;justify-content:space-evenly;min-height:0">
+        <div style="display:flex;justify-content:flex-end;gap:10px;margin-bottom:18px">
+          <span class="badge" style="font-size:16px">LLM 호출</span>
+          <span class="badge neutral" style="font-size:16px">결정론적 처리, LLM 미사용</span>
+          <span class="badge" style="font-size:16px;background:var(--purple);color:#fff">최종 산출물</span>
         </div>
-        <div style="border-top:1px solid var(--line);padding-top:26px">
-          <div class="section-line" style="font-size:26px;margin-bottom:20px">측정 2, 예상 질문 적중률</div>
-          <div style="display:grid;grid-template-columns:1fr 60px 1fr 60px 1fr 60px 1fr;align-items:stretch">
-            <div class="flow-node" style="padding:30px 26px">면접 회고<span class="sub">실제 받은 질문 기록</span></div><div class="flow-arrow">→</div>
-            <div class="flow-node" style="padding:30px 26px">예상 질문 매칭<span class="sub">추천 후 사용자 확정</span></div><div class="flow-arrow">→</div>
-            <div class="flow-node accent" style="padding:30px 26px">예상 질문 적중률</div><div></div><div></div>
-          </div>
+        <div style="display:grid;grid-template-columns:1fr 46px 1fr 46px 1fr 46px 1fr;align-items:stretch">
+          <div class="flow-node" style="padding:24px 22px"><span style="display:block;font-size:14px;color:var(--muted);font-weight:800;letter-spacing:.12em;margin-bottom:5px">01</span>채용공고 입력<span class="sub">URL, 이미지, PDF, 텍스트</span></div><div class="flow-arrow">→</div>
+          <div class="flow-node accent" style="padding:24px 22px"><span style="display:block;font-size:14px;color:var(--purple-deep);font-weight:800;letter-spacing:.12em;margin-bottom:5px">02 LLM</span>공고 구조화<span class="sub">이미지 공고는 비전 OCR 복원</span></div><div class="flow-arrow">→</div>
+          <div class="flow-node" style="padding:24px 22px"><span style="display:block;font-size:14px;color:var(--muted);font-weight:800;letter-spacing:.12em;margin-bottom:5px">03</span>저장소 인덱싱<span class="sub">본인 커밋과 PR 수집</span></div><div class="flow-arrow">→</div>
+          <div class="flow-node" style="padding:24px 22px"><span style="display:block;font-size:14px;color:var(--muted);font-weight:800;letter-spacing:.12em;margin-bottom:5px">04</span>커밋 선별<span class="sub">잡음 제거, 점수 계산</span></div>
+        </div>
+        <div style="height:52px;display:flex;justify-content:flex-end;align-items:center;padding-right:118px;color:var(--purple);font-size:38px;font-weight:900">↓</div>
+        <div style="display:grid;grid-template-columns:1fr 46px 1fr 46px 1fr 46px 1fr;align-items:stretch">
+          <div class="flow-node" style="padding:24px 22px;background:var(--purple);border-color:var(--purple);color:#fff"><span style="display:block;font-size:14px;color:#d9d3ff;font-weight:800;letter-spacing:.12em;margin-bottom:5px">08</span>산출물<span class="sub" style="color:#d9d3ff">지원자용 준비 자료<br>면접관용 인터뷰 킷</span></div><div class="flow-arrow">←</div>
+          <div class="flow-node" style="padding:24px 22px"><span style="display:block;font-size:14px;color:var(--muted);font-weight:800;letter-spacing:.12em;margin-bottom:5px">07</span>부재 기반 질문<span class="sub">테스트, CI 부재 판정</span></div><div class="flow-arrow">←</div>
+          <div class="flow-node accent" style="padding:24px 22px"><span style="display:block;font-size:14px;color:var(--purple-deep);font-weight:800;letter-spacing:.12em;margin-bottom:5px">06 LLM</span>질문, 어필 생성<span class="sub">코드 근거 질문, 어필 포인트</span></div><div class="flow-arrow">←</div>
+          <div class="flow-node" style="padding:24px 22px"><span style="display:block;font-size:14px;color:var(--muted);font-weight:800;letter-spacing:.12em;margin-bottom:5px">05</span>근거 단위화<span class="sub">질문 가치 조각만 추출</span></div>
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:1.15fr .85fr;gap:26px;margin-top:26px">
-        <div class="panel green-soft flat" style="padding:28px 32px;display:flex;align-items:center;gap:24px"><span class="badge green" style="font-size:20px">구현 완료</span><div class="body-copy">최종평가에서 <strong>유용성 비율과 적중률</strong>을 숫자로 보고합니다.</div></div>
-        <div class="panel flat" style="padding:28px 32px"><div class="small-copy">질문 판별력을 자동 평가하는 연구 프레임워크의 실증 하네스로 활용합니다.</div></div>
+      <div style="display:grid;grid-template-columns:1.15fr .85fr;gap:26px;margin-top:24px">
+        <div class="panel flat soft" style="padding:26px 32px"><div class="body-copy">커밋 선별과 근거 단위화가 <strong style="color:var(--purple-deep)">LLM 앞단에서 입력을 줄여</strong>, 토큰 비용과 환각을 함께 낮춥니다.</div></div>
+        <div class="panel flat" style="padding:26px 32px;display:flex;align-items:center"><div class="small-copy">수천 개의 커밋을 그대로 넣지 않고 질문 가치가 높은 조각만 남깁니다. 프롬프트 압축과 증분 분석으로 비용을 추가로 절감합니다.</div></div>
       </div>
     </div>
     <div class="folio">12</div>
-    <div class="source">이 측정 장치가 뒤의 검증 계획에서 약속하는 지표의 근거</div>
+    <div class="source">LLM 호출 4곳: 공고 이미지 OCR, 공고 구조화, 질문 생성, 어필 포인트 생성. 미사용: 커밋 선별, 근거 단위화, 부재 기반 질문, 공고 일정 추출</div>
   </div>
 </section>
 
@@ -1464,39 +1465,47 @@ img{display:block}
       <div class="eyebrow">기획심의 의견 반영</div>
       <h1 class="title">기획심의에서 받은 <span class="purple">세 가지 지적</span>을 제품 구조에 반영했습니다</h1>
     </header>
-    <div class="slide-content" style="margin-top:20px;gap:18px">
-      <div class="panel" style="display:grid;grid-template-columns:41% 1fr;overflow:hidden;flex:1">
-        <div style="padding:24px 32px;background:linear-gradient(135deg,#efedf6,#e8e4f4);display:flex;gap:20px;align-items:center;border-right:1px solid var(--line)">
-          <span class="num" style="flex:none">1</span>
-          <div><span class="badge red">기획심의 의견</span><div style="margin-top:11px;font-size:22px;font-weight:800;line-height:1.5;color:var(--ink)">"선점 사업자의 락인을 상쇄할 진입 전략이 필요하며, 기관 단위 채택이 전제되는 구조를 고려해야 한다"</div></div>
-        </div>
-        <div style="padding:20px 34px;display:flex;flex-direction:column;justify-content:center;gap:9px">
-          <div style="display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start"><span style="font-size:21px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)">선행 아이템 베베톡 중단: <strong style="color:var(--ink)">차별점이 기능 단위, 양면 동시 도입 필요, 학부모 도입 유인 부재</strong></div></div>
-          <div style="display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start"><span style="font-size:21px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)">단독 사용 가치, 설득 상대, 표준 사업자 유무를 새 선정 기준으로 삼아 <strong style="color:var(--purple-deep)">DevFit으로 전환</strong></div></div>
-          <div style="display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start"><span style="font-size:21px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)">기업 도입 여부와 무관하게 <strong style="color:var(--ink)">지원자 혼자 써도 즉각적이고 온전한 효용</strong>을 얻는 구조</div></div>
-        </div>
+    <div class="slide-content" style="margin-top:16px;gap:20px">
+      <div class="panel flat soft" style="padding:17px 28px;display:flex;align-items:center;gap:20px">
+        <span class="badge" style="flex:none;font-size:17px;padding:8px 15px">선행 아이템 베베톡</span>
+        <div class="small-copy" style="font-size:19px;flex:1;color:var(--body)">어린이집 교사 사생활 보호 메신저로 현장 인터뷰까지 진행했지만, 기능 단위 차별점과 교사, 학부모 동시 도입의 한계를 확인하고 중단했습니다.<br>이 경험이 세 가지 지적과 함께 DevFit의 설계 기준이 되었습니다.</div>
+        <span style="color:var(--purple);font-size:26px;font-weight:900;flex:none">→</span>
+        <span class="badge" style="flex:none;font-size:17px;padding:8px 15px">DevFit 피벗</span>
       </div>
-      <div class="panel" style="display:grid;grid-template-columns:41% 1fr;overflow:hidden;flex:1">
-        <div style="padding:24px 32px;background:linear-gradient(135deg,#efedf6,#e8e4f4);display:flex;gap:20px;align-items:center;border-right:1px solid var(--line)">
-          <span class="num" style="flex:none">2</span>
-          <div><span class="badge red">기획심의 의견</span><div style="margin-top:11px;font-size:22px;font-weight:800;line-height:1.5;color:var(--ink)">"민감 정보를 다루는 만큼 데이터 보관과 AI 활용 범위에 대한 보안 설계와 동의 안내가 초기부터 중요하다"</div></div>
-        </div>
-        <div style="padding:20px 34px;display:flex;flex-direction:column;justify-content:center;gap:9px">
-          <div style="display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start"><span style="font-size:21px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)"><strong style="color:var(--ink)">합격 판정, 지원자 순위, 작성자 판별을 제품 원칙으로 배제</strong>하고 최종 판단은 사람에게 남김</div></div>
-          <div style="display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start"><span style="font-size:21px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)">GitHub 토큰은 <strong style="color:var(--purple-deep)">암호화 저장, 인증 토큰은 해시만 보관</strong>해 즉시 폐기, 권한은 최소 범위</div></div>
-          <div style="display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start"><span style="font-size:21px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)">필수 동의 2건과 이메일 인증, Rate Limit 적용, <strong style="color:var(--ink)">이용약관과 개인정보처리방침 제정</strong></div></div>
-        </div>
-      </div>
-      <div class="panel" style="display:grid;grid-template-columns:41% 1fr;overflow:hidden;flex:1">
-        <div style="padding:24px 32px;background:linear-gradient(135deg,#efedf6,#e8e4f4);display:flex;gap:20px;align-items:center;border-right:1px solid var(--line)">
-          <span class="num" style="flex:none">3</span>
-          <div><span class="badge red">기획심의 의견</span><div style="margin-top:11px;font-size:22px;font-weight:800;line-height:1.5;color:var(--ink)">"불명확한 비즈니스 모델을 구체화하고, AI 판단이 개입하는 기능은 오차를 최소화해야 한다"</div></div>
-        </div>
-        <div style="padding:20px 34px;display:flex;flex-direction:column;justify-content:center;gap:9px">
-          <div style="display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start"><span style="font-size:21px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)"><strong style="color:var(--purple-deep)">분석 지원자 수 기준 종량 과금으로 전환</strong>하고 실측 원가를 기반으로 가격 설계</div></div>
-          <div style="display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start"><span style="font-size:21px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)">모든 산출물에 <strong style="color:var(--ink)">커밋 해시와 파일 경로 인용을 강제</strong>하고 근거 없는 결과는 즉시 폐기</div></div>
-          <div style="display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start"><span style="font-size:21px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)">면접관용은 결정론적 로직으로 동일 입력 동일 결과, <strong style="color:var(--ink)">유용성 라벨과 변별도 모듈 선제 구축</strong></div></div>
-        </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;flex:1;align-items:stretch">
+        <article class="panel" style="padding:30px 34px;display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:14px"><span class="num" style="background:var(--purple)">1</span><div style="font-size:25px;font-weight:900;letter-spacing:-.04em">진입 전략과 락인</div></div>
+          <div class="small-copy" style="margin-top:14px;font-size:18px;line-height:1.55;color:var(--muted);min-height:88px">「선점 사업자의 락인을 상쇄할 진입 전략이 필요하며, 기관 단위 채택이 전제되는 구조를 고려해야 한다」</div>
+          <div style="height:1px;background:var(--line);margin:14px 0 18px"></div>
+          <span class="badge" style="align-self:flex-start;margin-bottom:16px">반영 결과</span>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:space-evenly;gap:10px;padding-bottom:6px">
+            <div style="display:grid;grid-template-columns:28px 1fr;gap:9px;align-items:start"><span style="font-size:20px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)">베베톡 중단에서 얻은 <strong style="color:var(--ink)">단독 사용 가치, 설득 상대, 표준 사업자</strong> 기준 확립</div></div>
+            <div style="display:grid;grid-template-columns:28px 1fr;gap:9px;align-items:start"><span style="font-size:20px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)">본인 GitHub와 공고만으로 시작하는 <strong style="color:var(--purple-deep)">DevFit으로 전환</strong></div></div>
+            <div style="display:grid;grid-template-columns:28px 1fr;gap:9px;align-items:start"><span style="font-size:20px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)">기업 도입과 무관하게 <strong style="color:var(--ink)">혼자 써도 효용이 완결</strong>되는 구조</div></div>
+          </div>
+        </article>
+        <article class="panel" style="padding:30px 34px;display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:14px"><span class="num" style="background:var(--purple)">2</span><div style="font-size:25px;font-weight:900;letter-spacing:-.04em">보안 설계와 동의</div></div>
+          <div class="small-copy" style="margin-top:14px;font-size:18px;line-height:1.55;color:var(--muted);min-height:88px">「민감 정보를 다루는 만큼 데이터 보관과 AI 활용 범위에 대한 보안 설계와 동의 안내가 초기부터 중요하다」</div>
+          <div style="height:1px;background:var(--line);margin:14px 0 18px"></div>
+          <span class="badge" style="align-self:flex-start;margin-bottom:16px">반영 결과</span>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:space-evenly;gap:10px;padding-bottom:6px">
+            <div style="display:grid;grid-template-columns:28px 1fr;gap:9px;align-items:start"><span style="font-size:20px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)"><strong style="color:var(--ink)">합격 판정, 순위, 작성자 판별 배제</strong>, 최종 판단은 사람에게</div></div>
+            <div style="display:grid;grid-template-columns:28px 1fr;gap:9px;align-items:start"><span style="font-size:20px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)">토큰 <strong style="color:var(--purple-deep)">암호화 저장, 해시만 보관</strong>해 즉시 폐기, 최소 권한</div></div>
+            <div style="display:grid;grid-template-columns:28px 1fr;gap:9px;align-items:start"><span style="font-size:20px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)">동의 2건과 이메일 인증, Rate Limit, <strong style="color:var(--ink)">약관과 개인정보처리방침 제정</strong></div></div>
+          </div>
+        </article>
+        <article class="panel" style="padding:30px 34px;display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:14px"><span class="num" style="background:var(--purple)">3</span><div style="font-size:25px;font-weight:900;letter-spacing:-.04em">비즈니스 모델과 AI 오차</div></div>
+          <div class="small-copy" style="margin-top:14px;font-size:18px;line-height:1.55;color:var(--muted);min-height:88px">「불명확한 비즈니스 모델을 구체화하고, AI 판단이 개입하는 기능은 오차를 최소화해야 한다」</div>
+          <div style="height:1px;background:var(--line);margin:14px 0 18px"></div>
+          <span class="badge" style="align-self:flex-start;margin-bottom:16px">반영 결과</span>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:space-evenly;gap:10px;padding-bottom:6px">
+            <div style="display:grid;grid-template-columns:28px 1fr;gap:9px;align-items:start"><span style="font-size:20px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)"><strong style="color:var(--purple-deep)">분석 지원자 수 기준 종량 과금</strong>, 실측 원가 기반 가격 설계</div></div>
+            <div style="display:grid;grid-template-columns:28px 1fr;gap:9px;align-items:start"><span style="font-size:20px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)"><strong style="color:var(--ink)">커밋 해시와 파일 경로 인용 강제</strong>, 근거 없으면 즉시 폐기</div></div>
+            <div style="display:grid;grid-template-columns:28px 1fr;gap:9px;align-items:start"><span style="font-size:20px;font-weight:900;color:var(--purple)">✓</span><div class="small-copy" style="font-size:19.5px;color:var(--body)">결정론적 로직으로 동일 입력 동일 결과, <strong style="color:var(--ink)">변별도 모듈 선제 구축</strong></div></div>
+          </div>
+        </article>
       </div>
     </div>
     <div class="folio">19</div>
