@@ -676,6 +676,72 @@ img{display:block}
   transform:translateY(-50%);
 }
 
+/* interview capture cards */
+.chat-head{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex:none;
+  padding:15px 24px;
+  border-bottom:1px solid var(--line);
+  background:var(--surface);
+}
+.chat{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-evenly;
+  gap:11px;
+  padding:20px 24px;
+  background:#eeecf1;
+}
+.bubble{
+  max-width:88%;
+  padding:14px 19px;
+  border-radius:17px;
+  line-height:1.55;
+  letter-spacing:-.022em;
+  word-break:keep-all;
+}
+.bubble.ask{
+  align-self:flex-start;
+  border-top-left-radius:5px;
+  border:1px solid var(--line);
+  background:#fff;
+  color:var(--muted);
+  font-size:17.5px;
+}
+.bubble.say{
+  align-self:flex-end;
+  border-top-right-radius:5px;
+  border:1px solid #d9d3ff;
+  background:var(--purple-soft);
+  color:var(--ink-2);
+  font-size:19.5px;
+  font-weight:700;
+}
+.bubble.say b{color:var(--purple-deep)}
+.bubble.say.warn{background:var(--red-soft);border-color:#ffd1d8;color:#7c1226}
+.bubble.say.warn b{color:var(--red)}
+.chat-note{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  flex:none;
+  padding:15px 24px;
+  border-top:1px solid var(--line);
+  background:var(--surface);
+  color:var(--ink);
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:-.028em;
+}
+.chat-note::before{
+  content:"\2192";
+  flex:none;
+  color:var(--purple);
+  font-weight:900;
+}
+
 /* responsive and print */
 #progress{
   position:fixed;
@@ -858,6 +924,125 @@ img{display:block}
     </div>
     <div class="folio">03</div>
     <div class="source">자료: 사람인, 점핏 2025 상반기 개발자 채용 리포트, NC State University ESEC/FSE 2020, LinkedIn Economic Graph, 미국 노동부</div>
+  </div>
+</section>
+
+<!-- 05.5 CUSTOMER DISCOVERY -->
+<section class="slide" data-title="고객 검증, 사용자 인터뷰" data-order="5.5">
+  <div class="slide-shell">
+    <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
+    <header class="topline">
+      <div class="eyebrow">고객 검증</div>
+      <h1 class="title">취업을 준비하는 개발자 2명을 <span class="purple">직접 인터뷰</span>했습니다</h1>
+    </header>
+    <div class="slide-content" style="margin-top:14px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;flex:1;min-height:0">
+
+        <div class="panel" style="padding:0;display:flex;flex-direction:column;min-height:0;overflow:hidden">
+          <div class="chat-head">
+            <span class="badge" style="flex:none">지원자 A</span>
+            <span class="small-copy" style="font-size:17px">20세, 프론트엔드 인턴 지원 경험</span>
+            <span class="small-copy" style="margin-left:auto;font-size:15px">1대1 인터뷰</span>
+          </div>
+          <div class="chat" style="flex:1;min-height:0">
+            <div class="bubble ask">공고와 GitHub를 함께 분석해 다시 볼 변경사항을 골라주는 서비스가 있었다면 쓰셨을까요?</div>
+            <div class="bubble say">시간을 제일 많이 쓴 게 코드를 읽는 것 자체가 아니라 <b>수백 개 커밋 중에 뭘 복기해야 할지를 정하는 단계</b>였습니다</div>
+            <div class="bubble ask">범용 AI로 준비하면서 아쉬웠던 점은요?</div>
+            <div class="bubble say">무엇을 했는지는 잘 정리해주지만 <b>왜 했는지는 모르니까 그럴듯하게 추측해서 채우는</b> 경향이 있습니다</div>
+            <div class="bubble ask">얼마까지 결제할 의향이 있으신가요?</div>
+            <div class="bubble say">면접 1회 기준 <b>만원</b> 정도, 준비기간 동안이면 <b>2만원</b>까지는 결제할 의향이 있습니다</div>
+          </div>
+          <div class="chat-note">문제는 코드 읽기가 아니라 선별, 그리고 근거 없는 이유를 만들지 않는 것</div>
+        </div>
+
+        <div class="panel" style="padding:0;display:flex;flex-direction:column;min-height:0;overflow:hidden">
+          <div class="chat-head">
+            <span class="badge" style="flex:none">지원자 B</span>
+            <span class="small-copy" style="font-size:17px">24세, 비전공 개발자</span>
+            <span class="small-copy" style="margin-left:auto;font-size:15px">1대1 인터뷰</span>
+          </div>
+          <div class="chat" style="flex:1;min-height:0">
+            <div class="bubble ask">포트폴리오와 채용공고를 함께 분석해주면 어떤 결과가 도움이 될까요?</div>
+            <div class="bubble say">그 회사의 <b>면접 리뷰</b>가 중요한 거 같아요 채용공고만 분석한다고 해서 막상 내가 준비한 예상 질문과 너무나 차이가 날 수 있기 때문에</div>
+            <div class="bubble say warn">지금까지 말씀하신것만 들으면 서비스라기 보다 <b>이미 내가 쓰고 있는 ai로 다 준비하는 부분</b>입니다</div>
+            <div class="bubble ask">지금 쓰시는 AI로 준비하면서 아쉬웠던 점은요?</div>
+            <div class="bubble say">개발자들이면 이미 ai는 다 쓰는거고 저 역시도 한달에 90만원정도 쓰는 거 같아요 이런 서비스를 기본으로 가져가면서 <b>실제 검증이 된 정보들</b>을 주면 어떨까 합니다</div>
+          </div>
+          <div class="chat-note">질문 생성은 이미 대체 가능, 혼자 얻을 수 없는 검증된 정보가 남는 차별점</div>
+        </div>
+
+      </div>
+      <div class="callout" style="margin-top:22px">인터뷰의 결론은 하나입니다. <strong>무엇을 다시 볼지 고르는 일</strong>과 <strong>혼자서는 얻을 수 없는 정보</strong>에만 값이 매겨집니다</div>
+    </div>
+    <div class="folio">06</div>
+    <div class="source">취업 준비 경험이 있는 개발자 2명 대상 1대1 텍스트 인터뷰. 답변은 원문 그대로이며 질문은 지면상 요약. 개인 식별 정보는 비공개 처리. 표본 2인의 정성 신호이므로 8~9월 추가 인터뷰로 반복 검증</div>
+  </div>
+</section>
+
+<!-- 05.6 HYPOTHESIS VERDICT -->
+<section class="slide" data-title="가설 검증 결과" data-order="5.6">
+  <div class="slide-shell">
+    <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
+    <header class="topline">
+      <div class="eyebrow">고객 검증, 가설 판정</div>
+      <h1 class="title">가설 4건을 확인하고, <span class="purple">반증 1건</span>이 제품 원칙을 바꿨습니다</h1>
+    </header>
+    <div class="slide-content" style="margin-top:14px">
+      <div style="display:grid;grid-template-columns:1.12fr .88fr;gap:32px;flex:1;min-height:0">
+
+        <div class="panel" style="padding:0;display:flex;flex-direction:column;min-height:0;overflow:hidden">
+          <div style="display:grid;grid-template-columns:118px 1fr 1fr;gap:20px;padding:15px 30px;background:#f1eff3;color:var(--muted);font-size:17.5px;font-weight:900">
+            <div>판정</div><div>인터뷰 전 가설</div><div>제품 반영</div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;min-height:0">
+            <div style="flex:1;display:grid;grid-template-columns:118px 1fr 1fr;gap:20px;padding:12px 30px;align-items:center;border-top:1px solid var(--line)">
+              <div><span class="badge green">입증</span></div>
+              <div class="body-copy" style="font-size:20px;line-height:1.45">공고 기준으로 <strong style="color:var(--ink)">다시 볼 커밋을 골라주는 것</strong>이 핵심 가치다</div>
+              <div class="small-copy" style="font-size:19px;color:var(--body)">결정론적 선별 계층 <span class="badge green" style="font-size:14px;padding:5px 10px">완료</span></div>
+            </div>
+            <div style="flex:1;display:grid;grid-template-columns:118px 1fr 1fr;gap:20px;padding:12px 30px;align-items:center;border-top:1px solid var(--line)">
+              <div><span class="badge green">입증</span></div>
+              <div class="body-copy" style="font-size:20px;line-height:1.45">질문에는 <strong style="color:var(--ink)">코드 근거</strong>가 붙어야 한다</div>
+              <div class="small-copy" style="font-size:19px;color:var(--body)">커밋 해시와 파일 경로 인용 강제 <span class="badge green" style="font-size:14px;padding:5px 10px">완료</span></div>
+            </div>
+            <div style="flex:1;display:grid;grid-template-columns:118px 1fr 1fr;gap:20px;padding:12px 30px;align-items:center;border-top:1px solid var(--line)">
+              <div><span class="badge green">입증</span></div>
+              <div class="body-copy" style="font-size:20px;line-height:1.45">GitHub 연결은 <strong style="color:var(--ink)">최소 권한</strong>이어야 채택된다</div>
+              <div class="small-copy" style="font-size:19px;color:var(--body)">저장소 선택 연결, 토큰 암호화 <span class="badge green" style="font-size:14px;padding:5px 10px">완료</span></div>
+            </div>
+            <div style="flex:1;display:grid;grid-template-columns:118px 1fr 1fr;gap:20px;padding:12px 30px;align-items:center;border-top:1px solid var(--line)">
+              <div><span class="badge green">입증</span></div>
+              <div class="body-copy" style="font-size:20px;line-height:1.45">지불 의향은 있으나 <strong style="color:var(--ink)">정액 구독은 맞지 않다</strong></div>
+              <div class="small-copy" style="font-size:19px;color:var(--body)">종량 과금 유지, 유료화는 기간권으로 검증</div>
+            </div>
+            <div style="flex:1;display:grid;grid-template-columns:118px 1fr 1fr;gap:20px;padding:12px 30px;align-items:center;border-top:1px solid var(--line);background:#fff7f8">
+              <div><span class="badge red">반증</span></div>
+              <div class="body-copy" style="font-size:20px;line-height:1.45"><strong style="color:var(--ink)">AI 질문 생성 자체</strong>가 독립 제품의 가치다</div>
+              <div class="small-copy" style="font-size:19px;color:var(--red)">제품 포지션을 이동, 오른쪽 참조</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel soft" style="padding:28px 34px;display:flex;flex-direction:column;border:2px solid var(--purple);min-height:0">
+          <div class="section-line" style="font-size:27px;margin-bottom:14px"><span class="num" style="background:var(--purple)">!</span>반증 1건이 바꾼 것</div>
+          <div class="panel flat" style="padding:18px 24px;background:#f1eff3;border:1px solid var(--line)">
+            <div class="small-copy" style="font-size:16px;font-weight:900;color:var(--muted);margin-bottom:7px">인터뷰 전</div>
+            <div style="font-size:23px;font-weight:900;letter-spacing:-.035em;color:var(--muted)">GitHub + 공고 → AI 예상 질문 생성</div>
+            <div class="small-copy" style="font-size:17.5px;margin-top:7px">이미 쓰는 범용 AI로 대체 가능하다는 지적</div>
+          </div>
+          <div class="flow-arrow" style="height:46px">↓</div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:space-evenly;gap:11px;min-height:0">
+            <div style="display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center"><span class="num" style="background:var(--purple);font-size:20px">1</span><div><div style="font-size:22px;font-weight:900;letter-spacing:-.035em">선별</div><div class="small-copy" style="font-size:18px;color:var(--body)">공고 기준으로 다시 볼 커밋을 고른다</div></div></div>
+            <div style="display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center"><span class="num" style="background:var(--purple);font-size:20px">2</span><div><div style="font-size:22px;font-weight:900;letter-spacing:-.035em">근거</div><div class="small-copy" style="font-size:18px;color:var(--body)">모든 문장이 커밋과 diff로 되돌아간다</div></div></div>
+            <div style="display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center"><span class="num" style="background:var(--purple);font-size:20px">3</span><div><div style="font-size:22px;font-weight:900;letter-spacing:-.035em">축적</div><div class="small-copy" style="font-size:18px;color:var(--body)">한 번 채운 기록이 다음 지원에 재사용된다</div></div></div>
+          </div>
+          <div class="panel flat" style="padding:15px 22px;background:#fff;border:1px solid #ddd7ff"><div class="small-copy" style="font-size:18px;color:var(--body)">실제 면접 질문과 후기 등 <strong style="color:var(--purple-deep)">검증된 채용 데이터 확보</strong>는 로드맵에 추가했습니다</div></div>
+        </div>
+
+      </div>
+    </div>
+    <div class="folio">07</div>
+    <div class="source">가설 5건은 인터뷰 이전에 정의한 항목. 표본 2인의 정성 신호이므로 8~9월 사용자 유입 이후 사용 로그와 추가 인터뷰로 반복 검증</div>
   </div>
 </section>
 
@@ -1151,7 +1336,7 @@ img{display:block}
       <h1 class="title"><span class="purple">공고 1건과 본인 커밋의 교차 분석</span>, 그리고 근거 추적으로 차별화합니다</h1>
     </header>
     <div class="slide-content" style="margin-top:20px;justify-content:center">
-      <table class="matrix" style="margin-top:34px">
+      <table class="matrix" style="margin-top:24px">
         <thead><tr><th style="width:220px"></th><th>DevFit</th><th>범용 LLM<br><span style="font-weight:400;font-size:16px">ChatGPT, Claude</span></th><th>사람인<br><span style="font-weight:400;font-size:16px">AI 모의면접</span></th><th>CodeSubmit<br><span style="font-weight:400;font-size:16px">해외</span></th><th>GitHub 스캔형<br><span style="font-weight:400;font-size:16px">Evalo, Greenroom</span></th></tr></thead>
         <tbody>
           <tr><td>본인 커밋과 diff 분석</td><td><span class="yes">✓</span></td><td><span class="part">△</span></td><td><span class="no">−</span></td><td><span class="no">−</span></td><td><span class="yes">✓</span></td></tr>
@@ -1162,7 +1347,7 @@ img{display:block}
         </tbody>
       </table>
       <div style="display:grid;grid-template-columns:1.22fr .78fr;gap:26px;margin-top:24px">
-        <div class="panel flat soft" style="padding:25px 30px"><div class="body-copy">국내 18건, 해외 18건을 전수 조사한 결과 <strong style="color:var(--purple-deep)">지원자 본인 커밋을 근거로 면접 질문을 만드는 국내 상용 서비스는 확인되지 않았습니다.</strong> 가장 흔한 대안은 서비스가 아니라 범용 LLM에 직접 붙여넣기입니다.</div></div>
+        <div class="panel flat soft" style="padding:22px 30px"><div class="body-copy" style="font-size:22px">국내 18건, 해외 18건을 전수 조사한 결과 <strong style="color:var(--purple-deep)">지원자 본인 커밋을 근거로 면접 질문을 만드는 국내 상용 서비스는 확인되지 않았습니다.</strong> 가장 흔한 대안은 서비스가 아니라 범용 LLM에 직접 붙여넣기입니다.</div><div class="small-copy" style="font-size:18.5px;color:var(--body);border-top:1px solid #cec6f5;margin-top:13px;padding-top:13px">인터뷰 2건 모두 실제로 범용 LLM에 공고와 코드베이스를 붙여넣어 준비했고, <strong style="color:var(--ink)">근거 없는 추측</strong>과 <strong style="color:var(--ink)">일반적인 질문으로의 수렴</strong>을 한계로 지적했습니다.</div></div>
         <div class="panel flat" style="padding:25px 30px;display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="badge">공고 1건 맞춤</span><span class="badge">근거 추적</span><span class="badge">B2C, B2B 공유 엔진</span></div>
       </div>
     </div>
@@ -1528,7 +1713,7 @@ img{display:block}
           <div style="display:grid;grid-template-columns:1fr 64px 1fr;align-items:center;margin:28px 0">
             <div class="flow-node">공고 등록<span class="sub">하루 10회 무료</span></div><div class="flow-arrow">→</div><div class="flow-node">준비와 연습<span class="sub">질문, 모의면접, 지원 일정</span></div>
           </div>
-          <div class="panel flat" style="padding:27px 30px;margin-top:auto"><div class="body-copy"><strong style="color:var(--purple-deep)">유용성 라벨과 적중률 데이터</strong>가 쌓여 질문 품질 개선의 근거가 됩니다.</div></div>
+          <div class="panel flat" style="padding:24px 30px;margin-top:auto"><div class="body-copy"><strong style="color:var(--purple-deep)">유용성 라벨과 적중률 데이터</strong>가 쌓여 질문 품질 개선의 근거가 됩니다.</div><div class="small-copy" style="font-size:18px;color:var(--body);border-top:1px solid var(--line);margin-top:13px;padding-top:13px">인터뷰 기준 지불 의향은 <strong style="color:var(--ink)">면접 1회 1만원, 준비기간 이용권 2만원</strong>. 유료화는 기간권 형태로 검증합니다.</div></div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center">
           <img src="deck_assets/icon.svg" alt="" style="width:100px;height:100px;border-radius:23px;box-shadow:var(--shadow)">
@@ -1540,7 +1725,7 @@ img{display:block}
           <div style="display:grid;grid-template-columns:1fr 64px 1fr;align-items:center;margin:28px 0">
             <div class="flow-node">채널 개설<span class="sub">공개 링크, 자동 분석</span></div><div class="flow-arrow">→</div><div class="flow-node accent">인터뷰 킷<span class="sub">근거와 질문 흐름</span></div>
           </div>
-          <div class="panel flat" style="padding:27px 30px;margin-top:auto;background:#f1eff3"><div class="body-copy">채용은 시즌성이 커서 정액 구독보다 <strong>사용한 만큼 내는 종량 과금</strong>이 적합합니다.</div></div>
+          <div class="panel flat" style="padding:24px 30px;margin-top:auto;background:#f1eff3"><div class="body-copy">채용은 시즌성이 커서 정액 구독보다 <strong>사용한 만큼 내는 종량 과금</strong>이 적합합니다.</div><div class="small-copy" style="font-size:18px;color:var(--body);border-top:1px solid var(--line-2);margin-top:13px;padding-top:13px">인터뷰에서도 <strong style="color:var(--ink)">면접 시즌에만 쓰는 도구라 월 구독은 부담</strong>이라는 같은 반응을 확인했습니다.</div></div>
         </div>
       </div>
       <div class="panel" style="margin-top:26px;padding:22px 30px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center">
@@ -1699,6 +1884,83 @@ img{display:block}
   </div>
 </section>
 
+<!-- 20.5 MARKETING STRATEGY -->
+<section class="slide" data-title="마케팅 전략" data-order="20.5">
+  <div class="slide-shell">
+    <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
+    <header class="topline">
+      <div class="eyebrow">앞으로 계획, 마케팅 전략</div>
+      <h1 class="title" style="font-size:48px">검색 유입과 광고로 지원자를, <span class="purple">콜드메일과 기업 인터뷰</span>로 기업을 모읍니다</h1>
+    </header>
+    <div class="slide-content" style="margin-top:12px">
+
+      <div style="display:grid;grid-template-columns:1.08fr .94fr 1.02fr;gap:26px;flex:1;min-height:0">
+
+        <div class="panel soft" style="padding:26px 30px;display:flex;flex-direction:column;min-height:0;border:2px solid var(--purple)">
+          <div style="display:flex;align-items:center;gap:12px"><span class="badge" style="flex:none">1 SEO, 오가닉 검색</span><span class="small-copy" style="font-size:16px">광고비 없이 누적</span></div>
+          <div style="margin-top:14px;font-size:27px;font-weight:900;letter-spacing:-.04em">CS 지식백과로 검색 결과 선점</div>
+          <div class="small-copy" style="margin-top:10px;font-size:18.5px;color:var(--body)">기술면접에 반복해 나오는 CS 개념을 페이지 단위로 축적해 검색 유입을 만듭니다. 아정당이 정보성 콘텐츠로 검색 상단을 확보한 방식과 같은 접근입니다.</div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:6px;margin-top:16px;min-height:0">
+            <div style="background:#fff;border:1px solid #d9d3ff;border-radius:12px;padding:12px 18px;font-size:19px;font-weight:800">개발자가 CS 개념을 검색</div>
+            <div style="color:var(--purple);font-size:19px;font-weight:900;line-height:1;text-align:center">↓</div>
+            <div style="background:#fff;border:1px solid #d9d3ff;border-radius:12px;padding:12px 18px;font-size:19px;font-weight:800">DevFit 지식백과 페이지 유입</div>
+            <div style="color:var(--purple);font-size:19px;font-weight:900;line-height:1;text-align:center">↓</div>
+            <div style="background:#fff;border:1px solid #d9d3ff;border-radius:12px;padding:12px 18px;font-size:19px;font-weight:800">내 커밋으로 확인하기 유도</div>
+            <div style="color:var(--purple);font-size:19px;font-weight:900;line-height:1;text-align:center">↓</div>
+            <div style="background:var(--purple);border-radius:12px;padding:12px 18px;font-size:19px;font-weight:800;color:#fff">가입과 공고 분석</div>
+          </div>
+          <div class="small-copy" style="font-size:17.5px;color:var(--body);border-top:1px solid #cec6f5;margin-top:16px;padding-top:13px">지식백과 항목이 곧 <strong style="color:var(--purple-deep)">예상 질문의 주제</strong>라 콘텐츠와 제품이 같은 자산을 씁니다</div>
+        </div>
+
+        <div class="panel" style="padding:26px 30px;display:flex;flex-direction:column;min-height:0">
+          <div style="display:flex;align-items:center;gap:12px"><span class="badge" style="flex:none">2 검색 광고</span><span class="small-copy" style="font-size:16px">즉시 유입</span></div>
+          <div style="margin-top:14px;font-size:27px;font-weight:900;letter-spacing:-.04em">구글 Ads 키워드 광고</div>
+          <div class="small-copy" style="margin-top:10px;font-size:18.5px;color:var(--body)">구매 의도가 높은 키워드에 검색 광고를 집행해 준비가 급한 지원자를 직접 확보합니다.</div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px;margin-top:16px;min-height:0">
+            <div>
+              <div class="small-copy" style="font-size:16px;font-weight:900;color:var(--purple-deep);margin-bottom:10px">집행 키워드</div>
+              <div style="display:flex;gap:9px;flex-wrap:wrap"><span class="badge neutral">기술면접 준비</span><span class="badge neutral">개발자 포트폴리오 면접</span><span class="badge neutral">GitHub 면접 질문</span><span class="badge neutral">신입 개발자 면접</span></div>
+            </div>
+            <div style="border-top:1px solid var(--line);padding-top:16px">
+              <div class="small-copy" style="font-size:16px;font-weight:900;color:var(--purple-deep);margin-bottom:8px">운영 원칙</div>
+              <div class="small-copy" style="font-size:18px;color:var(--body)">키워드별 전환 단가를 측정해 유효한 키워드만 남기고, SEO가 자리 잡는 구간까지의 유입을 광고로 메웁니다.</div>
+            </div>
+            <div style="border-top:1px solid var(--line);padding-top:16px">
+              <div class="small-copy" style="font-size:16px;font-weight:900;color:var(--purple-deep);margin-bottom:10px">측정 지표</div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <div style="display:grid;grid-template-columns:26px 1fr;gap:9px;align-items:start"><span style="font-size:18px;font-weight:900;color:var(--purple)">·</span><div class="small-copy" style="font-size:18px;color:var(--body)">키워드별 클릭당 비용과 가입 전환율</div></div>
+                <div style="display:grid;grid-template-columns:26px 1fr;gap:9px;align-items:start"><span style="font-size:18px;font-weight:900;color:var(--purple)">·</span><div class="small-copy" style="font-size:18px;color:var(--body)">가입 이후 공고 분석까지 도달한 비율</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel flat soft" style="padding:16px 20px;margin-top:16px"><div class="small-copy" style="font-size:17.5px;color:var(--body)">인터뷰에서 확인한 사용 시점인 <strong style="color:var(--purple-deep)">서류 합격 직후</strong>가 검색이 몰리는 시점과 일치합니다</div></div>
+        </div>
+
+        <div class="panel" style="padding:26px 30px;display:flex;flex-direction:column;min-height:0;background:#f7faff;border:2px solid #c7dcff">
+          <div style="display:flex;align-items:center;gap:12px"><span class="badge" style="flex:none;background:#e2efff;color:#005CE6">3 기업용 B2B</span><span class="small-copy" style="font-size:16px">직접 접점</span></div>
+          <div style="margin-top:14px;font-size:27px;font-weight:900;letter-spacing:-.04em">콜드메일과 기업 인터뷰</div>
+          <div class="small-copy" style="margin-top:10px;font-size:18.5px;color:var(--body)">콜드메일로 접점을 열고, 이어지는 기업 인터뷰를 요구사항 수집과 서비스 홍보에 함께 씁니다.</div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:5px;margin-top:16px;min-height:0">
+            <div style="background:#fff;border:1px solid #c7dcff;border-radius:12px;padding:11px 18px"><div style="font-size:19px;font-weight:800">대상 기업 선별</div><div class="small-copy" style="font-size:15.5px;margin-top:2px">공시 정보 기반</div></div>
+            <div style="color:#005CE6;font-size:19px;font-weight:900;line-height:1;text-align:center">↓</div>
+            <div style="background:#fff;border:1px solid #c7dcff;border-radius:12px;padding:11px 18px"><div style="font-size:19px;font-weight:800">콜드메일 발송</div><div class="small-copy" style="font-size:15.5px;margin-top:2px">개발 채용 담당 접점</div></div>
+            <div style="color:#005CE6;font-size:19px;font-weight:900;line-height:1;text-align:center">↓</div>
+            <div style="background:#e2efff;border:1px solid #a8c9f5;border-radius:12px;padding:11px 18px"><div style="font-size:19px;font-weight:800;color:#0047b8">기업 인터뷰</div><div class="small-copy" style="font-size:15.5px;margin-top:2px;color:#33639e">채용 기준과 페인포인트 확인</div></div>
+            <div style="color:#005CE6;font-size:19px;font-weight:900;line-height:1;text-align:center">↓</div>
+            <div style="background:#fff;border:1px solid #c7dcff;border-radius:12px;padding:11px 18px"><div style="font-size:19px;font-weight:800">서비스 홍보와 데모</div><div class="small-copy" style="font-size:15.5px;margin-top:2px">인터뷰 킷 실물 제시</div></div>
+            <div style="color:#005CE6;font-size:19px;font-weight:900;line-height:1;text-align:center">↓</div>
+            <div style="background:#005CE6;border-radius:12px;padding:11px 18px"><div style="font-size:19px;font-weight:800;color:#fff">파일럿 진행</div><div class="small-copy" style="font-size:15.5px;margin-top:2px;color:#cfe2ff">질문 채택률과 가격 검증</div></div>
+          </div>
+          <div class="small-copy" style="font-size:17.5px;color:var(--body);border-top:1px solid #c7dcff;margin-top:16px;padding-top:13px">지원자 인터뷰에서 제안받은 <strong style="color:#0047b8">기업 파트너십</strong> 경로와 같은 방향입니다</div>
+        </div>
+
+      </div>
+    </div>
+    <div class="folio">20</div>
+    <div class="source">채널별 유입과 전환 단가를 측정해 9월 이후 예산을 재배분. 메타 광고와 대학 굿즈 등 소셜, 현장 집행과 기업 파일럿의 상세 계획은 다음 두 장</div>
+  </div>
+</section>
+
 <!-- 21 ROADMAP B2C -->
 <section class="slide" data-title="앞으로 계획, 지원자용" data-order="21">
   <div class="slide-shell">
@@ -1753,7 +2015,7 @@ img{display:block}
         <div class="panel" style="padding:34px 38px;display:flex;flex-direction:column">
           <span class="badge" style="align-self:flex-start;margin-bottom:18px;font-size:19px;padding:10px 16px">2 콜드 메일</span>
           <div style="font-size:29px;font-weight:900;letter-spacing:-.035em;margin-bottom:12px">기업 콜드메일</div>
-          <div class="small-copy" style="font-size:20px;margin-bottom:24px">공시 정보로 대상 기업을 추려 콜드 메일로 접점을 만듭니다.</div>
+          <div class="small-copy" style="font-size:20px;margin-bottom:24px">공시 정보로 대상 기업을 추려 콜드 메일로 접점을 만들고, 회신 기업과 인터뷰를 진행하며 서비스를 함께 홍보합니다.</div>
           <img src="deck_assets/roadmap_b2b_cold_email.png" alt="기업 페르소나 선별과 콜드 메일 발송" style="width:100%;height:498px;flex:0 0 498px;margin-top:auto;border-radius:16px;object-fit:cover;display:block">
         </div>
         <div class="panel" style="padding:34px 38px;display:flex;flex-direction:column">
@@ -1939,7 +2201,7 @@ img{display:block}
       </div>
       <div class="panel" style="display:grid;grid-template-columns:150px 38% 1fr;overflow:hidden;flex:1;align-items:center">
         <div style="padding:22px 26px;background:#eeecef;height:100%;display:flex;align-items:center;font-size:23px;font-weight:900">상용화</div>
-        <div style="padding:22px 28px"><div class="body-copy" style="font-size:21px">범용 코딩 에이전트가 유사 기능을 기본 탑재하면 차별점이 상쇄된다. 지원자는 <strong>취업 성공 시 이탈하는 단발성 사용자</strong>다</div></div>
+        <div style="padding:22px 28px"><div class="body-copy" style="font-size:21px">범용 코딩 에이전트가 유사 기능을 기본 탑재하면 차별점이 상쇄된다. 지원자는 <strong>취업 성공 시 이탈하는 단발성 사용자</strong>다<br><span class="small-copy" style="font-size:17px">사용자 인터뷰에서 실제로 제기된 지적</span></div></div>
         <div style="padding:22px 30px;border-left:1px solid var(--line)"><div class="body-copy" style="font-size:21px"><strong style="color:var(--purple-deep)">→</strong> 단기 방어는 선별 계층의 원가·속도 우위와 공고 연결 워크플로. 중기는 질문 유용성 라벨을 축적해 어떤 질문이 유효한지 데이터로 확보하고 이를 기업용 근거로 전환. <strong>수익은 반복 사용이 발생하는 기업 측</strong>에서 확보</div></div>
       </div>
       <div class="panel" style="display:grid;grid-template-columns:150px 38% 1fr;overflow:hidden;flex:1;align-items:center">
