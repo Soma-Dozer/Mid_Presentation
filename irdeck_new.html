@@ -246,12 +246,7 @@ img{display:block}
   object-position:center;
 }
 .source{
-  min-height:22px;
-  margin-top:20px;
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.5;
-  text-align:right;
+  display:none;
 }
 .folio{
   position:absolute;
@@ -676,70 +671,545 @@ img{display:block}
   transform:translateY(-50%);
 }
 
-/* interview capture cards */
-.chat-head{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  flex:none;
-  padding:15px 24px;
-  border-bottom:1px solid var(--line);
-  background:var(--surface);
+/* interview conversation spread */
+.interview-slide{
+  background:var(--paper);
 }
-.chat{
+.interview-slide::after{display:none}
+.interview-slide .source{margin-bottom:18px}
+.interview-content{margin-top:6px!important}
+.interview-editorial{
+  flex:1;
+  min-height:0;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 1px minmax(0,1fr);
+  column-gap:42px;
+  padding:6px 4px 4px;
+}
+.interview-divider{background:#d9d5df}
+.interview-column{
+  min-width:0;
+  height:100%;
   display:flex;
   flex-direction:column;
-  justify-content:space-evenly;
-  gap:11px;
-  padding:20px 24px;
-  background:#eeecf1;
 }
-.bubble{
-  max-width:88%;
-  padding:14px 19px;
-  border-radius:17px;
-  line-height:1.55;
-  letter-spacing:-.022em;
-  word-break:keep-all;
-}
-.bubble.ask{
-  align-self:flex-start;
-  border-top-left-radius:5px;
-  border:1px solid var(--line);
-  background:#fff;
-  color:var(--muted);
-  font-size:17.5px;
-}
-.bubble.say{
-  align-self:flex-end;
-  border-top-right-radius:5px;
-  border:1px solid #d9d3ff;
-  background:var(--purple-soft);
-  color:var(--ink-2);
-  font-size:19.5px;
-  font-weight:700;
-}
-.bubble.say b{color:var(--purple-deep)}
-.bubble.say.warn{background:var(--red-soft);border-color:#ffd1d8;color:#7c1226}
-.bubble.say.warn b{color:var(--red)}
-.chat-note{
+.interview-profile{
+  position:relative;
+  min-height:76px;
   display:flex;
   align-items:center;
-  gap:11px;
-  flex:none;
-  padding:15px 24px;
-  border-top:1px solid var(--line);
-  background:var(--surface);
-  color:var(--ink);
-  font-size:20px;
-  font-weight:800;
-  letter-spacing:-.028em;
+  padding:0 0 16px 70px;
+  border-bottom:1px solid var(--line-2);
 }
-.chat-note::before{
-  content:"\2192";
-  flex:none;
-  color:var(--purple);
+.interview-profile::before{
+  content:"A";
+  position:absolute;
+  top:0;
+  left:0;
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--purple);
+  color:#fff;
+  font-size:22px;
   font-weight:900;
+  letter-spacing:-.03em;
+}
+.interview-person{
+  color:var(--ink);
+  font-size:27px;
+  font-weight:900;
+  line-height:1.15;
+  letter-spacing:-.035em;
+}
+.interview-meta{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-top:6px;
+  color:var(--muted);
+  font-size:16px;
+  font-weight:600;
+}
+.interview-meta span+span{
+  padding-left:14px;
+  border-left:1px solid var(--line-2);
+}
+.interview-transcript{
+  flex:1;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:18px;
+  padding:18px 4px 16px;
+}
+.interview-exchange{
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+}
+.interview-question{
+  position:relative;
+  align-self:flex-start;
+  max-width:88%;
+  margin:0 0 0 36px;
+  padding:11px 16px;
+  border-radius:5px 18px 18px 18px;
+  background:#e9e7ec;
+  color:#4f4a55;
+  font-size:16px;
+  font-weight:700;
+  line-height:1.4;
+  letter-spacing:-.018em;
+  word-break:keep-all;
+}
+.interview-question::before{
+  content:"Q";
+  position:absolute;
+  top:2px;
+  left:-36px;
+  width:26px;
+  height:26px;
+  display:grid;
+  place-items:center;
+  border:1px solid #c8c3ce;
+  border-radius:50%;
+  background:var(--paper);
+  color:var(--muted);
+  font-size:13px;
+  font-weight:900;
+}
+.interview-answer{
+  position:relative;
+  align-self:flex-end;
+  max-width:86%;
+  margin:0 36px 0 0;
+  padding:12px 17px;
+  border:1px solid #d8d2ff;
+  border-radius:18px 5px 18px 18px;
+  background:var(--purple-pale);
+  color:var(--ink);
+  font-size:19px;
+  font-weight:650;
+  line-height:1.42;
+  letter-spacing:-.026em;
+  word-break:keep-all;
+}
+.interview-answer::after{
+  content:"A";
+  position:absolute;
+  top:2px;
+  right:-36px;
+  width:26px;
+  height:26px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--purple);
+  color:#fff;
+  font-size:13px;
+  font-weight:900;
+}
+.interview-answer strong{
+  color:var(--purple-deep);
+  font-weight:900;
+}
+.interview-answer.counter-evidence{
+  margin-top:0;
+  border-color:#d8d2ff;
+  background:var(--purple-pale);
+  color:var(--ink);
+}
+.interview-answer.counter-evidence::after{display:none}
+.interview-answer.counter-evidence strong{color:var(--purple-deep)}
+.interview-note{
+  position:relative;
+  margin-top:auto;
+  min-height:72px;
+  padding:14px 0 0 36px;
+  border-top:2px solid var(--purple);
+  color:var(--body);
+  font-size:19.5px;
+  font-weight:800;
+  line-height:1.45;
+  letter-spacing:-.028em;
+  word-break:keep-all;
+}
+.interview-note::before{
+  content:"";
+  position:absolute;
+  margin:5px 0 0 -36px;
+  width:20px;
+  height:3px;
+  background:var(--purple);
+}
+.interview-column--counter .interview-profile::before{
+  content:"B";
+}
+.interview-column--counter .interview-transcript{
+  justify-content:center;
+  gap:20px;
+}
+
+/* GitHub introduction for a non-technical audience */
+.github-slide{
+  background:var(--paper);
+}
+.github-slide::after{display:none}
+.github-slide .source{margin-bottom:18px}
+.github-intro-content{
+  margin-top:14px!important;
+  padding-top:2px;
+}
+.github-evidence-layout{
+  flex:1;
+  min-height:0;
+  display:grid;
+  grid-template-columns:minmax(0,1.28fr) minmax(0,.72fr);
+  gap:48px;
+  align-items:stretch;
+}
+.github-copy-column{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  padding:8px 0 16px;
+}
+.github-lead{
+  max-width:100%;
+  margin:0;
+  color:var(--body);
+  font-size:27px;
+  font-weight:600;
+  line-height:1.55;
+  letter-spacing:-.027em;
+  word-break:keep-all;
+}
+.github-evidence-copy{
+  margin:34px 0 0;
+  padding-top:28px;
+  border-top:1px solid var(--line-2);
+  color:var(--body);
+  font-size:23px;
+  font-weight:600;
+  line-height:1.55;
+  letter-spacing:-.027em;
+  word-break:keep-all;
+}
+.github-capture{
+  min-width:0;
+  height:100%;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+}
+.github-capture-frame{
+  flex:1;
+  min-height:0;
+  overflow:hidden;
+  border:1px solid #343a43;
+  border-radius:10px;
+  background:#0d1117;
+}
+.github-capture-frame img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center center;
+}
+.github-capture figcaption{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:15px;
+  font-weight:600;
+  text-align:left;
+  letter-spacing:-.01em;
+}
+.github-history{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:34px;
+  margin-top:44px;
+  padding-bottom:34px;
+}
+.github-history::before{
+  content:"";
+  position:absolute;
+  top:34px;
+  left:9px;
+  right:9px;
+  height:2px;
+  background:#cbc7d1;
+}
+.github-step{
+  position:relative;
+  min-width:0;
+  padding-right:16px;
+}
+.github-step::before{
+  content:"";
+  position:relative;
+  z-index:1;
+  display:block;
+  width:18px;
+  height:18px;
+  margin:26px 0 26px;
+  border:5px solid var(--purple);
+  border-radius:50%;
+  background:var(--paper);
+}
+.github-step-title{
+  color:var(--ink);
+  font-size:25px;
+  font-weight:800;
+  line-height:1.3;
+  letter-spacing:-.035em;
+}
+.github-step-copy{
+  max-width:340px;
+  margin-top:10px;
+  color:var(--body);
+  font-size:20px;
+  font-weight:550;
+  line-height:1.48;
+  letter-spacing:-.023em;
+  word-break:keep-all;
+}
+.github-step-term{
+  margin-top:16px;
+  color:var(--muted);
+  font-family:var(--mono);
+  font-size:15px;
+  font-weight:650;
+  letter-spacing:.01em;
+}
+.github-overview-slide .github-lead{
+  max-width:100%;
+  font-size:30px;
+}
+.github-audience-line{
+  margin:22px 0 0;
+  color:var(--body);
+  font-size:23px;
+  font-weight:650;
+  line-height:1.45;
+  letter-spacing:-.025em;
+  word-break:keep-all;
+}
+.github-overview-slide .github-intro-content{
+  justify-content:center;
+  gap:90px;
+}
+.github-overview-slide .github-history{
+  margin-top:0;
+  padding-bottom:24px;
+}
+.github-intro-grid{
+  display:grid;
+  grid-template-columns:300px minmax(0,1fr);
+  gap:70px;
+  align-items:center;
+}
+.github-stats{
+  display:flex;
+  gap:70px;
+  margin-top:36px;
+  padding-top:28px;
+  border-top:1px solid var(--line-2);
+}
+.github-stat-num{
+  color:var(--ink);
+  font-size:46px;
+  font-weight:800;
+  letter-spacing:-.04em;
+}
+.github-stat-label{
+  margin-top:8px;
+  color:var(--muted);
+  font-size:19px;
+  font-weight:600;
+  letter-spacing:-.02em;
+}
+.github-mascot{
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:22px;
+  border:1px solid var(--line-2);
+  border-radius:16px;
+  background:#fff;
+}
+.github-mascot img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.github-mascot--dark{
+  background:#24292e;
+  border-color:#24292e;
+  padding:74px;
+}
+.github-link{
+  display:grid;
+  grid-template-columns:280px minmax(0,1fr);
+  gap:40px;
+  margin-top:70px;
+  padding-top:24px;
+  border-top:2px solid var(--ink);
+}
+.github-link-label{
+  padding-top:6px;
+  color:var(--muted);
+  font-size:18px;
+  font-weight:750;
+  letter-spacing:.035em;
+}
+.github-link-copy{
+  color:var(--ink);
+  font-size:29px;
+  font-weight:650;
+  line-height:1.45;
+  letter-spacing:-.033em;
+  word-break:keep-all;
+}
+.github-copy-column .github-link{
+  display:block;
+  margin-top:auto;
+  padding-top:22px;
+}
+.github-copy-column .github-link-label{
+  padding:0;
+}
+.github-copy-column .github-link-copy{
+  margin-top:12px;
+  font-size:25px;
+  line-height:1.48;
+}
+.github-record-slide .github-intro-content{
+  margin-top:10px!important;
+}
+.commit-record-layout{
+  flex:1;
+  min-height:0;
+  display:grid;
+  grid-template-columns:minmax(0,1.22fr) minmax(0,.78fr);
+  gap:38px;
+}
+.commit-record-browser{
+  height:100%;
+  min-height:0;
+  background:#0d1117;
+}
+.commit-record-browser img{
+  object-fit:contain;
+  object-position:center;
+  background:#0d1117;
+}
+.commit-record-copy{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:22px;
+}
+.commit-record-panel{
+  padding:30px 34px;
+  box-shadow:var(--shadow);
+}
+.commit-record-item{
+  padding:20px 0;
+}
+.commit-record-item:first-child{padding-top:0}
+.commit-record-item:last-child{padding-bottom:0}
+.commit-record-item+.commit-record-item{
+  border-top:1px solid var(--line);
+}
+.commit-record-item .section-line{
+  margin-bottom:8px;
+  font-size:27px;
+}
+.commit-record-item .num{
+  width:38px;
+  height:38px;
+  font-size:20px;
+  background:var(--purple);
+}
+.commit-record-item .body-copy{
+  margin:0;
+  font-size:22px;
+  line-height:1.5;
+}
+.commit-record-copy .callout{
+  padding:20px 24px;
+  font-size:23px;
+}
+
+/* video-first product demo slides */
+.demo-slide .topline{
+  min-height:0;
+}
+.demo-slide .slide-content{
+  margin-top:16px;
+  align-items:center;
+  justify-content:center;
+}
+.demo-video-frame{
+  position:relative;
+  width:1680px;
+  height:780px;
+  overflow:hidden;
+  border:1px solid #3b3841;
+  border-radius:18px;
+  background:#15141a;
+  box-shadow:0 28px 70px rgba(24,20,31,.18);
+}
+.demo-video-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  opacity:.68;
+}
+.demo-video-frame::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(14,12,18,.08),rgba(14,12,18,.52));
+}
+.demo-video-overlay{
+  position:absolute;
+  z-index:1;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  text-align:center;
+}
+.demo-play{
+  width:88px;
+  height:88px;
+  display:grid;
+  place-items:center;
+  padding-left:7px;
+  border:2px solid rgba(255,255,255,.72);
+  border-radius:50%;
+  background:rgba(15,13,20,.48);
+  font-size:38px;
+  line-height:1;
+  box-shadow:0 14px 32px rgba(0,0,0,.24);
+}
+.demo-video-name{
+  margin-top:22px;
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:-.035em;
 }
 
 /* responsive and print */
@@ -863,7 +1333,7 @@ img{display:block}
           </div>
         </div>
       </div>
-      <div class="callout" style="margin-top:26px">평가의 초점이 "코드를 짤 수 있는가"에서 <strong>"자기 코드를 이해하고 설명할 수 있는가"</strong>로 이동하고 있습니다</div>
+      <div class="callout" style="margin-top:26px">평가의 초점이 "코드를 짤 수 있는가"에서 <strong>"자기 코드를 이해하고 설명할 수 있는가"</strong>로 변화하고 있습니다</div>
     </div>
     <div class="folio">02</div>
     <div class="source">자료: GitHub Octoverse 2025, Stack Overflow Developer Survey 2025, SPRi 2024 SW산업 실태조사, ZDNet Korea, 헤럴드경제</div>
@@ -892,7 +1362,7 @@ img{display:block}
               <div class="body-copy" style="font-size:27px;line-height:1.5">면접관이 지켜보는 환경에서 문제 해결 점수는 <strong>절반</strong>으로 하락. 실력이 있어도 저평가됩니다</div>
             </div>
             <div style="display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;border-top:1px solid var(--line);padding-top:18px">
-              <div style="font-size:31px;font-weight:900;color:var(--purple-deep);line-height:1.2">반복<br>준비</div>
+              <div style="font-size:31px;font-weight:900;color:var(--purple-deep);line-height:1.2;white-space:nowrap">반복 준비</div>
               <div class="body-copy" style="font-size:27px;line-height:1.5">바이브코딩으로 늘어난 프로젝트의 구현 의도와 기여 근거를 공고마다 처음부터 다시 복기합니다</div>
             </div>
           </div>
@@ -906,7 +1376,7 @@ img{display:block}
           <div style="font-size:30px;font-weight:900;margin-bottom:24px">면접관, 기업</div>
           <div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:18px">
             <div style="display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center">
-              <div style="font-size:31px;font-weight:900;color:var(--purple-deep);line-height:1.2">본업과<br>병행</div>
+              <div style="font-size:31px;font-weight:900;color:var(--purple-deep);line-height:1.2;white-space:nowrap">본업과 병행</div>
               <div class="body-copy" style="font-size:27px;line-height:1.5">기술면접 대부분은 <strong>개발 실무자</strong>가 면접관으로 들어갑니다. 본업에 쫓겨 지원자 저장소를 읽지 못한 채 면접을 시작합니다</div>
             </div>
             <div style="display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;border-top:1px solid var(--line);padding-top:18px">
@@ -920,134 +1390,177 @@ img{display:block}
           </div>
         </div>
       </div>
-      <div class="callout" style="margin-top:26px">지원자는 실력을 <strong>증명할 수단</strong>이 없고, 면접관은 <strong>확인할 시간</strong>이 없습니다. DevFit은 이 검증 공백을 해결합니다</div>
+      <div class="callout" style="margin-top:26px">지원자는 개발 경험을 공고마다 <strong>다시 정리</strong>해야 하고, 면접관은 실제 기여를 <strong>확인할 시간</strong>이 부족합니다</div>
     </div>
     <div class="folio">03</div>
     <div class="source">자료: 사람인, 점핏 2025 상반기 개발자 채용 리포트, NC State University ESEC/FSE 2020, LinkedIn Economic Graph, 미국 노동부</div>
   </div>
 </section>
 
-<!-- 05.5 CUSTOMER DISCOVERY -->
-<section class="slide" data-title="고객 검증, 사용자 인터뷰" data-order="5.5">
+<!-- 05.6 CUSTOMER DISCOVERY -->
+<section class="slide interview-slide" data-title="고객 검증, 사용자 인터뷰" data-order="5.6">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
       <div class="eyebrow">고객 검증</div>
-      <h1 class="title">취업을 준비하는 개발자 2명을 <span class="purple">직접 인터뷰</span>했습니다</h1>
+      <h1 class="title">취업을 준비하는 개발자들을 <span class="purple">직접 인터뷰</span>했습니다</h1>
     </header>
-    <div class="slide-content" style="margin-top:14px">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;flex:1;min-height:0">
+    <div class="slide-content interview-content">
+      <div class="interview-editorial">
+        <article class="interview-column">
+          <header class="interview-profile">
+            <div>
+              <div class="interview-person">지원자 A</div>
+              <div class="interview-meta"><span>20세, 프론트엔드 인턴 지원 경험</span><span>1대1 인터뷰</span></div>
+            </div>
+          </header>
 
-        <div class="panel" style="padding:0;display:flex;flex-direction:column;min-height:0;overflow:hidden">
-          <div class="chat-head">
-            <span class="badge" style="flex:none">지원자 A</span>
-            <span class="small-copy" style="font-size:17px">20세, 프론트엔드 인턴 지원 경험</span>
-            <span class="small-copy" style="margin-left:auto;font-size:15px">1대1 인터뷰</span>
+          <div class="interview-transcript">
+            <div class="interview-exchange">
+              <p class="interview-question">공고와 GitHub를 함께 분석해 다시 볼 변경사항을 골라주는 서비스가 있었다면 쓰셨을까요?</p>
+              <p class="interview-answer">시간을 제일 많이 쓴 게 코드를 읽는 것 자체가 아니라 <strong>수백 개 커밋 중에 뭘 복기해야 할지를 정하는 단계</strong>였습니다</p>
+            </div>
+            <div class="interview-exchange">
+              <p class="interview-question">범용 AI로 준비하면서 아쉬웠던 점은요?</p>
+              <p class="interview-answer">무엇을 했는지는 잘 정리해주지만 <strong>왜 했는지는 모르니까 그럴듯하게 추측해서 채우는</strong> 경향이 있습니다</p>
+            </div>
+            <div class="interview-exchange">
+              <p class="interview-question">얼마까지 결제할 의향이 있으신가요?</p>
+              <p class="interview-answer">면접 1회 기준 <strong>만원</strong> 정도, 준비기간 동안이면 <strong>2만원</strong>까지는 결제할 의향이 있습니다</p>
+            </div>
           </div>
-          <div class="chat" style="flex:1;min-height:0">
-            <div class="bubble ask">공고와 GitHub를 함께 분석해 다시 볼 변경사항을 골라주는 서비스가 있었다면 쓰셨을까요?</div>
-            <div class="bubble say">시간을 제일 많이 쓴 게 코드를 읽는 것 자체가 아니라 <b>수백 개 커밋 중에 뭘 복기해야 할지를 정하는 단계</b>였습니다</div>
-            <div class="bubble ask">범용 AI로 준비하면서 아쉬웠던 점은요?</div>
-            <div class="bubble say">무엇을 했는지는 잘 정리해주지만 <b>왜 했는지는 모르니까 그럴듯하게 추측해서 채우는</b> 경향이 있습니다</div>
-            <div class="bubble ask">얼마까지 결제할 의향이 있으신가요?</div>
-            <div class="bubble say">면접 1회 기준 <b>만원</b> 정도, 준비기간 동안이면 <b>2만원</b>까지는 결제할 의향이 있습니다</div>
-          </div>
-          <div class="chat-note">문제는 코드 읽기가 아니라 선별, 그리고 근거 없는 이유를 만들지 않는 것</div>
-        </div>
 
-        <div class="panel" style="padding:0;display:flex;flex-direction:column;min-height:0;overflow:hidden">
-          <div class="chat-head">
-            <span class="badge" style="flex:none">지원자 B</span>
-            <span class="small-copy" style="font-size:17px">24세, 비전공 개발자</span>
-            <span class="small-copy" style="margin-left:auto;font-size:15px">1대1 인터뷰</span>
-          </div>
-          <div class="chat" style="flex:1;min-height:0">
-            <div class="bubble ask">포트폴리오와 채용공고를 함께 분석해주면 어떤 결과가 도움이 될까요?</div>
-            <div class="bubble say">그 회사의 <b>면접 리뷰</b>가 중요한 거 같아요 채용공고만 분석한다고 해서 막상 내가 준비한 예상 질문과 너무나 차이가 날 수 있기 때문에</div>
-            <div class="bubble say warn">지금까지 말씀하신것만 들으면 서비스라기 보다 <b>이미 내가 쓰고 있는 ai로 다 준비하는 부분</b>입니다</div>
-            <div class="bubble ask">지금 쓰시는 AI로 준비하면서 아쉬웠던 점은요?</div>
-            <div class="bubble say">개발자들이면 이미 ai는 다 쓰는거고 저 역시도 한달에 90만원정도 쓰는 거 같아요 이런 서비스를 기본으로 가져가면서 <b>실제 검증이 된 정보들</b>을 주면 어떨까 합니다</div>
-          </div>
-          <div class="chat-note">질문 생성은 이미 대체 가능, 혼자 얻을 수 없는 검증된 정보가 남는 차별점</div>
-        </div>
+          <div class="interview-note">문제는 코드 읽기가 아니라 선별, 그리고 근거 없는 이유를 만들지 않는 것</div>
+        </article>
 
+        <div class="interview-divider" aria-hidden="true"></div>
+
+        <article class="interview-column interview-column--counter">
+          <header class="interview-profile">
+            <div>
+              <div class="interview-person">지원자 B</div>
+              <div class="interview-meta"><span>24세, 비전공 개발자</span><span>1대1 인터뷰</span></div>
+            </div>
+          </header>
+
+          <div class="interview-transcript">
+            <div class="interview-exchange">
+              <p class="interview-question">포트폴리오와 채용공고를 함께 분석해주면 어떤 결과가 도움이 될까요?</p>
+              <p class="interview-answer">그 회사의 <strong>면접 리뷰</strong>가 중요한 거 같아요 채용공고만 분석한다고 해서 막상 내가 준비한 예상 질문과 너무나 차이가 날 수 있기 때문에</p>
+              <p class="interview-answer counter-evidence">지금까지 말씀하신것만 들으면 서비스라기 보다 <strong>이미 내가 쓰고 있는 ai로 다 준비하는 부분</strong>입니다</p>
+            </div>
+            <div class="interview-exchange">
+              <p class="interview-question">지금 쓰시는 AI로 준비하면서 아쉬웠던 점은요?</p>
+              <p class="interview-answer">개발자들이면 이미 ai는 다 쓰는거고 저 역시도 한달에 90만원정도 쓰는 거 같아요 이런 서비스를 기본으로 가져가면서 <strong>실제 검증이 된 정보들</strong>을 주면 어떨까 합니다</p>
+            </div>
+          </div>
+
+          <div class="interview-note">질문 생성은 이미 대체 가능, 혼자 얻을 수 없는 검증된 정보가 남는 차별점</div>
+        </article>
       </div>
-      <div class="callout" style="margin-top:22px">인터뷰의 결론은 하나입니다. <strong>무엇을 다시 볼지 고르는 일</strong>과 <strong>혼자서는 얻을 수 없는 정보</strong>에만 값이 매겨집니다</div>
     </div>
     <div class="folio">06</div>
     <div class="source">취업 준비 경험이 있는 개발자 2명 대상 1대1 텍스트 인터뷰. 답변은 원문 그대로이며 질문은 지면상 요약. 개인 식별 정보는 비공개 처리. 표본 2인의 정성 신호이므로 8~9월 추가 인터뷰로 반복 검증</div>
   </div>
 </section>
 
-<!-- 05.6 HYPOTHESIS VERDICT -->
-<section class="slide" data-title="가설 검증 결과" data-order="5.6">
+<!-- 05.1 WHY GITHUB -->
+<section class="slide github-slide github-overview-slide" data-title="GitHub 소개" data-order="5.1">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
-      <div class="eyebrow">고객 검증, 가설 판정</div>
-      <h1 class="title">가설 4건을 확인하고, <span class="purple">반증 1건</span>이 제품 원칙을 바꿨습니다</h1>
+      <div class="eyebrow">왜 GitHub인가</div>
+      <h1 class="title">GitHub에서 해답을 찾았습니다</h1>
     </header>
-    <div class="slide-content" style="margin-top:14px">
-      <div style="display:grid;grid-template-columns:1.12fr .88fr;gap:32px;flex:1;min-height:0">
-
-        <div class="panel" style="padding:0;display:flex;flex-direction:column;min-height:0;overflow:hidden">
-          <div style="display:grid;grid-template-columns:118px 1fr 1fr;gap:20px;padding:15px 30px;background:#f1eff3;color:var(--muted);font-size:17.5px;font-weight:900">
-            <div>판정</div><div>인터뷰 전 가설</div><div>제품 반영</div>
-          </div>
-          <div style="flex:1;display:flex;flex-direction:column;min-height:0">
-            <div style="flex:1;display:grid;grid-template-columns:118px 1fr 1fr;gap:20px;padding:12px 30px;align-items:center;border-top:1px solid var(--line)">
-              <div><span class="badge green">입증</span></div>
-              <div class="body-copy" style="font-size:20px;line-height:1.45">공고 기준으로 <strong style="color:var(--ink)">다시 볼 커밋을 골라주는 것</strong>이 핵심 가치다</div>
-              <div class="small-copy" style="font-size:19px;color:var(--body)">결정론적 선별 계층 <span class="badge green" style="font-size:14px;padding:5px 10px">완료</span></div>
+    <div class="slide-content github-intro-content">
+      <div class="github-intro-grid">
+        <figure class="github-mascot github-mascot--dark">
+          <img src="deck_assets/github_mark_dark.svg" alt="GitHub 로고">
+        </figure>
+        <div class="github-intro-copy">
+          <p class="github-lead">GitHub는 계획 작업부터 소프트웨어 배포 및 운영에 이르기까지 전체 소프트웨어 개발 프로세스를 지원하는 플랫폼입니다. 코드가 바뀔 때마다 누가, 언제, 왜 바꿨는지가 저장소에 남습니다.</p>
+          <p class="github-audience-line">개인 프로젝트부터 팀 협업, 기업의 제품 개발까지 GitHub에서 같은 방식으로 기록을 남깁니다.</p>
+          <div class="github-stats">
+            <div class="github-stat">
+              <div class="github-stat-num">1억 8천만 명</div>
+              <div class="github-stat-label">전 세계 GitHub 개발자</div>
             </div>
-            <div style="flex:1;display:grid;grid-template-columns:118px 1fr 1fr;gap:20px;padding:12px 30px;align-items:center;border-top:1px solid var(--line)">
-              <div><span class="badge green">입증</span></div>
-              <div class="body-copy" style="font-size:20px;line-height:1.45">질문에는 <strong style="color:var(--ink)">코드 근거</strong>가 붙어야 한다</div>
-              <div class="small-copy" style="font-size:19px;color:var(--body)">커밋 해시와 파일 경로 인용 강제 <span class="badge green" style="font-size:14px;padding:5px 10px">완료</span></div>
-            </div>
-            <div style="flex:1;display:grid;grid-template-columns:118px 1fr 1fr;gap:20px;padding:12px 30px;align-items:center;border-top:1px solid var(--line)">
-              <div><span class="badge green">입증</span></div>
-              <div class="body-copy" style="font-size:20px;line-height:1.45">GitHub 연결은 <strong style="color:var(--ink)">최소 권한</strong>이어야 채택된다</div>
-              <div class="small-copy" style="font-size:19px;color:var(--body)">저장소 선택 연결, 토큰 암호화 <span class="badge green" style="font-size:14px;padding:5px 10px">완료</span></div>
-            </div>
-            <div style="flex:1;display:grid;grid-template-columns:118px 1fr 1fr;gap:20px;padding:12px 30px;align-items:center;border-top:1px solid var(--line)">
-              <div><span class="badge green">입증</span></div>
-              <div class="body-copy" style="font-size:20px;line-height:1.45">지불 의향은 있으나 <strong style="color:var(--ink)">정액 구독은 맞지 않다</strong></div>
-              <div class="small-copy" style="font-size:19px;color:var(--body)">종량 과금 유지, 유료화는 기간권으로 검증</div>
-            </div>
-            <div style="flex:1;display:grid;grid-template-columns:118px 1fr 1fr;gap:20px;padding:12px 30px;align-items:center;border-top:1px solid var(--line);background:#fff7f8">
-              <div><span class="badge red">반증</span></div>
-              <div class="body-copy" style="font-size:20px;line-height:1.45"><strong style="color:var(--ink)">AI 질문 생성 자체</strong>가 독립 제품의 가치다</div>
-              <div class="small-copy" style="font-size:19px;color:var(--red)">제품 포지션을 이동, 오른쪽 참조</div>
+            <div class="github-stat">
+              <div class="github-stat-num">6억 3천만 개</div>
+              <div class="github-stat-label">GitHub에 쌓인 저장소</div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="panel soft" style="padding:28px 34px;display:flex;flex-direction:column;border:2px solid var(--purple);min-height:0">
-          <div class="section-line" style="font-size:27px;margin-bottom:14px"><span class="num" style="background:var(--purple)">!</span>반증 1건이 바꾼 것</div>
-          <div class="panel flat" style="padding:18px 24px;background:#f1eff3;border:1px solid var(--line)">
-            <div class="small-copy" style="font-size:16px;font-weight:900;color:var(--muted);margin-bottom:7px">인터뷰 전</div>
-            <div style="font-size:23px;font-weight:900;letter-spacing:-.035em;color:var(--muted)">GitHub + 공고 → AI 예상 질문 생성</div>
-            <div class="small-copy" style="font-size:17.5px;margin-top:7px">이미 쓰는 범용 AI로 대체 가능하다는 지적</div>
-          </div>
-          <div class="flow-arrow" style="height:46px">↓</div>
-          <div style="flex:1;display:flex;flex-direction:column;justify-content:space-evenly;gap:11px;min-height:0">
-            <div style="display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center"><span class="num" style="background:var(--purple);font-size:20px">1</span><div><div style="font-size:22px;font-weight:900;letter-spacing:-.035em">선별</div><div class="small-copy" style="font-size:18px;color:var(--body)">공고 기준으로 다시 볼 커밋을 고른다</div></div></div>
-            <div style="display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center"><span class="num" style="background:var(--purple);font-size:20px">2</span><div><div style="font-size:22px;font-weight:900;letter-spacing:-.035em">근거</div><div class="small-copy" style="font-size:18px;color:var(--body)">모든 문장이 커밋과 diff로 되돌아간다</div></div></div>
-            <div style="display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center"><span class="num" style="background:var(--purple);font-size:20px">3</span><div><div style="font-size:22px;font-weight:900;letter-spacing:-.035em">축적</div><div class="small-copy" style="font-size:18px;color:var(--body)">한 번 채운 기록이 다음 지원에 재사용된다</div></div></div>
-          </div>
-          <div class="panel flat" style="padding:15px 22px;background:#fff;border:1px solid #ddd7ff"><div class="small-copy" style="font-size:18px;color:var(--body)">실제 면접 질문과 후기 등 <strong style="color:var(--purple-deep)">검증된 채용 데이터 확보</strong>는 로드맵에 추가했습니다</div></div>
-        </div>
-
+      <div class="github-history" aria-label="GitHub에 개발 기록이 남는 과정">
+        <article class="github-step">
+          <div class="github-step-title">코드를 바꿉니다</div>
+          <div class="github-step-copy">수정한 파일과 이전 코드의 차이가 기록됩니다.</div>
+          <div class="github-step-term">파일 변경</div>
+        </article>
+        <article class="github-step">
+          <div class="github-step-title">변경 이유를 적습니다</div>
+          <div class="github-step-copy">작업한 사람과 시점도 함께 남습니다.</div>
+          <div class="github-step-term">커밋</div>
+        </article>
+        <article class="github-step">
+          <div class="github-step-title">동료가 검토합니다</div>
+          <div class="github-step-copy">질문과 수정 요청, 답변이 한곳에 모입니다.</div>
+          <div class="github-step-term">풀 리퀘스트</div>
+        </article>
+        <article class="github-step">
+          <div class="github-step-title">검토 뒤 반영합니다</div>
+          <div class="github-step-copy">승인 여부와 최종 결과가 남습니다.</div>
+          <div class="github-step-term">병합</div>
+        </article>
       </div>
     </div>
     <div class="folio">07</div>
-    <div class="source">가설 5건은 인터뷰 이전에 정의한 항목. 표본 2인의 정성 신호이므로 8~9월 사용자 유입 이후 사용 로그와 추가 인터뷰로 반복 검증</div>
+    <div class="source">자료: GitHub Docs; GitHub Octoverse 2025</div>
   </div>
 </section>
 
-<!-- 06 PRODUCT LINES -->
-<section class="slide" data-title="제품 구조" data-order="6">
+<!-- 05.2 GITHUB COMMIT RECORD -->
+<section class="slide github-slide github-record-slide" data-title="GitHub 커밋 기록" data-order="5.2">
+  <div class="slide-shell">
+    <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
+    <header class="topline">
+      <div class="eyebrow">GitHub에 남는 기록</div>
+      <h1 class="title" style="font-size:48px;white-space:nowrap">커밋 기록에는 개발 당시의 고민, 문제 해결과 협업 과정이 남습니다</h1>
+    </header>
+    <div class="slide-content github-intro-content">
+      <div class="commit-record-layout">
+        <div class="browser commit-record-browser">
+          <div class="browser-bar"><i></i><i></i><i></i><div class="browser-url">github.com / commit</div></div>
+          <img src="deck_assets/commIt.png" alt="GitHub 커밋 상세 화면. 작성자, 시점, 커밋 설명, 변경 파일과 코드 차이가 함께 보인다">
+        </div>
+        <div class="commit-record-copy">
+          <div class="panel commit-record-panel">
+            <div class="commit-record-item">
+              <div class="section-line"><span class="num">1</span><span>무엇을 바꿨는지</span></div>
+              <p class="body-copy">수정한 파일과 실제 코드 차이가 남습니다.</p>
+            </div>
+            <div class="commit-record-item">
+              <div class="section-line"><span class="num">2</span><span>왜 바꿨는지</span></div>
+              <p class="body-copy">커밋 메시지에 당시의 문제와 판단이 남습니다.</p>
+            </div>
+            <div class="commit-record-item">
+              <div class="section-line"><span class="num">3</span><span>어떻게 협업했는지</span></div>
+              <p class="body-copy">리뷰와 수정 내역을 통해 합의 과정이 이어집니다.</p>
+            </div>
+          </div>
+          <div class="callout"><strong>DevFit은 이러한 과정을 기술면접으로 녹여냅니다</strong></div>
+        </div>
+      </div>
+    </div>
+    <div class="folio">08</div>
+    <div class="source">화면: Soma-Dozer/Devfit_FE, commit 226f995, 설명 근거: GitHub Docs</div>
+  </div>
+</section>
+
+<!-- 05.4 PRODUCT LINES -->
+<section class="slide" data-title="제품 구조" data-order="5.4">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -1085,8 +1598,8 @@ img{display:block}
   </div>
 </section>
 
-<!-- 06.5 PLATFORM VISION -->
-<section class="slide" data-title="통합 플랫폼" data-order="6.5">
+<!-- 05.5 PLATFORM VISION -->
+<section class="slide" data-title="통합 플랫폼" data-order="5.5">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -1150,8 +1663,8 @@ img{display:block}
   </div>
 </section>
 
-<!-- 07 SOLUTION -->
-<section class="slide" data-title="솔루션" data-order="7">
+<!-- 05.3 SOLUTION -->
+<section class="slide" data-title="솔루션" data-order="5.3">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
@@ -1190,24 +1703,20 @@ img{display:block}
 </section>
 
 <!-- 12 B2C -->
-<section class="slide" data-title="지원자용 서비스" data-order="12">
+<section class="slide demo-slide" data-title="지원자용 데모" data-order="12">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
-      <div class="eyebrow">서비스 소개, 지원자용</div>
-      <h1 class="title">공고를 등록하면 <span class="purple">자기 코드가 근거로 붙은 준비 자료</span>를 받습니다</h1>
+      <div class="eyebrow">서비스 시연</div>
+      <h1 class="title">DevFit 지원자용</h1>
     </header>
-    <div class="slide-content" style="margin-top:8px">
-      <div class="step-strip">
-        <div class="step"><div class="dot">1</div><div class="t">공고 입력</div><div class="s">URL, 이미지, PDF, 텍스트</div></div>
-        <div class="step"><div class="dot">2</div><div class="t">본인 기여 분석</div><div class="s">머지, 자동 생성, 설정 잡음 제외</div></div>
-        <div class="step"><div class="dot">3</div><div class="t">맞춤 준비 자료</div><div class="s">어필 포인트, 질문, 꼬리질문</div></div>
-        <div class="step"><div class="dot">4</div><div class="t">연습과 회고</div><div class="s">모의면접, 지원 일정, 실제 질문 기록</div></div>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;height:515px;margin-top:32px">
-        <div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2c_mock.png" alt="공고 등록과 분석 화면"></div>
-        <div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2c_appeal.png" alt="어필 포인트와 근거 화면"></div>
-        <div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2c_quiz.png" alt="모의면접 화면"></div>
+    <div class="slide-content">
+      <div class="demo-video-frame" data-video-slot="b2c">
+        <img src="deck_assets/b2c_dashboard.png" alt="지원자용 서비스 데모 영상 표지">
+        <div class="demo-video-overlay">
+          <div class="demo-play" aria-hidden="true">▶</div>
+          <div class="demo-video-name">지원자용 제품 데모</div>
+        </div>
       </div>
     </div>
     <div class="folio">06</div>
@@ -1216,22 +1725,19 @@ img{display:block}
 </section>
 
 <!-- 13 B2B -->
-<section class="slide b2b-theme" data-title="기업용 서비스" data-order="13">
+<section class="slide b2b-theme demo-slide" data-title="기업용 데모" data-order="13">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon-b2b.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
-      <div class="eyebrow">서비스 소개, 기업용</div>
-      <h1 class="title">면접관은 저장소를 직접 읽지 않고 <span class="purple">구조화 인터뷰 킷</span>을 받습니다</h1>
+      <div class="eyebrow">서비스 시연</div>
+      <h1 class="title">DevFit 면접관용</h1>
     </header>
     <div class="slide-content">
-      <div style="display:grid;grid-template-columns:1.08fr .92fr;gap:40px;flex:1;min-height:0">
-        <div class="browser" style="height:100%"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2b_landing_hero.png" alt="면접관용 랜딩 페이지"></div>
-        <div style="display:flex;flex-direction:column;justify-content:center;gap:16px">
-          <div class="panel" style="padding:23px 27px;display:flex;align-items:center;gap:20px"><span class="num">1</span><div class="body-copy"><strong>채용 채널 개설</strong><br><span class="small-copy">공개 지원 링크 배포</span></div></div>
-          <div class="panel" style="padding:23px 27px;display:flex;align-items:center;gap:20px"><span class="num">2</span><div class="body-copy"><strong>지원자 인증과 동의</strong><br><span class="small-copy">동의 2건, 이메일 인증 후 접수</span></div></div>
-          <div class="panel" style="padding:23px 27px;display:flex;align-items:center;gap:20px"><span class="num">3</span><div class="body-copy"><strong>프로젝트와 기여 확인</strong><br><span class="small-copy">서류 우선 프로젝트 선택, 저자 확인</span></div></div>
-          <div class="panel soft" style="padding:25px 27px;display:flex;align-items:center;gap:20px;border:2px solid var(--purple)"><span class="num" style="background:var(--purple)">4</span><div class="body-copy"><strong style="color:var(--purple-deep)">구조화 인터뷰 킷</strong><br><span class="small-copy">질문별 코드 근거와 평가 기록</span></div></div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px"><span class="badge neutral">자동 합격 판정 없음</span><span class="badge neutral">지원자 순위 없음</span><span class="badge neutral">AI 작성 판별 없음</span><span class="badge">최종 판단은 면접관</span></div>
+      <div class="demo-video-frame" data-video-slot="b2b">
+        <img src="deck_assets/b2b_landing_hero.png" alt="기업용 서비스 데모 영상 표지">
+        <div class="demo-video-overlay">
+          <div class="demo-play" aria-hidden="true">▶</div>
+          <div class="demo-video-name">기업용 제품 데모</div>
         </div>
       </div>
     </div>
@@ -1376,9 +1882,8 @@ img{display:block}
           <div class="panel flat" style="width:33%;padding:25px 32px;background:var(--purple);color:#fff"><div style="font-size:28px;font-weight:900">질문 가치 조각</div></div>
         </div>
         <div style="display:flex;flex-direction:column;justify-content:center;gap:22px">
-          <div class="panel" style="padding:32px 36px"><div class="small-copy">선별 구간의 LLM 호출</div><div class="metric" style="font-size:84px;margin-top:14px">0회</div><div class="body-copy" style="margin-top:18px">같은 입력이면 같은 결과가 나오고, 점수 변경은 회귀 테스트가 감지합니다.</div></div>
-          <div class="panel soft" style="padding:32px 36px"><div class="small-copy">B2C 분석 1회 변동비 <span class="badge neutral">내부 산출</span></div><div class="metric purple" style="font-size:64px;margin-top:14px">약 330원</div><div class="body-copy" style="margin-top:18px">입력 토큰을 줄여 비용과 환각을 함께 낮춥니다.</div></div>
-          <div class="panel flat" style="padding:23px 28px"><div class="small-copy">완전한 저작 판정이 아니라 <strong style="color:var(--ink)">검증 가능한 기여 근거</strong>를 제공합니다. 커밋 이메일 원문은 저장하지 않고 HMAC 지문만 보관합니다.</div></div>
+          <div class="panel" style="padding:32px 36px"><div class="small-copy">선별 구간의 LLM 호출</div><div class="metric" style="font-size:84px;margin-top:14px">0회</div><div class="body-copy" style="margin-top:18px">모든 판단을 LLM에 맡기지 않습니다. 선별은 규칙과 점수 계산만으로 처리하고, LLM은 걸러진 코드에만 씁니다.</div></div>
+          <div class="panel soft" style="padding:32px 36px"><div class="small-copy">B2C 분석 1회 변동비 <span class="badge neutral">내부 산출</span></div><div class="metric purple" style="font-size:64px;margin-top:14px">약 330원</div><div class="body-copy" style="margin-top:18px">캐싱을 적용해 10회 분석 비용이 3,300원이 아니라 880원입니다. 코드가 그대로면 재분석은 0원입니다.</div></div>
         </div>
       </div>
     </div>
@@ -1884,110 +2389,31 @@ img{display:block}
   </div>
 </section>
 
-<!-- 20.5 MARKETING STRATEGY -->
-<section class="slide" data-title="마케팅 전략" data-order="20.5">
-  <div class="slide-shell">
-    <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
-    <header class="topline">
-      <div class="eyebrow">앞으로 계획, 마케팅 전략</div>
-      <h1 class="title" style="font-size:48px">검색 유입과 광고로 지원자를, <span class="purple">콜드메일과 기업 인터뷰</span>로 기업을 모읍니다</h1>
-    </header>
-    <div class="slide-content" style="margin-top:12px">
-
-      <div style="display:grid;grid-template-columns:1.08fr .94fr 1.02fr;gap:26px;flex:1;min-height:0">
-
-        <div class="panel soft" style="padding:26px 30px;display:flex;flex-direction:column;min-height:0;border:2px solid var(--purple)">
-          <div style="display:flex;align-items:center;gap:12px"><span class="badge" style="flex:none">1 SEO, 오가닉 검색</span><span class="small-copy" style="font-size:16px">광고비 없이 누적</span></div>
-          <div style="margin-top:14px;font-size:27px;font-weight:900;letter-spacing:-.04em">CS 지식백과로 검색 결과 선점</div>
-          <div class="small-copy" style="margin-top:10px;font-size:18.5px;color:var(--body)">기술면접에 반복해 나오는 CS 개념을 페이지 단위로 축적해 검색 유입을 만듭니다. 아정당이 정보성 콘텐츠로 검색 상단을 확보한 방식과 같은 접근입니다.</div>
-          <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:6px;margin-top:16px;min-height:0">
-            <div style="background:#fff;border:1px solid #d9d3ff;border-radius:12px;padding:12px 18px;font-size:19px;font-weight:800">개발자가 CS 개념을 검색</div>
-            <div style="color:var(--purple);font-size:19px;font-weight:900;line-height:1;text-align:center">↓</div>
-            <div style="background:#fff;border:1px solid #d9d3ff;border-radius:12px;padding:12px 18px;font-size:19px;font-weight:800">DevFit 지식백과 페이지 유입</div>
-            <div style="color:var(--purple);font-size:19px;font-weight:900;line-height:1;text-align:center">↓</div>
-            <div style="background:#fff;border:1px solid #d9d3ff;border-radius:12px;padding:12px 18px;font-size:19px;font-weight:800">내 커밋으로 확인하기 유도</div>
-            <div style="color:var(--purple);font-size:19px;font-weight:900;line-height:1;text-align:center">↓</div>
-            <div style="background:var(--purple);border-radius:12px;padding:12px 18px;font-size:19px;font-weight:800;color:#fff">가입과 공고 분석</div>
-          </div>
-          <div class="small-copy" style="font-size:17.5px;color:var(--body);border-top:1px solid #cec6f5;margin-top:16px;padding-top:13px">지식백과 항목이 곧 <strong style="color:var(--purple-deep)">예상 질문의 주제</strong>라 콘텐츠와 제품이 같은 자산을 씁니다</div>
-        </div>
-
-        <div class="panel" style="padding:26px 30px;display:flex;flex-direction:column;min-height:0">
-          <div style="display:flex;align-items:center;gap:12px"><span class="badge" style="flex:none">2 검색 광고</span><span class="small-copy" style="font-size:16px">즉시 유입</span></div>
-          <div style="margin-top:14px;font-size:27px;font-weight:900;letter-spacing:-.04em">구글 Ads 키워드 광고</div>
-          <div class="small-copy" style="margin-top:10px;font-size:18.5px;color:var(--body)">구매 의도가 높은 키워드에 검색 광고를 집행해 준비가 급한 지원자를 직접 확보합니다.</div>
-          <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px;margin-top:16px;min-height:0">
-            <div>
-              <div class="small-copy" style="font-size:16px;font-weight:900;color:var(--purple-deep);margin-bottom:10px">집행 키워드</div>
-              <div style="display:flex;gap:9px;flex-wrap:wrap"><span class="badge neutral">기술면접 준비</span><span class="badge neutral">개발자 포트폴리오 면접</span><span class="badge neutral">GitHub 면접 질문</span><span class="badge neutral">신입 개발자 면접</span></div>
-            </div>
-            <div style="border-top:1px solid var(--line);padding-top:16px">
-              <div class="small-copy" style="font-size:16px;font-weight:900;color:var(--purple-deep);margin-bottom:8px">운영 원칙</div>
-              <div class="small-copy" style="font-size:18px;color:var(--body)">키워드별 전환 단가를 측정해 유효한 키워드만 남기고, SEO가 자리 잡는 구간까지의 유입을 광고로 메웁니다.</div>
-            </div>
-            <div style="border-top:1px solid var(--line);padding-top:16px">
-              <div class="small-copy" style="font-size:16px;font-weight:900;color:var(--purple-deep);margin-bottom:10px">측정 지표</div>
-              <div style="display:flex;flex-direction:column;gap:8px">
-                <div style="display:grid;grid-template-columns:26px 1fr;gap:9px;align-items:start"><span style="font-size:18px;font-weight:900;color:var(--purple)">·</span><div class="small-copy" style="font-size:18px;color:var(--body)">키워드별 클릭당 비용과 가입 전환율</div></div>
-                <div style="display:grid;grid-template-columns:26px 1fr;gap:9px;align-items:start"><span style="font-size:18px;font-weight:900;color:var(--purple)">·</span><div class="small-copy" style="font-size:18px;color:var(--body)">가입 이후 공고 분석까지 도달한 비율</div></div>
-              </div>
-            </div>
-          </div>
-          <div class="panel flat soft" style="padding:16px 20px;margin-top:16px"><div class="small-copy" style="font-size:17.5px;color:var(--body)">인터뷰에서 확인한 사용 시점인 <strong style="color:var(--purple-deep)">서류 합격 직후</strong>가 검색이 몰리는 시점과 일치합니다</div></div>
-        </div>
-
-        <div class="panel" style="padding:26px 30px;display:flex;flex-direction:column;min-height:0;background:#f7faff;border:2px solid #c7dcff">
-          <div style="display:flex;align-items:center;gap:12px"><span class="badge" style="flex:none;background:#e2efff;color:#005CE6">3 기업용 B2B</span><span class="small-copy" style="font-size:16px">직접 접점</span></div>
-          <div style="margin-top:14px;font-size:27px;font-weight:900;letter-spacing:-.04em">콜드메일과 기업 인터뷰</div>
-          <div class="small-copy" style="margin-top:10px;font-size:18.5px;color:var(--body)">콜드메일로 접점을 열고, 이어지는 기업 인터뷰를 요구사항 수집과 서비스 홍보에 함께 씁니다.</div>
-          <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:5px;margin-top:16px;min-height:0">
-            <div style="background:#fff;border:1px solid #c7dcff;border-radius:12px;padding:11px 18px"><div style="font-size:19px;font-weight:800">대상 기업 선별</div><div class="small-copy" style="font-size:15.5px;margin-top:2px">공시 정보 기반</div></div>
-            <div style="color:#005CE6;font-size:19px;font-weight:900;line-height:1;text-align:center">↓</div>
-            <div style="background:#fff;border:1px solid #c7dcff;border-radius:12px;padding:11px 18px"><div style="font-size:19px;font-weight:800">콜드메일 발송</div><div class="small-copy" style="font-size:15.5px;margin-top:2px">개발 채용 담당 접점</div></div>
-            <div style="color:#005CE6;font-size:19px;font-weight:900;line-height:1;text-align:center">↓</div>
-            <div style="background:#e2efff;border:1px solid #a8c9f5;border-radius:12px;padding:11px 18px"><div style="font-size:19px;font-weight:800;color:#0047b8">기업 인터뷰</div><div class="small-copy" style="font-size:15.5px;margin-top:2px;color:#33639e">채용 기준과 페인포인트 확인</div></div>
-            <div style="color:#005CE6;font-size:19px;font-weight:900;line-height:1;text-align:center">↓</div>
-            <div style="background:#fff;border:1px solid #c7dcff;border-radius:12px;padding:11px 18px"><div style="font-size:19px;font-weight:800">서비스 홍보와 데모</div><div class="small-copy" style="font-size:15.5px;margin-top:2px">인터뷰 킷 실물 제시</div></div>
-            <div style="color:#005CE6;font-size:19px;font-weight:900;line-height:1;text-align:center">↓</div>
-            <div style="background:#005CE6;border-radius:12px;padding:11px 18px"><div style="font-size:19px;font-weight:800;color:#fff">파일럿 진행</div><div class="small-copy" style="font-size:15.5px;margin-top:2px;color:#cfe2ff">질문 채택률과 가격 검증</div></div>
-          </div>
-          <div class="small-copy" style="font-size:17.5px;color:var(--body);border-top:1px solid #c7dcff;margin-top:16px;padding-top:13px">지원자 인터뷰에서 제안받은 <strong style="color:#0047b8">기업 파트너십</strong> 경로와 같은 방향입니다</div>
-        </div>
-
-      </div>
-    </div>
-    <div class="folio">20</div>
-    <div class="source">채널별 유입과 전환 단가를 측정해 9월 이후 예산을 재배분. 메타 광고와 대학 굿즈 등 소셜, 현장 집행과 기업 파일럿의 상세 계획은 다음 두 장</div>
-  </div>
-</section>
-
-<!-- 21 ROADMAP B2C -->
-<section class="slide" data-title="앞으로 계획, 지원자용" data-order="21">
+<!-- 21 ROADMAP B2C: SEO -->
+<section class="slide" data-title="앞으로 계획, 지원자용 SEO" data-order="21">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline" style="min-height:auto">
       <div class="eyebrow">앞으로 계획, 지원자용</div>
-      <h1 class="title">사용자를 모으고, <span class="purple">피드백으로 제품을 고도화</span>합니다</h1>
+      <h1 class="title"><span class="purple">CS 지식백과</span>로 검색 결과를 선점합니다</h1>
     </header>
-    <div class="slide-content" style="margin-top:24px">
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;flex:1;align-items:stretch">
-        <div class="panel" style="padding:34px 38px;display:flex;flex-direction:column">
-          <span class="badge" style="align-self:flex-start;margin-bottom:18px;font-size:19px;padding:10px 16px">1 소셜 마케팅</span>
-          <div style="font-size:29px;font-weight:900;letter-spacing:-.035em;margin-bottom:12px">메타 광고 집행</div>
-          <div class="small-copy" style="font-size:20px;margin-bottom:24px">개발자 지원자를 대상으로 메타 광고를 집행해 초기 사용자를 확보합니다.</div>
-          <img src="deck_assets/roadmap_b2c_social_marketing.png" alt="소셜 미디어를 활용한 개발자 지원자 대상 마케팅" style="width:100%;min-height:0;flex:1;margin-top:12px;border-radius:16px;object-fit:cover;display:block">
+    <div class="slide-content" style="margin-top:20px">
+      <div style="display:grid;grid-template-columns:.86fr 1.24fr;gap:56px;flex:1;min-height:0;align-items:stretch">
+        <div style="display:flex;flex-direction:column;justify-content:center;gap:26px">
+          <span class="badge" style="align-self:flex-start;font-size:19px;padding:10px 16px">1 SEO, 오가닉 검색</span>
+          <div class="body-copy" style="font-size:26px;line-height:1.55;word-break:keep-all">기술면접에 반복해 나오는 CS 개념을 페이지 단위로 축적해 검색 유입을 만듭니다. 아정당이 정보성 콘텐츠로 검색 상단을 확보한 방식과 같은 접근입니다.</div>
+          <div class="small-copy" style="font-size:21px;color:var(--body);word-break:keep-all">검색으로 들어온 개발자는 내 커밋으로 확인하기를 거쳐 가입과 공고 분석으로 이어집니다.</div>
+          <div class="small-copy" style="font-size:21px;color:var(--body);border-top:1px solid var(--line-2);padding-top:20px;word-break:keep-all">지식백과 항목이 곧 <strong style="color:var(--purple-deep)">예상 질문의 주제</strong>라 콘텐츠와 제품이 같은 자산을 씁니다.</div>
         </div>
-        <div class="panel" style="padding:34px 38px;display:flex;flex-direction:column">
-          <span class="badge" style="align-self:flex-start;margin-bottom:18px;font-size:19px;padding:10px 16px">2 현장 마케팅</span>
-          <div style="font-size:29px;font-weight:900;letter-spacing:-.035em;margin-bottom:12px">대학 현장 굿즈 배포</div>
-          <div class="small-copy" style="font-size:20px;margin-bottom:24px">대학을 직접 찾아가 굿즈를 나눠주며 서비스를 알리고 현장 반응을 수집합니다.</div>
-          <img src="deck_assets/roadmap_b2c_campus_goods.png" alt="대학 현장에서 배포할 QR 코드 굿즈" style="width:100%;min-height:0;flex:1;margin-top:12px;border-radius:16px;object-fit:cover;display:block">
-        </div>
-        <div class="panel" style="padding:34px 38px;display:flex;flex-direction:column">
-          <span class="badge" style="align-self:flex-start;margin-bottom:18px;font-size:19px;padding:10px 16px">3 고도화</span>
-          <div style="font-size:29px;font-weight:900;letter-spacing:-.035em;margin-bottom:12px">피드백 반영, 질문 DB 업데이트</div>
-          <div class="small-copy" style="font-size:20px;margin-bottom:24px">사용자 피드백을 제품에 반영하고 면접 질문 DB를 지속해서 업데이트합니다.</div>
-          <img src="deck_assets/roadmap_b2c_feedback_loop.png" alt="사용자 피드백과 질문 데이터베이스 고도화 과정" style="width:100%;min-height:0;flex:1;margin-top:12px;border-radius:16px;object-fit:cover;display:block">
+        <div style="display:flex;flex-direction:column;gap:16px;min-height:0">
+          <div style="flex:1.15;min-height:0;display:flex;flex-direction:column;gap:7px">
+            <div class="browser" style="flex:1;min-height:0"><div class="browser-bar"><i></i><i></i><i></i><div class="browser-url">DevFit / CS 지식백과</div></div><img src="deck_assets/CS지식백과.png" alt="DevFit CS 지식백과의 ARM 프로세서 문서 화면"></div>
+            <div class="small-copy" style="font-size:16px;text-align:right">운영 중인 DevFit CS 지식백과</div>
+          </div>
+          <div style="flex:.85;min-height:0;display:flex;flex-direction:column;gap:7px">
+            <div class="browser" style="flex:1;min-height:0"><div class="browser-bar"><i></i><i></i><i></i><div class="browser-url">아정당 꿀팁게시판</div></div><img src="deck_assets/아정당.png" alt="아정당 꿀팁게시판의 정보성 콘텐츠 화면"></div>
+            <div class="small-copy" style="font-size:16px;text-align:right">같은 방식으로 검색 상단을 확보한 아정당</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1996,37 +2422,105 @@ img{display:block}
   </div>
 </section>
 
-<!-- 22 ROADMAP B2B -->
-<section class="slide b2b-theme" data-title="앞으로 계획, 기업용" data-order="22">
+<!-- 21.3 ROADMAP B2C: SOCIAL -->
+<section class="slide" data-title="앞으로 계획, 지원자용 소셜" data-order="21.3">
   <div class="slide-shell">
-    <div class="brand"><img src="deck_assets/icon-b2b.svg" alt="">Dev<b>Fit</b></div>
+    <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline" style="min-height:auto">
-      <div class="eyebrow">앞으로 계획, 기업용</div>
-      <h1 class="title">기업 접점을 만들어 <span class="purple">파일럿 프로젝트로 검증</span>합니다</h1>
+      <div class="eyebrow">앞으로 계획, 지원자용</div>
+      <h1 class="title"><span class="purple">메타 광고</span>로 초기 사용자를 확보합니다</h1>
     </header>
     <div class="slide-content" style="margin-top:24px">
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;flex:1;align-items:stretch">
-        <div class="panel" style="padding:34px 38px;display:flex;flex-direction:column">
-          <span class="badge" style="align-self:flex-start;margin-bottom:18px;font-size:19px;padding:10px 16px">1 기능 개발</span>
-          <div style="font-size:29px;font-weight:900;letter-spacing:-.035em;margin-bottom:12px">기업용 기능 완성</div>
-          <div class="small-copy" style="font-size:20px;margin-bottom:24px">남은 기업용 기능을 마저 개발해 파일럿에 들어갈 준비를 마칩니다.</div>
-          <img src="deck_assets/roadmap_b2b_feature_completion.png" alt="기업용 지원자 분석과 평가 기능" style="width:100%;height:498px;flex:0 0 498px;margin-top:auto;border-radius:16px;object-fit:cover;display:block">
+      <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:56px;flex:1;min-height:0;align-items:center">
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <span class="badge" style="align-self:flex-start;font-size:19px;padding:10px 16px">2 소셜 마케팅</span>
+          <div class="body-copy" style="font-size:26px;line-height:1.55;word-break:keep-all">개발자 지원자를 대상으로 메타 광고를 집행해 초기 사용자를 확보합니다.</div>
+          <div class="small-copy" style="font-size:21px;color:var(--body);border-top:1px solid var(--line-2);padding-top:20px;word-break:keep-all">채널별 유입과 전환 단가를 측정해 9월 이후 예산을 재배분합니다.</div>
         </div>
-        <div class="panel" style="padding:34px 38px;display:flex;flex-direction:column">
-          <span class="badge" style="align-self:flex-start;margin-bottom:18px;font-size:19px;padding:10px 16px">2 콜드 메일</span>
-          <div style="font-size:29px;font-weight:900;letter-spacing:-.035em;margin-bottom:12px">기업 콜드메일</div>
-          <div class="small-copy" style="font-size:20px;margin-bottom:24px">공시 정보로 대상 기업을 추려 콜드 메일로 접점을 만들고, 회신 기업과 인터뷰를 진행하며 서비스를 함께 홍보합니다.</div>
-          <img src="deck_assets/roadmap_b2b_cold_email.png" alt="기업 페르소나 선별과 콜드 메일 발송" style="width:100%;height:498px;flex:0 0 498px;margin-top:auto;border-radius:16px;object-fit:cover;display:block">
-        </div>
-        <div class="panel" style="padding:34px 38px;display:flex;flex-direction:column">
-          <span class="badge" style="align-self:flex-start;margin-bottom:18px;font-size:19px;padding:10px 16px">3 파일럿</span>
-          <div style="font-size:29px;font-weight:900;letter-spacing:-.035em;margin-bottom:12px">파일럿 프로젝트 진행</div>
-          <div class="small-copy" style="font-size:20px;margin-bottom:24px">관심 기업과 파일럿을 진행해 질문 채택률과 효용을 검증합니다.</div>
-          <img src="deck_assets/roadmap_b2b_pilot.png" alt="기업 면접관과 지원자가 참여하는 파일럿 프로젝트" style="width:100%;height:498px;flex:0 0 498px;margin-top:auto;border-radius:16px;object-fit:cover;display:block">
+        <div style="min-height:0;height:100%;display:flex">
+          <img src="deck_assets/roadmap_b2c_social_marketing.png" alt="소셜 미디어를 활용한 개발자 지원자 대상 마케팅" style="width:100%;min-height:0;flex:1;border-radius:18px;object-fit:cover;display:block;border:1px solid var(--line-2)">
         </div>
       </div>
     </div>
     <div class="folio">22</div>
+    <div class="source"></div>
+  </div>
+</section>
+
+<!-- 21.6 ROADMAP B2C: CAMPUS -->
+<section class="slide" data-title="앞으로 계획, 지원자용 현장" data-order="21.6">
+  <div class="slide-shell">
+    <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
+    <header class="topline" style="min-height:auto">
+      <div class="eyebrow">앞으로 계획, 지원자용</div>
+      <h1 class="title">대학 현장에서 <span class="purple">굿즈</span>로 서비스를 알립니다</h1>
+    </header>
+    <div class="slide-content" style="margin-top:24px">
+      <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:56px;flex:1;min-height:0;align-items:center">
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <span class="badge" style="align-self:flex-start;font-size:19px;padding:10px 16px">3 현장 마케팅</span>
+          <div class="body-copy" style="font-size:26px;line-height:1.55;word-break:keep-all">대학을 직접 찾아가 굿즈를 나눠주며 서비스를 알리고 현장 반응을 수집합니다.</div>
+        </div>
+        <div style="min-height:0;height:100%;display:flex">
+          <img src="deck_assets/roadmap_b2c_campus_goods.png" alt="대학 현장에서 배포할 QR 코드 굿즈" style="width:100%;min-height:0;flex:1;border-radius:18px;object-fit:cover;display:block;border:1px solid var(--line-2)">
+        </div>
+      </div>
+    </div>
+    <div class="folio">23</div>
+    <div class="source"></div>
+  </div>
+</section>
+
+<!-- 22 ROADMAP B2B: FEATURE -->
+<section class="slide b2b-theme" data-title="앞으로 계획, 기업용 고도화" data-order="22">
+  <div class="slide-shell">
+    <div class="brand"><img src="deck_assets/icon-b2b.svg" alt="">Dev<b>Fit</b></div>
+    <header class="topline" style="min-height:auto">
+      <div class="eyebrow">앞으로 계획, 기업용</div>
+      <h1 class="title"><span class="purple">기업용 기능을 고도화</span>해 파일럿을 준비합니다</h1>
+    </header>
+    <div class="slide-content" style="margin-top:24px">
+      <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:56px;flex:1;min-height:0;align-items:center">
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <span class="badge" style="align-self:flex-start;font-size:19px;padding:10px 16px">1 고도화</span>
+          <div class="body-copy" style="font-size:26px;line-height:1.55;word-break:keep-all">남은 기업용 기능을 마저 개발해 파일럿에 들어갈 준비를 마칩니다.</div>
+        </div>
+        <div style="min-height:0;height:100%;display:flex">
+          <img src="deck_assets/roadmap_b2b_feature_completion.png" alt="기업용 지원자 분석과 평가 기능" style="width:100%;min-height:0;flex:1;border-radius:18px;object-fit:cover;display:block;border:1px solid #bfd3ef">
+        </div>
+      </div>
+    </div>
+    <div class="folio">24</div>
+    <div class="source"></div>
+  </div>
+</section>
+
+<!-- 22.3 ROADMAP B2B: COLD MAIL TO PILOT -->
+<section class="slide b2b-theme" data-title="앞으로 계획, 기업용 콜드메일과 파일럿" data-order="22.3">
+  <div class="slide-shell">
+    <div class="brand"><img src="deck_assets/icon-b2b.svg" alt="">Dev<b>Fit</b></div>
+    <header class="topline" style="min-height:auto">
+      <div class="eyebrow">앞으로 계획, 기업용</div>
+      <h1 class="title">콜드메일로 접점을 만들어 <span class="purple">파일럿으로 검증</span>합니다</h1>
+    </header>
+    <div class="slide-content" style="margin-top:24px">
+      <div style="display:grid;grid-template-columns:1fr 64px 1fr;gap:0;flex:1;min-height:0;align-items:stretch">
+        <div class="panel" style="padding:34px 38px;display:flex;flex-direction:column;min-height:0">
+          <span class="badge" style="align-self:flex-start;margin-bottom:18px;font-size:19px;padding:10px 16px">2 콜드 메일</span>
+          <div style="font-size:29px;font-weight:900;letter-spacing:-.035em;margin-bottom:12px">기업 콜드메일</div>
+          <div class="small-copy" style="font-size:20px;margin-bottom:24px;word-break:keep-all">공시 정보로 대상 기업을 추려 콜드 메일로 접점을 만들고, 회신 기업과 인터뷰를 진행하며 서비스를 함께 홍보합니다.</div>
+          <img src="deck_assets/roadmap_b2b_cold_email.png" alt="기업 페르소나 선별과 콜드 메일 발송" style="width:100%;min-height:0;flex:1;margin-top:auto;border-radius:16px;object-fit:cover;display:block">
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;color:#005CE6;font-size:38px;font-weight:900">→</div>
+        <div class="panel" style="padding:34px 38px;display:flex;flex-direction:column;min-height:0">
+          <span class="badge" style="align-self:flex-start;margin-bottom:18px;font-size:19px;padding:10px 16px">3 파일럿</span>
+          <div style="font-size:29px;font-weight:900;letter-spacing:-.035em;margin-bottom:12px">파일럿 프로젝트 진행</div>
+          <div class="small-copy" style="font-size:20px;margin-bottom:24px;word-break:keep-all">관심 기업과 파일럿을 진행해 질문 채택률과 효용을 검증합니다.</div>
+          <img src="deck_assets/roadmap_b2b_pilot.png" alt="기업 면접관과 지원자가 참여하는 파일럿 프로젝트" style="width:100%;min-height:0;flex:1;margin-top:auto;border-radius:16px;object-fit:cover;display:block">
+        </div>
+      </div>
+    </div>
+    <div class="folio">25</div>
     <div class="source"></div>
   </div>
 </section>
