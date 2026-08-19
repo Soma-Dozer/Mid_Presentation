@@ -235,17 +235,6 @@ img{display:block}
 }
 .brand img{width:42px;height:42px;border-radius:10px}
 .brand b{margin-left:-13px;color:var(--purple)}
-.team-avatar{
-  width:78px;
-  height:78px;
-  flex:none;
-  border:2px solid #ded8ff;
-  border-radius:50%;
-  background:#fff;
-  box-shadow:0 5px 14px rgba(79,63,201,.14);
-  object-fit:cover;
-  object-position:center;
-}
 .source{
   display:none;
 }
@@ -2335,14 +2324,17 @@ img{display:block}
 <section class="slide" data-title="팀 소개" data-order="2">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
-    <header class="topline" style="min-height:auto">
-      <div class="eyebrow">팀 소개</div>
-      <h1 class="title" style="font-size:42px">팀 <span class="purple">Dozer</span></h1>
+    <header class="topline" style="min-height:auto;display:flex;align-items:center;justify-content:space-between;gap:40px;padding-right:200px">
+      <div>
+        <div class="eyebrow">팀 소개</div>
+        <h1 class="title" style="font-size:42px">팀 <span class="purple">Dozer</span></h1>
+      </div>
+      <img src="deck_assets/Dozer_일러스트_trim.png" alt="팀 Dozer 일러스트, 왼쪽부터 노재원 박천웅 김건우" style="width:320px;height:auto;flex:none">
     </header>
     <div class="slide-content" style="margin-top:18px">
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;flex:1">
         <article class="panel" style="padding:26px 30px 30px;display:flex;flex-direction:column">
-          <div style="display:flex;align-items:center;gap:18px;margin-bottom:16px"><img class="team-avatar" src="deck_assets/team-park-cheonwoong.jpg" alt="박천웅 프로필"><div><div style="font-size:28px;font-weight:900">박천웅 <span class="small-copy" style="font-size:17px;font-weight:700">Team Leader · 23세</span></div><div class="badge" style="margin-top:8px">풀스택, 인프라</div></div></div>
+          <div style="margin-bottom:16px"><div style="font-size:28px;font-weight:900">박천웅 <span class="small-copy" style="font-size:17px;font-weight:700">Team Leader · 23세</span></div><div class="badge" style="margin-top:8px">풀스택, 인프라</div></div>
           <div style="flex:1;display:flex;flex-direction:column;gap:16px;justify-content:space-evenly">
             <div>
               <div style="font-size:15px;font-weight:900;letter-spacing:.08em;color:var(--purple-deep);margin-bottom:6px">이력</div>
@@ -2363,7 +2355,7 @@ img{display:block}
           </div>
         </article>
         <article class="panel" style="padding:26px 30px 30px;display:flex;flex-direction:column">
-          <div style="display:flex;align-items:center;gap:18px;margin-bottom:16px"><img class="team-avatar" src="deck_assets/team-kim-gunwoo.jpg" alt="김건우 프로필"><div><div style="font-size:28px;font-weight:900">김건우 <span class="small-copy" style="font-size:17px;font-weight:700">Product Manager · 18세</span></div><div class="badge" style="margin-top:8px">제품 기획, 프론트엔드</div></div></div>
+          <div style="margin-bottom:16px"><div style="font-size:28px;font-weight:900">김건우 <span class="small-copy" style="font-size:17px;font-weight:700">Product Manager · 18세</span></div><div class="badge" style="margin-top:8px">제품 기획, 프론트엔드</div></div>
           <div style="flex:1;display:flex;flex-direction:column;gap:16px;justify-content:space-evenly">
             <div>
               <div style="font-size:15px;font-weight:900;letter-spacing:.08em;color:var(--purple-deep);margin-bottom:6px">이력</div>
@@ -2384,7 +2376,7 @@ img{display:block}
           </div>
         </article>
         <article class="panel" style="padding:26px 30px 30px;display:flex;flex-direction:column">
-          <div style="display:flex;align-items:center;gap:18px;margin-bottom:16px"><img class="team-avatar" src="deck_assets/team-noh-jaewon.jpg" alt="노재원 프로필"><div><div style="font-size:28px;font-weight:900">노재원 <span class="small-copy" style="font-size:17px;font-weight:700">Backend Engineer · 20세</span></div><div class="badge" style="margin-top:8px">백엔드, AI</div></div></div>
+          <div style="margin-bottom:16px"><div style="font-size:28px;font-weight:900">노재원 <span class="small-copy" style="font-size:17px;font-weight:700">Backend Engineer · 20세</span></div><div class="badge" style="margin-top:8px">백엔드, AI</div></div>
           <div style="flex:1;display:flex;flex-direction:column;gap:26px;justify-content:space-evenly">
             <div>
               <div style="font-size:19px;font-weight:900;letter-spacing:.08em;color:var(--purple-deep);margin-bottom:10px">이력</div>
