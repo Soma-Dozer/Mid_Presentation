@@ -179,6 +179,7 @@ img{display:block}
   display:flex;
   flex-direction:column;
   margin-top:34px;
+  translate:0 -14px;
 }
 .topline{
   min-height:170px;
@@ -251,10 +252,11 @@ img{display:block}
 .folio{
   position:absolute;
   left:88px;
-  bottom:52px;
+  bottom:32px;
   color:#aca7b2;
-  font-size:15px;
-  font-weight:700;
+  font-size:22px;
+  font-weight:800;
+  line-height:1;
 }
 
 .panel{
@@ -305,6 +307,114 @@ img{display:block}
   line-height:1.58;
   letter-spacing:-.018em;
   word-break:keep-all;
+}
+.infra-summary-card{
+  padding:22px 26px;
+  flex:1;
+}
+.infra-summary-title{
+  margin-bottom:8px;
+  color:var(--purple-deep);
+  font-size:22px;
+  font-weight:900;
+  line-height:1.3;
+  letter-spacing:-.025em;
+  word-break:keep-all;
+}
+.infra-summary-copy{
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.5;
+  letter-spacing:-.018em;
+  word-break:keep-all;
+}
+.seo-intro-copy{
+  max-width:1640px;
+  color:var(--body);
+  font-size:21px;
+  line-height:1.48;
+  letter-spacing:-.02em;
+  word-break:keep-all;
+}
+.seo-slide .slide-content{
+  translate:0 28px;
+}
+.seo-shot{
+  height:500px;
+}
+.seo-shot img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top center;
+}
+.competition-summary{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:30px;
+  align-items:center;
+  margin-top:24px;
+  padding:24px 30px;
+}
+.competition-summary-note{
+  padding-left:30px;
+  border-left:1px solid #cec6f5;
+}
+.screening-cost-panel{
+  padding:34px 38px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.screening-cost-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:18px;
+}
+.screening-cost-title{
+  margin-top:7px;
+  font-size:30px;
+  font-weight:900;
+  line-height:1.35;
+  letter-spacing:-.035em;
+  word-break:keep-all;
+}
+.screening-cost-copy{
+  margin-top:12px;
+  color:var(--body);
+  font-size:19px;
+  line-height:1.55;
+  letter-spacing:-.018em;
+  word-break:keep-all;
+}
+.screening-metric-list{
+  margin-top:26px;
+  border-top:1px solid var(--line-2);
+}
+.screening-metric-row{
+  min-height:102px;
+  padding:18px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  border-bottom:1px solid var(--line-2);
+}
+.screening-metric-label{
+  color:var(--body);
+  font-size:19px;
+  font-weight:800;
+  line-height:1.4;
+  word-break:keep-all;
+}
+.screening-metric-value{
+  flex:none;
+  color:var(--purple);
+  font-size:44px;
+  font-weight:900;
+  line-height:1;
+  letter-spacing:-.045em;
 }
 .callout{
   padding:22px 30px;
@@ -358,6 +468,20 @@ img{display:block}
   border-radius:20px;
   background:#fff;
   box-shadow:var(--shadow-lg);
+}
+.shot{
+  overflow:hidden;
+  border:1px solid #d7d3dc;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:var(--shadow-lg);
+}
+.shot img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top center;
+  display:block;
 }
 .browser-bar{
   height:47px;
@@ -1173,43 +1297,6 @@ img{display:block}
   height:100%;
   object-fit:cover;
   object-position:center top;
-  opacity:.68;
-}
-.demo-video-frame::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg,rgba(14,12,18,.08),rgba(14,12,18,.52));
-}
-.demo-video-overlay{
-  position:absolute;
-  z-index:1;
-  inset:0;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  text-align:center;
-}
-.demo-play{
-  width:88px;
-  height:88px;
-  display:grid;
-  place-items:center;
-  padding-left:7px;
-  border:2px solid rgba(255,255,255,.72);
-  border-radius:50%;
-  background:rgba(15,13,20,.48);
-  font-size:38px;
-  line-height:1;
-  box-shadow:0 14px 32px rgba(0,0,0,.24);
-}
-.demo-video-name{
-  margin-top:22px;
-  font-size:28px;
-  font-weight:800;
-  letter-spacing:-.035em;
 }
 
 /* responsive and print */
@@ -1531,8 +1618,7 @@ img{display:block}
     </header>
     <div class="slide-content github-intro-content">
       <div class="commit-record-layout">
-        <div class="browser commit-record-browser">
-          <div class="browser-bar"><i></i><i></i><i></i><div class="browser-url">github.com / commit</div></div>
+        <div class="shot commit-record-browser">
           <img src="deck_assets/commIt.png" alt="GitHub 커밋 상세 화면. 작성자, 시점, 커밋 설명, 변경 파일과 코드 차이가 함께 보인다">
         </div>
         <div class="commit-record-copy">
@@ -1713,10 +1799,6 @@ img{display:block}
     <div class="slide-content">
       <div class="demo-video-frame" data-video-slot="b2c">
         <img src="deck_assets/b2c_dashboard.png" alt="지원자용 서비스 데모 영상 표지">
-        <div class="demo-video-overlay">
-          <div class="demo-play" aria-hidden="true">▶</div>
-          <div class="demo-video-name">지원자용 제품 데모</div>
-        </div>
       </div>
     </div>
     <div class="folio">06</div>
@@ -1735,10 +1817,6 @@ img{display:block}
     <div class="slide-content">
       <div class="demo-video-frame" data-video-slot="b2b">
         <img src="deck_assets/b2b_landing_hero.png" alt="기업용 서비스 데모 영상 표지">
-        <div class="demo-video-overlay">
-          <div class="demo-play" aria-hidden="true">▶</div>
-          <div class="demo-video-name">기업용 제품 데모</div>
-        </div>
       </div>
     </div>
     <div class="folio">07</div>
@@ -1852,9 +1930,9 @@ img{display:block}
           <tr><td>면접관 인터뷰 킷</td><td><span class="yes">✓</span></td><td><span class="part">△</span></td><td><span class="no">−</span></td><td><span class="yes">✓</span></td><td><span class="part">△</span></td></tr>
         </tbody>
       </table>
-      <div style="display:grid;grid-template-columns:1.22fr .78fr;gap:26px;margin-top:24px">
-        <div class="panel flat soft" style="padding:22px 30px"><div class="body-copy" style="font-size:22px">국내 18건, 해외 18건을 전수 조사한 결과 <strong style="color:var(--purple-deep)">지원자 본인 커밋을 근거로 면접 질문을 만드는 국내 상용 서비스는 확인되지 않았습니다.</strong> 가장 흔한 대안은 서비스가 아니라 범용 LLM에 직접 붙여넣기입니다.</div><div class="small-copy" style="font-size:18.5px;color:var(--body);border-top:1px solid #cec6f5;margin-top:13px;padding-top:13px">인터뷰 2건 모두 실제로 범용 LLM에 공고와 코드베이스를 붙여넣어 준비했고, <strong style="color:var(--ink)">근거 없는 추측</strong>과 <strong style="color:var(--ink)">일반적인 질문으로의 수렴</strong>을 한계로 지적했습니다.</div></div>
-        <div class="panel flat" style="padding:25px 30px;display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="badge">공고 1건 맞춤</span><span class="badge">근거 추적</span><span class="badge">B2C, B2B 공유 엔진</span></div>
+      <div class="panel flat soft competition-summary">
+        <div class="body-copy" style="font-size:22px">국내 18건, 해외 18건을 전수 조사한 결과 <strong style="color:var(--purple-deep)">지원자 본인 커밋을 근거로 면접 질문을 만드는 국내 상용 서비스는 확인되지 않았습니다.</strong> 가장 흔한 대안은 서비스가 아니라 범용 LLM에 직접 붙여넣기입니다.</div>
+        <div class="small-copy competition-summary-note" style="font-size:18.5px;color:var(--body)">인터뷰 2건 모두 실제로 범용 LLM에 공고와 코드베이스를 붙여넣어 준비했고, <strong style="color:var(--ink)">근거 없는 추측</strong>과 <strong style="color:var(--ink)">일반적인 질문으로의 수렴</strong>을 한계로 지적했습니다.</div>
       </div>
     </div>
     <div class="folio">17</div>
@@ -1868,7 +1946,7 @@ img{display:block}
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
       <div class="eyebrow">핵심 기술 1, 커밋 선별</div>
-      <h1 class="title">LLM 호출 전에 <span class="purple">결정론적 선별 계층</span>이 질문 가치가 높은 코드만 남깁니다</h1>
+      <h1 class="title">LLM 호출 전에 <span class="purple">결정론적 선별 계층</span>이 면접 질문에 쓸 코드만 남깁니다</h1>
     </header>
     <div class="slide-content">
       <div style="display:grid;grid-template-columns:1.18fr .82fr;gap:48px;flex:1">
@@ -1879,11 +1957,22 @@ img{display:block}
           <div class="small-copy" style="padding-left:28px">↓ ② 잡음 제거: 머지, 자동 생성, 설정 변경 커밋 제외</div>
           <div class="panel flat" style="width:56%;padding:25px 32px;background:#c9c1fb"><div style="font-size:28px;font-weight:900;color:var(--purple-deep)">의미 있는 변경</div></div>
           <div class="small-copy" style="padding-left:28px">↓ ③ 중요도 점수와 샘플링: 메시지 키워드 + 로직 밀도 + 기술 키워드 가중치</div>
-          <div class="panel flat" style="width:33%;padding:25px 32px;background:var(--purple);color:#fff"><div style="font-size:28px;font-weight:900">질문 가치 조각</div></div>
+          <div class="panel flat" style="width:33%;padding:25px 32px;background:var(--purple);color:#fff"><div style="font-size:28px;font-weight:900">질문 생성</div></div>
         </div>
-        <div style="display:flex;flex-direction:column;justify-content:center;gap:22px">
-          <div class="panel" style="padding:32px 36px"><div class="small-copy">선별 구간의 LLM 호출</div><div class="metric" style="font-size:84px;margin-top:14px">0회</div><div class="body-copy" style="margin-top:18px">모든 판단을 LLM에 맡기지 않습니다. 선별은 규칙과 점수 계산만으로 처리하고, LLM은 걸러진 코드에만 씁니다.</div></div>
-          <div class="panel soft" style="padding:32px 36px"><div class="small-copy">B2C 분석 1회 변동비 <span class="badge neutral">내부 산출</span></div><div class="metric purple" style="font-size:64px;margin-top:14px">약 330원</div><div class="body-copy" style="margin-top:18px">캐싱을 적용해 10회 분석 비용이 3,300원이 아니라 880원입니다. 코드가 그대로면 재분석은 0원입니다.</div></div>
+        <div class="panel screening-cost-panel">
+          <div class="screening-cost-head">
+            <div>
+              <div class="small-copy" style="font-size:17px;font-weight:900;color:var(--purple-deep)">선별과 분석 비용</div>
+              <div class="screening-cost-title">커밋 선별은 LLM 없이 처리합니다</div>
+            </div>
+            <span class="badge neutral" style="flex:none">내부 산출</span>
+          </div>
+          <div class="screening-cost-copy">작성자 확인, 잡음 제거, 중요도 계산은 규칙과 점수로 처리합니다.</div>
+          <div class="screening-metric-list">
+            <div class="screening-metric-row"><div class="screening-metric-label">분석 1회</div><div class="screening-metric-value">약 330원</div></div>
+            <div class="screening-metric-row"><div class="screening-metric-label">캐싱 적용 10회</div><div class="screening-metric-value">880원</div></div>
+            <div class="screening-metric-row"><div class="screening-metric-label">동일 코드 재분석</div><div class="screening-metric-value">0원</div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1964,16 +2053,16 @@ img{display:block}
       </div>
     </div>
     <div class="folio">11</div>
-    <div class="source">역할별 모델과 선정 근거는 뒤의 모델 선정 장 참고. 특정 모델의 일반적 우월성을 주장하지 않음</div>
+    <div class="source">역할별 모델과 선정 근거는 다음 모델 선정 장 참고. 특정 모델의 일반적 우월성을 주장하지 않음</div>
   </div>
 </section>
 
-<!-- 17 QUALITY -->
-<section class="slide" data-title="핵심 기술, AI 파이프라인" data-order="17">
+<!-- 18 QUALITY -->
+<section class="slide" data-title="핵심 기술, AI 파이프라인" data-order="18">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
-      <div class="eyebrow">핵심 기술 4, AI 파이프라인</div>
+      <div class="eyebrow">핵심 기술 5, AI 파이프라인</div>
       <h1 class="title">8단계 파이프라인 중 LLM은 <span class="purple">꼭 필요한 4곳에서만</span> 호출합니다</h1>
     </header>
     <div class="slide-content">
@@ -1994,12 +2083,12 @@ img{display:block}
           <div class="flow-node" style="padding:24px 22px;background:var(--purple);border-color:var(--purple);color:#fff"><span style="display:block;font-size:14px;color:#d9d3ff;font-weight:800;letter-spacing:.12em;margin-bottom:5px">08</span>산출물<span class="sub" style="color:#d9d3ff">지원자용 준비 자료<br>면접관용 인터뷰 킷</span></div><div class="flow-arrow">←</div>
           <div class="flow-node" style="padding:24px 22px"><span style="display:block;font-size:14px;color:var(--muted);font-weight:800;letter-spacing:.12em;margin-bottom:5px">07</span>부재 기반 질문<span class="sub">테스트, CI 부재 판정</span></div><div class="flow-arrow">←</div>
           <div class="flow-node accent" style="padding:24px 22px"><span style="display:block;font-size:14px;color:var(--purple-deep);font-weight:800;letter-spacing:.12em;margin-bottom:5px">06 LLM</span>질문, 어필 생성<span class="sub">코드 근거 질문, 어필 포인트</span></div><div class="flow-arrow">←</div>
-          <div class="flow-node" style="padding:24px 22px"><span style="display:block;font-size:14px;color:var(--muted);font-weight:800;letter-spacing:.12em;margin-bottom:5px">05</span>근거 단위화<span class="sub">질문 가치 조각만 추출</span></div>
+          <div class="flow-node" style="padding:24px 22px"><span style="display:block;font-size:14px;color:var(--muted);font-weight:800;letter-spacing:.12em;margin-bottom:5px">05</span>근거 단위화<span class="sub">diff와 파일 경로 단위 정리</span></div>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:1.15fr .85fr;gap:26px;margin-top:24px">
-        <div class="panel flat soft" style="padding:26px 32px"><div class="body-copy">커밋 선별과 근거 단위화가 <strong style="color:var(--purple-deep)">LLM 앞단에서 입력을 줄여</strong>, 토큰 비용과 환각을 함께 낮춥니다.</div></div>
-        <div class="panel flat" style="padding:26px 32px;display:flex;align-items:center"><div class="small-copy">수천 개의 커밋을 그대로 넣지 않고 질문 가치가 높은 조각만 남깁니다. 프롬프트 압축과 증분 분석으로 비용을 추가로 절감합니다.</div></div>
+        <div class="panel flat soft" style="padding:26px 32px"><div class="body-copy">커밋 선별과 근거 단위화로 <strong style="color:var(--purple-deep)">LLM 입력을 줄여</strong> 토큰 비용과 환각을 함께 낮춥니다.</div></div>
+        <div class="panel flat" style="padding:26px 32px;display:flex;align-items:center"><div class="small-copy">저장소 전체를 매번 다시 읽지 않습니다. 변경된 커밋만 분석하고, diff와 파일 경로를 질문 근거로 정리해 모델에 전달합니다.</div></div>
       </div>
     </div>
     <div class="folio">12</div>
@@ -2007,12 +2096,12 @@ img{display:block}
   </div>
 </section>
 
-<!-- 18 INFRA -->
-<section class="slide" data-title="핵심 기술, 인프라" data-order="18">
+<!-- 19 INFRA -->
+<section class="slide" data-title="핵심 기술, 인프라" data-order="19">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline" style="padding-right:0">
-      <div class="eyebrow">핵심 기술 5, 인프라</div>
+      <div class="eyebrow">핵심 기술 6, 인프라</div>
       <h1 class="title" style="white-space:nowrap">개발 서버와 운영 서버를 <span class="purple">분리 구축</span>하고, 분석 워커는 API와 격리했습니다</h1>
     </header>
     <div class="slide-content" style="margin-top:16px">
@@ -2021,21 +2110,21 @@ img{display:block}
           <img src="deck_assets/infra_architecture.png" alt="Devfit AWS 통합 아키텍처 다이어그램" style="width:100%;height:100%;object-fit:contain">
         </div>
         <div style="display:flex;flex-direction:column;justify-content:space-between;gap:14px;min-height:0">
-          <div class="panel flat soft" style="padding:22px 26px;flex:1">
-            <div style="font-size:22px;font-weight:900;margin-bottom:8px;color:var(--purple-deep)">개발, 운영 환경 분리</div>
-            <div class="small-copy" style="font-size:17px">개발은 저비용 EC2 단일 서버, 운영은 프라이빗 ECS. 프런트, DB, 배포 경로도 환경별 분리</div>
+          <div class="panel flat soft infra-summary-card">
+            <div class="infra-summary-title">개발, 운영 환경 분리</div>
+            <div class="infra-summary-copy">개발은 저비용 EC2 단일 서버, 운영은 프라이빗 ECS. 프런트, DB, 배포 경로도 환경별 분리</div>
           </div>
-          <div class="panel flat soft" style="padding:22px 26px;flex:1">
-            <div style="font-size:22px;font-weight:900;margin-bottom:8px;color:var(--purple-deep)">워크로드 격리</div>
-            <div class="small-copy" style="font-size:17px">API ECS와 분석 워커 ECS 분리. RDS와 업로드 EFS는 프라이빗 서브넷에 배치</div>
+          <div class="panel flat soft infra-summary-card">
+            <div class="infra-summary-title">워크로드 격리</div>
+            <div class="infra-summary-copy">API ECS와 분석 워커 ECS 분리. RDS와 업로드 EFS는 프라이빗 서브넷에 배치</div>
           </div>
-          <div class="panel flat soft" style="padding:22px 26px;flex:1">
-            <div style="font-size:22px;font-weight:900;margin-bottom:8px;color:var(--purple-deep)">정적 프런트</div>
-            <div class="small-copy" style="font-size:17px">B2C, B2B 프런트는 S3와 CloudFront 서빙. 프런트 서버 비용 없음</div>
+          <div class="panel flat soft infra-summary-card">
+            <div class="infra-summary-title">정적 프런트</div>
+            <div class="infra-summary-copy">B2C, B2B 프런트는 S3와 CloudFront 서빙. 프런트 서버 비용 없음</div>
           </div>
-          <div class="panel flat soft" style="padding:22px 26px;flex:1">
-            <div style="font-size:22px;font-weight:900;margin-bottom:8px;color:var(--purple-deep)">유휴 자원 자동 중지</div>
-            <div class="small-copy" style="font-size:17px">개발 EC2와 RDS는 야간 자동 중지. NAT Gateway 대신 고정 EIP 사용</div>
+          <div class="panel flat soft infra-summary-card">
+            <div class="infra-summary-title">Bedrock API 기반 모델 적용</div>
+            <div class="infra-summary-copy">여러 LLM을 하나의 API로 연결해 역할에 맞는 모델을 적용하고 교체</div>
           </div>
         </div>
       </div>
@@ -2045,12 +2134,12 @@ img{display:block}
   </div>
 </section>
 
-<!-- 19 MODEL SELECTION -->
-<section class="slide" data-title="핵심 기술, 모델 선정" data-order="19">
+<!-- 17 MODEL SELECTION -->
+<section class="slide" data-title="핵심 기술, 모델 선정" data-order="17">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline">
-      <div class="eyebrow">핵심 기술 6, 모델 선정과 비용</div>
+      <div class="eyebrow">핵심 기술 4, 모델 선정과 비용</div>
       <h1 class="title">Bedrock 후보 모델을 <span class="purple">동일 조건으로 실측</span>해 역할별 모델을 선정했습니다</h1>
     </header>
     <div class="slide-content">
@@ -2122,7 +2211,7 @@ img{display:block}
     </header>
     <div class="slide-content" style="margin-top:18px">
       <div style="display:grid;grid-template-columns:1.05fr .95fr;gap:36px;height:415px">
-        <div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2c_dashboard.png" alt="운영 중인 DevFit 화면"></div>
+        <div class="shot"><img src="deck_assets/b2c_dashboard.png" alt="운영 중인 DevFit 화면"></div>
         <div style="display:grid;grid-template-rows:1fr 1fr;gap:20px">
           <div class="panel soft" style="padding:26px 36px;display:flex;align-items:center;justify-content:space-between"><div><div class="small-copy">DevFit 피벗에서 B2C 운영 배포까지</div><div class="metric purple" style="font-size:78px;margin-top:12px">45일</div></div><span class="badge green" style="font-size:22px;padding:13px 19px">운영 배포</span></div>
           <div class="panel" style="padding:24px 36px"><div class="small-copy" style="margin-bottom:14px">2026-08-14 코드 실사 기준</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:13px 36px"><div class="body-copy" style="font-size:23px"><strong>Java</strong> 217개 파일</div><div class="body-copy" style="font-size:23px"><strong>TypeScript</strong> 205개 파일</div><div class="body-copy" style="font-size:23px"><strong>API</strong> 92개</div><div class="body-copy" style="font-size:23px"><strong>FE 테스트</strong> 202개 통과</div></div></div>
@@ -2390,30 +2479,26 @@ img{display:block}
 </section>
 
 <!-- 21 ROADMAP B2C: SEO -->
-<section class="slide" data-title="앞으로 계획, 지원자용 SEO" data-order="21">
+<section class="slide seo-slide" data-title="앞으로 계획, 지원자용 SEO" data-order="21">
   <div class="slide-shell">
     <div class="brand"><img src="deck_assets/icon.svg" alt="">Dev<b>Fit</b></div>
     <header class="topline" style="min-height:auto">
       <div class="eyebrow">앞으로 계획, 지원자용</div>
       <h1 class="title"><span class="purple">CS 지식백과</span>로 검색 결과를 선점합니다</h1>
     </header>
-    <div class="slide-content" style="margin-top:20px">
-      <div style="display:grid;grid-template-columns:.86fr 1.24fr;gap:56px;flex:1;min-height:0;align-items:stretch">
-        <div style="display:flex;flex-direction:column;justify-content:center;gap:26px">
-          <span class="badge" style="align-self:flex-start;font-size:19px;padding:10px 16px">1 SEO, 오가닉 검색</span>
-          <div class="body-copy" style="font-size:26px;line-height:1.55;word-break:keep-all">기술면접에 반복해 나오는 CS 개념을 페이지 단위로 축적해 검색 유입을 만듭니다. 아정당이 정보성 콘텐츠로 검색 상단을 확보한 방식과 같은 접근입니다.</div>
-          <div class="small-copy" style="font-size:21px;color:var(--body);word-break:keep-all">검색으로 들어온 개발자는 내 커밋으로 확인하기를 거쳐 가입과 공고 분석으로 이어집니다.</div>
-          <div class="small-copy" style="font-size:21px;color:var(--body);border-top:1px solid var(--line-2);padding-top:20px;word-break:keep-all">지식백과 항목이 곧 <strong style="color:var(--purple-deep)">예상 질문의 주제</strong>라 콘텐츠와 제품이 같은 자산을 씁니다.</div>
+    <div class="slide-content" style="margin-top:18px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <span class="badge" style="align-self:flex-start;font-size:19px;padding:10px 16px">1 SEO, 오가닉 검색</span>
+        <div class="seo-intro-copy">아정당의 홍보 방식을 벤치마킹했습니다. 아정당은 ‘꿀팁게시판’으로 인터넷 관련 검색어를 선점해 자사 홈페이지 유입을 만들었습니다.<br>DevFit도 ‘CS 지식백과’를 구축해 기술면접 관련 검색어에 노출되도록 페이지별 SEO를 적용했습니다.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:24px;align-items:start">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div class="shot seo-shot"><img src="deck_assets/아정당.png" alt="아정당 꿀팁게시판의 정보성 콘텐츠 화면"></div>
+          <div class="small-copy" style="font-size:16px;text-align:right">같은 방식으로 검색 상단을 확보한 아정당</div>
         </div>
-        <div style="display:flex;flex-direction:column;gap:16px;min-height:0">
-          <div style="flex:1.15;min-height:0;display:flex;flex-direction:column;gap:7px">
-            <div class="browser" style="flex:1;min-height:0"><div class="browser-bar"><i></i><i></i><i></i><div class="browser-url">DevFit / CS 지식백과</div></div><img src="deck_assets/CS지식백과.png" alt="DevFit CS 지식백과의 ARM 프로세서 문서 화면"></div>
-            <div class="small-copy" style="font-size:16px;text-align:right">운영 중인 DevFit CS 지식백과</div>
-          </div>
-          <div style="flex:.85;min-height:0;display:flex;flex-direction:column;gap:7px">
-            <div class="browser" style="flex:1;min-height:0"><div class="browser-bar"><i></i><i></i><i></i><div class="browser-url">아정당 꿀팁게시판</div></div><img src="deck_assets/아정당.png" alt="아정당 꿀팁게시판의 정보성 콘텐츠 화면"></div>
-            <div class="small-copy" style="font-size:16px;text-align:right">같은 방식으로 검색 상단을 확보한 아정당</div>
-          </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div class="shot seo-shot"><img src="deck_assets/CS지식백과.png" alt="DevFit CS 지식백과의 ARM 프로세서 문서 화면"></div>
+          <div class="small-copy" style="font-size:16px;text-align:right">운영 중인 DevFit CS 지식백과</div>
         </div>
       </div>
     </div>
@@ -2434,8 +2519,8 @@ img{display:block}
       <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:56px;flex:1;min-height:0;align-items:center">
         <div style="display:flex;flex-direction:column;gap:24px">
           <span class="badge" style="align-self:flex-start;font-size:19px;padding:10px 16px">2 소셜 마케팅</span>
-          <div class="body-copy" style="font-size:26px;line-height:1.55;word-break:keep-all">개발자 지원자를 대상으로 메타 광고를 집행해 초기 사용자를 확보합니다.</div>
-          <div class="small-copy" style="font-size:21px;color:var(--body);border-top:1px solid var(--line-2);padding-top:20px;word-break:keep-all">채널별 유입과 전환 단가를 측정해 9월 이후 예산을 재배분합니다.</div>
+          <div class="body-copy" style="font-size:26px;line-height:1.55;word-break:keep-all">9월 공채 시즌을 겨냥해 개발자 지원자 대상 메타 광고를 집행하고 초기 사용자를 확보합니다.</div>
+          <div class="small-copy" style="font-size:21px;color:var(--body);border-top:1px solid var(--line-2);padding-top:20px;word-break:keep-all">현재 신청한 예산은 하루 2만 원씩 30일간, 총 60만 원입니다. 메타 광고를 시작으로 여러 마케팅 전략을 함께 운영할 예정입니다.</div>
         </div>
         <div style="min-height:0;height:100%;display:flex">
           <img src="deck_assets/roadmap_b2c_social_marketing.png" alt="소셜 미디어를 활용한 개발자 지원자 대상 마케팅" style="width:100%;min-height:0;flex:1;border-radius:18px;object-fit:cover;display:block;border:1px solid var(--line-2)">
@@ -2459,10 +2544,11 @@ img{display:block}
       <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:56px;flex:1;min-height:0;align-items:center">
         <div style="display:flex;flex-direction:column;gap:24px">
           <span class="badge" style="align-self:flex-start;font-size:19px;padding:10px 16px">3 현장 마케팅</span>
-          <div class="body-copy" style="font-size:26px;line-height:1.55;word-break:keep-all">대학을 직접 찾아가 굿즈를 나눠주며 서비스를 알리고 현장 반응을 수집합니다.</div>
+          <div class="body-copy" style="font-size:26px;line-height:1.55;word-break:keep-all">주요 고객층이 대학생인 만큼 대학 취업박람회와 학교 축제에 직접 부스를 운영합니다. 굿즈를 나눠주며 서비스를 알리고, 현장에서 반응을 수집합니다.</div>
+          <div class="small-copy" style="font-size:20px;color:var(--body);border-top:1px solid var(--line-2);padding-top:20px;word-break:keep-all">오른쪽 굿즈는 개발자만을 위한 기념품이 아니라, 대학생 사이에서 유행한 클릭커를 활용한 시안입니다. QR 코드를 넣어 서비스 유입으로 연결합니다.</div>
         </div>
         <div style="min-height:0;height:100%;display:flex">
-          <img src="deck_assets/roadmap_b2c_campus_goods.png" alt="대학 현장에서 배포할 QR 코드 굿즈" style="width:100%;min-height:0;flex:1;border-radius:18px;object-fit:cover;display:block;border:1px solid var(--line-2)">
+          <img src="deck_assets/roadmap_b2c_campus_goods.png" alt="대학 현장에서 배포할 QR 코드 클릭커 굿즈" style="width:100%;min-height:0;flex:1;border-radius:18px;object-fit:cover;display:block;border:1px solid var(--line-2)">
         </div>
       </div>
     </div>
@@ -2509,7 +2595,7 @@ img{display:block}
           <span class="badge" style="align-self:flex-start;margin-bottom:18px;font-size:19px;padding:10px 16px">2 콜드 메일</span>
           <div style="font-size:29px;font-weight:900;letter-spacing:-.035em;margin-bottom:12px">기업 콜드메일</div>
           <div class="small-copy" style="font-size:20px;margin-bottom:24px;word-break:keep-all">공시 정보로 대상 기업을 추려 콜드 메일로 접점을 만들고, 회신 기업과 인터뷰를 진행하며 서비스를 함께 홍보합니다.</div>
-          <img src="deck_assets/roadmap_b2b_cold_email.png" alt="기업 페르소나 선별과 콜드 메일 발송" style="width:100%;min-height:0;flex:1;margin-top:auto;border-radius:16px;object-fit:cover;display:block">
+          <img src="deck_assets/공시사이트 분석.png" alt="공시 정보 기반 대상 기업 분석 시트" style="width:100%;min-height:0;flex:1;margin-top:auto;border-radius:16px;object-fit:cover;object-position:left center;display:block">
         </div>
         <div style="display:flex;align-items:center;justify-content:center;color:#005CE6;font-size:38px;font-weight:900">→</div>
         <div class="panel" style="padding:34px 38px;display:flex;flex-direction:column;min-height:0">
@@ -2619,8 +2705,8 @@ img{display:block}
         <div class="folio" style="left:118px;color:#6d6774">26</div>
       </div>
       <div style="position:relative;overflow:hidden">
-        <div class="browser" style="position:absolute;width:690px;height:431px;right:-65px;top:110px;transform:rotate(2deg);opacity:.92"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2c_dashboard.png" alt="DevFit 대시보드"></div>
-        <div class="browser" style="position:absolute;width:670px;height:419px;left:16px;bottom:72px;transform:rotate(-2deg)"><div class="browser-bar"><i></i><i></i><i></i></div><img src="deck_assets/b2c_appeal.png" alt="DevFit 면접 준비 화면"></div>
+        <div class="shot" style="position:absolute;width:690px;height:431px;right:-65px;top:110px;transform:rotate(2deg);opacity:.92"><img src="deck_assets/b2c_dashboard.png" alt="DevFit 대시보드"></div>
+        <div class="shot" style="position:absolute;width:670px;height:419px;left:16px;bottom:72px;transform:rotate(-2deg)"><img src="deck_assets/b2c_appeal.png" alt="DevFit 면접 준비 화면"></div>
       </div>
     </div>
   </div>
